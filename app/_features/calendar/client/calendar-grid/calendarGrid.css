@@ -1,0 +1,7 @@
+.ant-picker-cell-selected .ant-picker-calendar-date-value {
+  color: #000000e0 !important;
+}
+
+.ant-picker-cell-selected .ant-picker-calendar-date {
+  background: unset !important;
+}
