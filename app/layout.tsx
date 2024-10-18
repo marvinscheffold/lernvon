@@ -1,11 +1,16 @@
-import { AntdRegistry } from "@ant-design/nextjs-registry";
 import "./globals.css";
-import dayjs from "dayjs";
-import { ConfigProvider } from "antd";
 import { ReactQueryClientProvider } from "./_components/ReactQueryClientProvider";
-import { CheckoutResultModal } from "./_features/checkout/client/CheckoutResultModal";
-import { Suspense } from "react";
-dayjs.locale("en-US");
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
+import { Roboto } from "next/font/google";
+import { ThemeProvider } from "@mui/material/styles";
+import { theme } from "./theme";
+
+const roboto = Roboto({
+  weight: ["300", "400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-roboto",
+});
 
 export default function RootLayout({
   children,
@@ -14,25 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <ReactQueryClientProvider>
-      <AntdRegistry>
-        <ConfigProvider
-          theme={{
-            token: {
-              colorPrimary: "#3b82f6",
-              colorInfo: "#3b82f6",
-              colorTextBase: "#030712",
-              colorBgBase: "#fff",
-            },
-          }}
-        >
-          <html lang="en">
-            <body>{children}</body>
-          </html>
-          <Suspense>
-            <CheckoutResultModal />
-          </Suspense>
-        </ConfigProvider>
-      </AntdRegistry>
+      <html lang="en">
+        <body className={roboto.variable}>
+          <AppRouterCacheProvider>
+            <ThemeProvider theme={theme}>{children}</ThemeProvider>
+          </AppRouterCacheProvider>
+        </body>
+      </html>
     </ReactQueryClientProvider>
   );
 }
