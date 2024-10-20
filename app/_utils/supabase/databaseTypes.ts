@@ -34,21 +34,42 @@ export type Database = {
   };
   public: {
     Tables: {
-      todo: {
+      teacher: {
         Row: {
+          about: string | null;
           created_at: string;
+          email: string | null;
           id: number;
-          text: string;
+          image_url: string | null;
+          name: string | null;
+          price_per_hour: number | null;
+          updated_at: string;
+          user_id: string;
+          video_url: string | null;
         };
         Insert: {
+          about?: string | null;
           created_at?: string;
+          email?: string | null;
           id?: number;
-          text: string;
+          image_url?: string | null;
+          name?: string | null;
+          price_per_hour?: number | null;
+          updated_at?: string;
+          user_id: string;
+          video_url?: string | null;
         };
         Update: {
+          about?: string | null;
           created_at?: string;
+          email?: string | null;
           id?: number;
-          text?: string;
+          image_url?: string | null;
+          name?: string | null;
+          price_per_hour?: number | null;
+          updated_at?: string;
+          user_id?: string;
+          video_url?: string | null;
         };
         Relationships: [];
       };

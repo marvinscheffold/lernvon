@@ -1,3 +1,4 @@
+import { Section } from "@/app/_components/Section";
 import { TEACHER_CREATE_MANDATORY_INFORMATION_ROUTE } from "@/app/_utils/constants/routes";
 import { Add } from "@mui/icons-material";
 import { Button, Typography } from "@mui/material";
@@ -5,7 +6,7 @@ import Link from "next/link";
 
 export async function TeacherCreatePage() {
   return (
-    <div className="py-14 flex flex-col gap-8">
+    <Section>
       <Typography variant="h5">Overview</Typography>
       <Typography variant="body1">
         You didnt create a teacher profile yet
@@ -15,6 +16,6 @@ export async function TeacherCreatePage() {
           Create Profile
         </Button>
       </Link>
-    </div>
+    </Section>
   );
 }
