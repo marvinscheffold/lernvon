@@ -37,39 +37,39 @@ export type Database = {
       teacher: {
         Row: {
           about: string | null;
-          created_at: string;
+          createdAt: string;
           email: string | null;
           id: number;
-          image_url: string | null;
           name: string | null;
-          price_per_hour: number | null;
-          updated_at: string;
-          user_id: string;
-          video_url: string | null;
+          pricePerHour: number | null;
+          updatedAt: string;
+          userId: string;
+          videoThumbnailPath: string | null;
+          videoUrl: string | null;
         };
         Insert: {
           about?: string | null;
-          created_at?: string;
+          createdAt?: string;
           email?: string | null;
           id?: number;
-          image_url?: string | null;
           name?: string | null;
-          price_per_hour?: number | null;
-          updated_at?: string;
-          user_id: string;
-          video_url?: string | null;
+          pricePerHour?: number | null;
+          updatedAt?: string;
+          userId: string;
+          videoThumbnailPath?: string | null;
+          videoUrl?: string | null;
         };
         Update: {
           about?: string | null;
-          created_at?: string;
+          createdAt?: string;
           email?: string | null;
           id?: number;
-          image_url?: string | null;
           name?: string | null;
-          price_per_hour?: number | null;
-          updated_at?: string;
-          user_id?: string;
-          video_url?: string | null;
+          pricePerHour?: number | null;
+          updatedAt?: string;
+          userId?: string;
+          videoThumbnailPath?: string | null;
+          videoUrl?: string | null;
         };
         Relationships: [];
       };

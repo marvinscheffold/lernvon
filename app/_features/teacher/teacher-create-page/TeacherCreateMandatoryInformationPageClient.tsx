@@ -1,7 +1,7 @@
 "use client";
 
 import { Section, SectionRow } from "@/app/_components/Section";
-import { Image as ImageIcon } from "@mui/icons-material";
+import { Image as ImageIcon, Save } from "@mui/icons-material";
 import {
   Alert,
   Button,
@@ -12,14 +12,25 @@ import {
 } from "@mui/material";
 import { useRef, useState } from "react";
 import Image from "next/image";
-import { upsertTeacherAction } from "@/app/_features/teacher/actions";
+import { upsertTeacherAction } from "@/app/_features/teacher/upsertTeacherAction";
+import { useFormStatus } from "react-dom";
+import { LoadingButton } from "@mui/lab";
 
 export function TeacherCreateMandatoryInformationPageClient() {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
+  async function handleSubmit(formData: FormData) {
+    if (!selectedFile) {
+      formData.delete("videoThumbnailFile");
+    }
+
+    const response = await upsertTeacherAction(formData);
+    console.log(response);
+  }
+
   return (
-    <form action={upsertTeacherAction}>
+    <form action={handleSubmit}>
       <Section>
         <Typography variant="h5">Mandatory Information</Typography>
         <SectionRow
@@ -91,7 +102,7 @@ export function TeacherCreateMandatoryInformationPageClient() {
                 <div className="ml-[14px]">
                   <FormHelperText>
                     Optimal aspect ratio 16:9, 1280x720px or bigger, jpg, jpeg
-                    or png.
+                    or png, max 500kB.
                   </FormHelperText>
                 </div>
               </div>
@@ -113,7 +124,7 @@ export function TeacherCreateMandatoryInformationPageClient() {
                       setSelectedFile(event.target.files[0]);
                     }}
                     ref={inputRef}
-                    name="imageFile"
+                    name="videoThumbnailFile"
                   />
                 </Button>
               </div>
@@ -146,11 +157,24 @@ export function TeacherCreateMandatoryInformationPageClient() {
           }
         />
         <div>
-          <Button variant="contained" type="submit">
-            Save
-          </Button>
+          <SubmitButton />
         </div>
       </Section>
     </form>
+  );
+}
+
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return (
+    <LoadingButton
+      loadingPosition="start"
+      startIcon={<Save />}
+      variant="contained"
+      loading={pending}
+      type="submit"
+    >
+      Save
+    </LoadingButton>
   );
 }
