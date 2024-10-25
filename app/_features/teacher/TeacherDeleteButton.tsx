@@ -1,10 +1,10 @@
 import { SubmitButton } from "@/app/_components/SubmitButton";
-import { deleteTeacherAction } from "@/app/_features/teacher/deleteTeacherAction";
+import { teacherDeleteAction } from "@/app/_features/teacher/actions/teacherDeleteAction";
 import { Delete } from "@mui/icons-material";
 
 export function TeacherDeleteButton() {
   return (
-    <form action={deleteTeacherAction}>
+    <form action={teacherDeleteAction}>
       <SubmitButton variant="contained" color="error" startIcon={<Delete />}>
         Delete
       </SubmitButton>

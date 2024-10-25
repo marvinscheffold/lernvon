@@ -1,7 +1,8 @@
 "use client";
 
 import { SubmitButton } from "@/app/_components/SubmitButton";
-import { upsertTeacherAction } from "@/app/_features/teacher/upsertTeacherAction";
+import { teacherUpdateVisibilityAction } from "@/app/_features/teacher/actions/teacherUpdateVisibilityAction";
+import { teacherUpsertAction } from "@/app/_features/teacher/actions/teacherUpsertAction";
 import { TeacherType } from "@/app/_utils/types/teacher";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 
@@ -21,7 +22,7 @@ export function TeacherToggleVisibilityButton({
           formData.append("isVisible", "true");
         }
 
-        const response = await upsertTeacherAction(formData);
+        const response = await teacherUpdateVisibilityAction(formData);
         return console.log(response);
       }}
     >

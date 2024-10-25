@@ -10,7 +10,7 @@ import {
   TextField,
 } from "@mui/material";
 import { useRef, useState } from "react";
-import { upsertTeacherAction } from "@/app/_features/teacher/upsertTeacherAction";
+import { teacherUpsertAction } from "@/app/_features/teacher/actions/teacherUpsertAction";
 import { TeacherType } from "@/app/_utils/types/teacher";
 import { TeacherCreatePageMandatoryInformationVideoThumbnail } from "@/app/_features/teacher/teacher-create-page/TeacherCreatePageMandatoryInformationVideoThumbnail";
 import { SubmitButton } from "@/app/_components/SubmitButton";
@@ -30,7 +30,7 @@ export function TeacherCreatePageMandatoryInformationForm({
       formData.delete("videoThumbnailFile");
     }
 
-    const response = await upsertTeacherAction(formData);
+    const response = await teacherUpsertAction(formData);
     console.log(response);
   }
 

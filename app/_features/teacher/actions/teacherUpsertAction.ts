@@ -46,17 +46,9 @@ const payloadSchema = z.object({
       "only .jpg, .jpeg, .png and .webp formats are supported"
     )
     .optional(),
-  isVisible: z
-    .string()
-    .refine((value) => value === "true" || value === "false", {
-      message: "Value must be a boolean",
-    })
-    .transform((value) => value === "true")
-    .nullable()
-    .optional(),
 });
 
-export async function upsertTeacherAction(payload: FormData) {
+export async function teacherUpsertAction(payload: FormData) {
   try {
     const supabaseServiceRole = createSupabaseServiceRoleClient();
     const supabase = createSupabaseServerClient();
@@ -116,7 +108,6 @@ export async function upsertTeacherAction(payload: FormData) {
         name: payloadVerified.name,
         pricePerHour: payloadVerified.pricePerHour,
         email: payloadVerified.email,
-        isVisible: payloadVerified.isVisible,
         videoThumbnailPath: videoThumbnailPath ?? undefined,
       })
       .eq("id", teacher.id);

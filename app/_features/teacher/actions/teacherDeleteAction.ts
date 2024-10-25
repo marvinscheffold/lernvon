@@ -4,7 +4,7 @@ import { createSupabaseServiceRoleClient } from "@/app/_utils/supabase/createSup
 import { httpResponseStatusCode } from "@/app/_utils/httpResponseStatusCode";
 import { revalidatePath } from "next/cache";
 
-export async function deleteTeacherAction() {
+export async function teacherDeleteAction() {
   try {
     const {
       data: { user },
