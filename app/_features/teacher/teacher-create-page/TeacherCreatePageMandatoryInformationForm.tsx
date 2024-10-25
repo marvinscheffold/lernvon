@@ -1,22 +1,19 @@
 "use client";
 
-import { Section, SectionRow } from "@/app/_components/Section";
-import { Image as ImageIcon, Save } from "@mui/icons-material";
+import { SectionRow } from "@/app/_components/Section";
+import { Save } from "@mui/icons-material";
 import {
   Alert,
   Button,
   FormHelperText,
   InputAdornment,
   TextField,
-  Typography,
 } from "@mui/material";
 import { useRef, useState } from "react";
-import Image from "next/image";
 import { upsertTeacherAction } from "@/app/_features/teacher/upsertTeacherAction";
-import { useFormStatus } from "react-dom";
-import { LoadingButton } from "@mui/lab";
 import { TeacherType } from "@/app/_utils/types/teacher";
 import { TeacherCreatePageMandatoryInformationVideoThumbnail } from "@/app/_features/teacher/teacher-create-page/TeacherCreatePageMandatoryInformationVideoThumbnail";
+import { SubmitButton } from "@/app/_components/SubmitButton";
 
 type TeacherCreatePageMandatoryInformationFormProps = {
   teacher: TeacherType | null;
@@ -34,6 +31,7 @@ export function TeacherCreatePageMandatoryInformationForm({
     }
 
     const response = await upsertTeacherAction(formData);
+    console.log(response);
   }
 
   return (
@@ -150,23 +148,14 @@ export function TeacherCreatePageMandatoryInformationForm({
         }
       />
       <div>
-        <SubmitButton />
+        <SubmitButton
+          loadingPosition="start"
+          startIcon={<Save />}
+          variant="contained"
+        >
+          Save
+        </SubmitButton>
       </div>
     </form>
-  );
-}
-
-function SubmitButton() {
-  const { pending } = useFormStatus();
-  return (
-    <LoadingButton
-      loadingPosition="start"
-      startIcon={<Save />}
-      variant="contained"
-      loading={pending}
-      type="submit"
-    >
-      Save
-    </LoadingButton>
   );
 }

@@ -40,6 +40,7 @@ export type Database = {
           createdAt: string;
           email: string | null;
           id: number;
+          isVisible: boolean | null;
           name: string | null;
           pricePerHour: number | null;
           updatedAt: string;
@@ -52,6 +53,7 @@ export type Database = {
           createdAt?: string;
           email?: string | null;
           id?: number;
+          isVisible?: boolean | null;
           name?: string | null;
           pricePerHour?: number | null;
           updatedAt?: string;
@@ -64,6 +66,7 @@ export type Database = {
           createdAt?: string;
           email?: string | null;
           id?: number;
+          isVisible?: boolean | null;
           name?: string | null;
           pricePerHour?: number | null;
           updatedAt?: string;
