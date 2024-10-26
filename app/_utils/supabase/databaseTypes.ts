@@ -41,7 +41,7 @@ export type Database = {
           id: number;
           name: string;
           street: string;
-          streetNumber: string | null;
+          streetNumber: string;
           zip: string;
         };
         Insert: {
@@ -50,7 +50,7 @@ export type Database = {
           id?: number;
           name: string;
           street: string;
-          streetNumber?: string | null;
+          streetNumber: string;
           zip: string;
         };
         Update: {
@@ -59,7 +59,7 @@ export type Database = {
           id?: number;
           name?: string;
           street?: string;
-          streetNumber?: string | null;
+          streetNumber?: string;
           zip?: string;
         };
         Relationships: [];
