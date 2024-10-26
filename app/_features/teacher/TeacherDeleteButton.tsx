@@ -5,8 +5,8 @@ import { Delete } from "@mui/icons-material";
 export function TeacherDeleteButton() {
   return (
     <form action={teacherDeleteAction}>
-      <SubmitButton variant="contained" color="error" startIcon={<Delete />}>
-        Delete
+      <SubmitButton variant="outlined" color="error" startIcon={<Delete />}>
+        Delete profile
       </SubmitButton>
     </form>
   );

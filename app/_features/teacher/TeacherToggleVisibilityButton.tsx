@@ -2,21 +2,20 @@
 
 import { SubmitButton } from "@/app/_components/SubmitButton";
 import { teacherUpdateVisibilityAction } from "@/app/_features/teacher/actions/teacherUpdateVisibilityAction";
-import { teacherUpsertAction } from "@/app/_features/teacher/actions/teacherUpsertAction";
 import { TeacherType } from "@/app/_utils/types/teacher";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 type TeacherToggleVisibilityButtonProps = {
-  isVisible: TeacherType["isVisible"];
+  teacher: TeacherType;
 };
 
 export function TeacherToggleVisibilityButton({
-  isVisible,
+  teacher,
 }: TeacherToggleVisibilityButtonProps) {
   return (
     <form
       action={async (formData) => {
-        if (isVisible) {
+        if (teacher.isVisible) {
           formData.append("isVisible", "false");
         } else {
           formData.append("isVisible", "true");
@@ -27,10 +26,16 @@ export function TeacherToggleVisibilityButton({
       }}
     >
       <SubmitButton
-        variant="outlined"
-        startIcon={isVisible ? <VisibilityOff /> : <Visibility />}
+        variant={"outlined"}
+        startIcon={teacher.isVisible ? <VisibilityOff /> : <Visibility />}
+        disabled={
+          teacher.name === null ||
+          teacher.email === null ||
+          teacher.videoThumbnailPath === null ||
+          teacher.pricePerHour === null
+        }
       >
-        {isVisible ? "Make invisible" : "Make visible"}
+        {teacher.isVisible ? "Make profile invisible" : "Make profile visible"}
       </SubmitButton>
     </form>
   );

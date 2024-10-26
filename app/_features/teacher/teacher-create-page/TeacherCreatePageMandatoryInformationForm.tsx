@@ -49,8 +49,7 @@ export function TeacherCreatePageMandatoryInformationForm({
         }
         rightChildren={
           <Alert className="w-full" severity="info" variant="outlined">
-            If students know your name, they feel more comfortable writing you a
-            message.
+            Your name should be between 3 and 32 characters long
           </Alert>
         }
       />
@@ -76,7 +75,7 @@ export function TeacherCreatePageMandatoryInformationForm({
             By entering a price per hour students can better compare you to
             other teachers. Even if you dont offer 60min lessons, try to
             calculate what the price of a 60min lesson would be. You can add
-            more prices and lesson durations in the "About" section.
+            more prices and lesson durations in the About section.
           </Alert>
         }
       />

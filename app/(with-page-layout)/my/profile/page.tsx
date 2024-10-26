@@ -1,5 +1,6 @@
 import { Section } from "@/app/_components/Section";
 import { TeacherDeleteButton } from "@/app/_features/teacher/TeacherDeleteButton";
+import { TeacherOverviewTable } from "@/app/_features/teacher/TeacherOverviewTable";
 import { TeacherToggleVisibilityButton } from "@/app/_features/teacher/TeacherToggleVisibilityButton";
 import {
   TEACHER_CREATE_MANDATORY_INFORMATION_ROUTE,
@@ -9,15 +10,18 @@ import { getDateAsDDMMYYYYHHMMSS } from "@/app/_utils/getDateAsDDMMYYYYHHMMSS";
 import { httpResponseStatusCode } from "@/app/_utils/httpResponseStatusCode";
 import { createSupabaseServerClient } from "@/app/_utils/supabase/createSupabaseServerClient";
 import { createSupabaseServiceRoleClient } from "@/app/_utils/supabase/createSupabaseServiceRoleClient";
-import { Add, Delete, OpenInNew, VisibilityOff } from "@mui/icons-material";
+import { Add, OpenInNew } from "@mui/icons-material";
 import {
+  Alert,
+  AlertTitle,
   Button,
   Chip,
-  Paper,
+  List,
+  ListItem,
+  ListItemText,
   Table,
   TableBody,
   TableCell,
-  TableContainer,
   TableHead,
   TableRow,
   Typography,
@@ -56,45 +60,39 @@ export default async function Page() {
   return (
     <Section>
       <Typography variant="h5">Overview</Typography>
-
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell>Price per hour</TableCell>
-            <TableCell>Video added</TableCell>
-            <TableCell>Visible</TableCell>
-            <TableCell>Last updated</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          <TableRow>
-            <TableCell component="th" scope="row">
-              {teacher.name || "⎯"}
-            </TableCell>
-            <TableCell>{teacher.pricePerHour || "⎯"} €</TableCell>
-            <TableCell>{teacher.videoUrl ? "yes" : "no"}</TableCell>
-            <TableCell>
-              {teacher.isVisible ? (
-                <Chip label="Visible" variant="outlined" color="success" />
-              ) : (
-                <Chip label="Invisible" variant="outlined" color="error" />
-              )}
-            </TableCell>
-            <TableCell>
-              {getDateAsDDMMYYYYHHMMSS("de", teacher.updatedAt)}
-            </TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
-
-      <div className="flex gap-4">
+      {!teacher.isVisible && (
+        <Alert severity="warning" variant="outlined">
+          <AlertTitle>Your profile is invisible</AlertTitle>
+          This means nobody can find your profile or contact you.
+          {teacher.name === null ||
+          teacher.email === null ||
+          teacher.videoThumbnailPath === null ||
+          teacher.pricePerHour === null ? (
+            <div className="flex flex-col">
+              Fill out all mandatory information to make your profile visible.
+              <div className="mt-2">
+                <Link href={TEACHER_CREATE_MANDATORY_INFORMATION_ROUTE}>
+                  <Button variant="contained" startIcon={<Add />}>
+                    Fill out mandatory information
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          ) : (
+            <div className="mt-2">
+              <TeacherToggleVisibilityButton teacher={teacher} />
+            </div>
+          )}
+        </Alert>
+      )}
+      <TeacherOverviewTable teacher={teacher} />
+      <div className="flex flex-col md:flex-row gap-4">
         <Link href={TEACHER_ROUTE(teacher.id)} target="_blank">
-          <Button variant="contained" startIcon={<OpenInNew />}>
+          <Button variant="outlined" startIcon={<OpenInNew />}>
             Open live preview
           </Button>
         </Link>
-        <TeacherToggleVisibilityButton isVisible={teacher.isVisible} />
+        <TeacherToggleVisibilityButton teacher={teacher} />
         <TeacherDeleteButton />
       </div>
     </Section>

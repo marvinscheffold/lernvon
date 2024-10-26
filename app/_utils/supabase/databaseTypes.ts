@@ -42,11 +42,14 @@ export type Database = {
           id: number;
           isVisible: boolean | null;
           name: string | null;
+          phoneNumber: string | null;
           pricePerHour: number | null;
+          telegramUsername: string | null;
           updatedAt: string;
           userId: string;
           videoThumbnailPath: string | null;
-          videoUrl: string | null;
+          whatsappPhoneNumber: string | null;
+          youtubeVideoUrl: string | null;
         };
         Insert: {
           about?: string | null;
@@ -55,11 +58,14 @@ export type Database = {
           id?: number;
           isVisible?: boolean | null;
           name?: string | null;
+          phoneNumber?: string | null;
           pricePerHour?: number | null;
+          telegramUsername?: string | null;
           updatedAt?: string;
           userId: string;
           videoThumbnailPath?: string | null;
-          videoUrl?: string | null;
+          whatsappPhoneNumber?: string | null;
+          youtubeVideoUrl?: string | null;
         };
         Update: {
           about?: string | null;
@@ -68,11 +74,14 @@ export type Database = {
           id?: number;
           isVisible?: boolean | null;
           name?: string | null;
+          phoneNumber?: string | null;
           pricePerHour?: number | null;
+          telegramUsername?: string | null;
           updatedAt?: string;
           userId?: string;
           videoThumbnailPath?: string | null;
-          videoUrl?: string | null;
+          whatsappPhoneNumber?: string | null;
+          youtubeVideoUrl?: string | null;
         };
         Relationships: [];
       };

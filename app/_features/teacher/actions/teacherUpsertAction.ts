@@ -20,6 +20,7 @@ const payloadSchema = z.object({
   name: z
     .string({ invalid_type_error: "name must be a string" })
     .min(3, "name has to be at least 3 characters long")
+    .max(32, "name can only be 32 characters long")
     .nullable()
     .optional(),
   pricePerHour: z.coerce
@@ -34,8 +35,8 @@ const payloadSchema = z.object({
     .optional(),
   about: z
     .string()
-    .min(3, "about has to be at least 3 characters long")
-    .max(1000, "about can be maximum of 1000 characters long")
+    .min(32, "about has to be at least 32 characters long")
+    .max(1000, "about can only be 1000 characters long")
     .nullable()
     .optional(),
   videoThumbnailFile: z
@@ -45,6 +46,29 @@ const payloadSchema = z.object({
       (file) => ACCEPTED_IMAGE_TYPES.includes(file?.type),
       "only .jpg, .jpeg, .png and .webp formats are supported"
     )
+    .optional(),
+  youtubeVideoUrl: z.string().nullable().optional(),
+  phoneNumber: z
+    .string()
+    .refine(
+      (s) => /^\d+$/.test(s),
+      "phoneNumber number can only contain numbers without spaces"
+    )
+    .nullable()
+    .optional(),
+  whatsappPhoneNumber: z
+    .string()
+    .refine(
+      (s) => /^\d+$/.test(s),
+      "whatsappPhoneNumber number can only contain numbers without spaces"
+    )
+    .nullable()
+    .optional(),
+  telegramUsername: z
+    .string()
+    .min(5, "telegramUsername must contain at least 5 characters")
+    .max(32, "telegramUsername can only be 32 characters long")
+    .nullable()
     .optional(),
 });
 
@@ -81,6 +105,7 @@ export async function teacherUpsertAction(payload: FormData) {
         .from("teacher")
         .insert({
           userId: user.id,
+          isVisible: false,
         })
         .select()
         .single();
@@ -108,11 +133,14 @@ export async function teacherUpsertAction(payload: FormData) {
         name: payloadVerified.name,
         pricePerHour: payloadVerified.pricePerHour,
         email: payloadVerified.email,
+        youtubeVideoUrl: payloadVerified.youtubeVideoUrl,
+        phoneNumber: payloadVerified.phoneNumber,
+        whatsappPhoneNumber: payloadVerified.whatsappPhoneNumber,
+        telegramUsername: payloadVerified.telegramUsername,
+        about: payloadVerified.about,
         videoThumbnailPath: videoThumbnailPath ?? undefined,
       })
       .eq("id", teacher.id);
-
-    console.log("heyyy", updateRequest.error);
 
     if (updateRequest.error)
       throw {
