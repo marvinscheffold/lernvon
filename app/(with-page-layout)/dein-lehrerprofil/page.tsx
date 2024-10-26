@@ -1,31 +1,16 @@
 import { Section } from "@/app/_components/Section";
 import { TeacherDeleteButton } from "@/app/_features/teacher/TeacherDeleteButton";
-import { TeacherOverviewTable } from "@/app/_features/teacher/TeacherOverviewTable";
+import { TeacherCreatePageOverviewTable } from "@/app/_features/teacher/teacher-create-page/TeacherCreatePageOverviewTable";
 import { TeacherToggleVisibilityButton } from "@/app/_features/teacher/TeacherToggleVisibilityButton";
 import {
   TEACHER_CREATE_MANDATORY_INFORMATION_ROUTE,
   TEACHER_ROUTE,
 } from "@/app/_utils/constants/routes";
-import { getDateAsDDMMYYYYHHMMSS } from "@/app/_utils/getDateAsDDMMYYYYHHMMSS";
 import { httpResponseStatusCode } from "@/app/_utils/httpResponseStatusCode";
 import { createSupabaseServerClient } from "@/app/_utils/supabase/createSupabaseServerClient";
 import { createSupabaseServiceRoleClient } from "@/app/_utils/supabase/createSupabaseServiceRoleClient";
 import { Add, OpenInNew } from "@mui/icons-material";
-import {
-  Alert,
-  AlertTitle,
-  Button,
-  Chip,
-  List,
-  ListItem,
-  ListItemText,
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
-  Typography,
-} from "@mui/material";
+import { Alert, AlertTitle, Button, Typography } from "@mui/material";
 import Link from "next/link";
 
 export default async function Page() {
@@ -45,13 +30,13 @@ export default async function Page() {
   if (!teacher)
     return (
       <Section>
-        <Typography variant="h5">Overview</Typography>
+        <Typography variant="h5">Übersicht</Typography>
         <Typography variant="body1">
-          You didnt create a teacher profile yet
+          Du hast noch kein Lehrerprofil erstellt.
         </Typography>
         <Link href={TEACHER_CREATE_MANDATORY_INFORMATION_ROUTE}>
           <Button variant="contained" startIcon={<Add />}>
-            Create Profile
+            Profil erstellen
           </Button>
         </Link>
       </Section>
@@ -59,21 +44,22 @@ export default async function Page() {
 
   return (
     <Section>
-      <Typography variant="h5">Overview</Typography>
+      <Typography variant="h5">Übersicht</Typography>
       {!teacher.isVisible && (
         <Alert severity="warning" variant="outlined">
-          <AlertTitle>Your profile is invisible</AlertTitle>
-          This means nobody can find your profile or contact you.
+          <AlertTitle>Dein Profil ist unsichtbar</AlertTitle>
+          Das bedeutet, dass niemand dein Profil finden oder dich kontaktieren
+          kann.
           {teacher.name === null ||
           teacher.email === null ||
           teacher.videoThumbnailPath === null ||
           teacher.pricePerHour === null ? (
             <div className="flex flex-col">
-              Fill out all mandatory information to make your profile visible.
+              Fülle alle Pflichtfelder aus, um dein Profil sichtbar zu machen.
               <div className="mt-2">
                 <Link href={TEACHER_CREATE_MANDATORY_INFORMATION_ROUTE}>
                   <Button variant="contained" startIcon={<Add />}>
-                    Fill out mandatory information
+                    Pflichtfelder ausfüllen
                   </Button>
                 </Link>
               </div>
@@ -85,11 +71,11 @@ export default async function Page() {
           )}
         </Alert>
       )}
-      <TeacherOverviewTable teacher={teacher} />
+      <TeacherCreatePageOverviewTable teacher={teacher} />
       <div className="flex flex-col md:flex-row gap-4">
         <Link href={TEACHER_ROUTE(teacher.id)} target="_blank">
           <Button variant="outlined" startIcon={<OpenInNew />}>
-            Open live preview
+            Live-Vorschau öffnen
           </Button>
         </Link>
         <TeacherToggleVisibilityButton teacher={teacher} />

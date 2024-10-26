@@ -34,6 +34,36 @@ export type Database = {
   };
   public: {
     Tables: {
+      pool: {
+        Row: {
+          city: string;
+          createdAt: string;
+          id: number;
+          name: string;
+          street: string;
+          streetNumber: string | null;
+          zip: string;
+        };
+        Insert: {
+          city: string;
+          createdAt?: string;
+          id?: number;
+          name: string;
+          street: string;
+          streetNumber?: string | null;
+          zip: string;
+        };
+        Update: {
+          city?: string;
+          createdAt?: string;
+          id?: number;
+          name?: string;
+          street?: string;
+          streetNumber?: string | null;
+          zip?: string;
+        };
+        Relationships: [];
+      };
       teacher: {
         Row: {
           about: string | null;
@@ -84,6 +114,39 @@ export type Database = {
           youtubeVideoUrl?: string | null;
         };
         Relationships: [];
+      };
+      teacherPool: {
+        Row: {
+          createdAt: string;
+          poolId: number;
+          teacherId: number;
+        };
+        Insert: {
+          createdAt?: string;
+          poolId: number;
+          teacherId: number;
+        };
+        Update: {
+          createdAt?: string;
+          poolId?: number;
+          teacherId?: number;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "teacherPool_poolId_fkey";
+            columns: ["poolId"];
+            isOneToOne: false;
+            referencedRelation: "pool";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "teacherPool_teacherId_fkey";
+            columns: ["teacherId"];
+            isOneToOne: false;
+            referencedRelation: "teacher";
+            referencedColumns: ["id"];
+          }
+        ];
       };
     };
     Views: {

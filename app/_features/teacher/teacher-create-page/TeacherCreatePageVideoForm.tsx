@@ -33,15 +33,16 @@ export function TeacherCreatePageVideoForm({
               <YoutubeVideo yotubeVideoUrl={youtubeVideoUrl} />
               <div className="ml-[14px]">
                 <FormHelperText>
-                  This video will be shown when people click on your image.
+                  Dieses Video wird angezeigt, wenn Nutzer auf dein Bild
+                  klicken.
                 </FormHelperText>
               </div>
             </div>
             <div>
               <TextField
                 className="w-full"
-                helperText="For example: https://www.youtube.com/embed/dQw4w9WgXcQ"
-                label="Enter a YouTube embed url"
+                helperText="Zum Beispiel: https://www.youtube.com/embed/dQw4w9WgXcQ"
+                label="Füge eine YouTube-Embed-URL ein"
                 name="youtubeVideoUrl"
                 value={youtubeVideoUrl}
                 onChange={(event) => setYoutubeVideoUrl(event.target.value)}
@@ -51,11 +52,12 @@ export function TeacherCreatePageVideoForm({
         }
         rightChildren={
           <Alert className="w-full" severity="info" variant="outlined">
-            A video will help you get more messages from students. Because
-            students will get a better feeling for you and your style of
-            teaching. Try to upload a video where you are in a pool, that will
-            get you the best results. <br></br> <br></br> To find the embed url,
-            open a video on Youtube, then click share and then embed.
+            Ein Video hilft dir, mehr Nachrichten von Schülern zu erhalten, da
+            diese ein besseres Gefühl für dich und deinen Unterrichtsstil
+            bekommen. Versuche, ein Video im Schwimmbad hochzuladen, das erzielt
+            die besten Ergebnisse. <br></br> <br></br> Um die Embed-URL zu
+            finden, öffne ein Video auf YouTube, klicke auf „Teilen“ und dann
+            auf „Einbetten“.
           </Alert>
         }
       />
@@ -65,7 +67,7 @@ export function TeacherCreatePageVideoForm({
           startIcon={<Save />}
           variant="contained"
         >
-          Save
+          Speichern
         </SubmitButton>
       </div>
     </form>

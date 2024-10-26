@@ -34,8 +34,8 @@ export function TeacherCreatePageContactForm({
         leftChildren={
           <TextField
             className="w-full"
-            helperText="For example: 004915255551111"
-            label="Your phone number"
+            helperText="Zum Beispiel: 004915255551111"
+            label="Deine Telefonnummer"
             name="phoneNumber"
             type="number"
             defaultValue={teacher?.phoneNumber}
@@ -43,8 +43,8 @@ export function TeacherCreatePageContactForm({
         }
         rightChildren={
           <Alert className="w-full" severity="info" variant="outlined">
-            Your number should start with the country code. For example 0049 for
-            germany.
+            Deine Nummer sollte mit der Landesvorwahl beginnen. Zum Beispiel
+            0049 für Deutschland.
           </Alert>
         }
       />
@@ -52,8 +52,8 @@ export function TeacherCreatePageContactForm({
         leftChildren={
           <TextField
             className="w-full"
-            helperText="For example: 004915255551111"
-            label="Your WhatsApp phone number"
+            helperText="Zum Beispiel: 004915255551111"
+            label="Deine WhatsApp-Telefonnummer"
             type="number"
             name="whatsappPhoneNumber"
             defaultValue={teacher?.whatsappPhoneNumber}
@@ -61,8 +61,8 @@ export function TeacherCreatePageContactForm({
         }
         rightChildren={
           <Alert className="w-full" severity="info" variant="outlined">
-            Your number should start with the country code. For example 0049 for
-            germany.
+            Deine Nummer sollte mit der Landesvorwahl beginnen. Zum Beispiel
+            0049 für Deutschland.
           </Alert>
         }
       />
@@ -70,15 +70,16 @@ export function TeacherCreatePageContactForm({
         leftChildren={
           <TextField
             className="w-full"
-            helperText="For example: banana123"
-            label="Your Telegram username"
+            helperText="Zum Beispiel: banana123"
+            label="Dein Telegram-Benutzername"
             name="telegramUsername"
             defaultValue={teacher?.telegramUsername}
           />
         }
         rightChildren={
           <Alert className="w-full" severity="info" variant="outlined">
-            Your telegram username should be between 5 and 32 characters long.
+            Dein Telegram-Benutzername sollte zwischen 5 und 32 Zeichen lang
+            sein.
           </Alert>
         }
       />
@@ -89,7 +90,7 @@ export function TeacherCreatePageContactForm({
           startIcon={<Save />}
           variant="contained"
         >
-          Save
+          Speichern
         </SubmitButton>
       </div>
     </form>

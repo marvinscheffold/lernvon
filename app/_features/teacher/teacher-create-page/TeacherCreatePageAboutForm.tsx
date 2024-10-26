@@ -25,8 +25,8 @@ export function TeacherCreatePageAboutForm({
         leftChildren={
           <TextField
             className="w-full"
-            helperText="For example: Hey! I'm John, and I love to teach swimming."
-            label="Write something about you"
+            helperText="Zum Beispiel: Hey! Ich bin John und unterrichte gerne Schwimmen."
+            label="Schreibe etwas über dich"
             name="about"
             defaultValue={teacher?.about}
             multiline
@@ -35,9 +35,10 @@ export function TeacherCreatePageAboutForm({
         }
         rightChildren={
           <Alert className="w-full" severity="info" variant="outlined">
-            Here you can write about how your lessons are structured, why you
-            teach swimming, when you are available or anything else that comes
-            to mind. Your text should be between 32 and 1000 characters long.
+            Hier kannst du darüber schreiben, wie dein Unterricht strukturiert
+            ist, warum du Schwimmen unterrichtest, wann du verfügbar bist oder
+            was dir sonst in den Sinn kommt. Dein Text sollte zwischen 32 und
+            1000 Zeichen lang sein.
           </Alert>
         }
       />
@@ -47,7 +48,7 @@ export function TeacherCreatePageAboutForm({
           startIcon={<Save />}
           variant="contained"
         >
-          Save
+          Speichern
         </SubmitButton>
       </div>
     </form>

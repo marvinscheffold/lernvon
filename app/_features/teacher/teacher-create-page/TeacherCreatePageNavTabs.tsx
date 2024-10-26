@@ -28,22 +28,22 @@ export function TeacherCreatePageNavTabs() {
       className="border-b border-gray-200"
     >
       <Link href={TEACHER_CREATE_ROUTE}>
-        <Tab label="Overview" />
+        <Tab label="Übersicht" />
       </Link>
       <Link href={TEACHER_CREATE_MANDATORY_INFORMATION_ROUTE}>
-        <Tab label="Mandatory Information" />
+        <Tab label="Pflichtangaben*" />
       </Link>
       <Link href={TEACHER_CREATE_VIDEO_ROUTE}>
         <Tab label="Video" />
       </Link>
       <Link href={TEACHER_CREATE_CONTACT_ROUTE}>
-        <Tab label="Contact" />
+        <Tab label="Kontaktmöglichkeiten" />
       </Link>
       <Link href={TEACHER_CREATE_ABOUT_ROUTE}>
-        <Tab label="About you" />
+        <Tab label="Über dich" />
       </Link>
       <Link href={TEACHER_CREATE_POOLS_ROUTE}>
-        <Tab label="Pools" />
+        <Tab label="Schwimmbäder" />
       </Link>
     </Tabs>
   );

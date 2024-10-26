@@ -1,5 +1,3 @@
-"use-client";
-
 import { Container } from "@/app/_components/Container";
 import { Typography } from "@mui/material";
 import { ReactNode } from "react";
@@ -9,7 +7,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <Container>
       <div className="py-12">
-        <Typography variant="h4">Teacher Profile</Typography>
+        <Typography variant="h4">Dein Lehrerprofil</Typography>
       </div>
       <TeacherCreatePageNavTabs />
       {children}

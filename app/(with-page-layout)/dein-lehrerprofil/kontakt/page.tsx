@@ -1,5 +1,5 @@
 import { Section } from "@/app/_components/Section";
-import { TeacherCreatePageMandatoryInformationForm } from "@/app/_features/teacher/teacher-create-page/TeacherCreatePageMandatoryInformationForm";
+import { TeacherCreatePageContactForm } from "@/app/_features/teacher/teacher-create-page/TeacherCreatePageContactForm";
 import { httpResponseStatusCode } from "@/app/_utils/httpResponseStatusCode";
 import { createSupabaseServerClient } from "@/app/_utils/supabase/createSupabaseServerClient";
 import { createSupabaseServiceRoleClient } from "@/app/_utils/supabase/createSupabaseServiceRoleClient";
@@ -21,8 +21,8 @@ export default async function Page() {
 
   return (
     <Section>
-      <Typography variant="h5">Mandatory Information</Typography>
-      <TeacherCreatePageMandatoryInformationForm teacher={teacher} />
+      <Typography variant="h5">Kontaktmöglichkeiten</Typography>
+      <TeacherCreatePageContactForm teacher={teacher} />
     </Section>
   );
 }

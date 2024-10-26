@@ -6,7 +6,7 @@ export function TeacherDeleteButton() {
   return (
     <form action={teacherDeleteAction}>
       <SubmitButton variant="outlined" color="error" startIcon={<Delete />}>
-        Delete profile
+        Profil löschen
       </SubmitButton>
     </form>
   );

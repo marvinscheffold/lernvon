@@ -35,7 +35,9 @@ export function TeacherToggleVisibilityButton({
           teacher.pricePerHour === null
         }
       >
-        {teacher.isVisible ? "Make profile invisible" : "Make profile visible"}
+        {teacher.isVisible
+          ? "Profil unsichtbar machen"
+          : "Profil sichtbar machen"}
       </SubmitButton>
     </form>
   );

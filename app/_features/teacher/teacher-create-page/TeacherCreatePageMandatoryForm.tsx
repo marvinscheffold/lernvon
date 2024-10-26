@@ -9,19 +9,21 @@ import {
   InputAdornment,
   TextField,
 } from "@mui/material";
-import { useRef, useState } from "react";
+import { ReactNode, useRef, useState } from "react";
 import { teacherUpsertAction } from "@/app/_features/teacher/actions/teacherUpsertAction";
 import { TeacherType } from "@/app/_utils/types/teacher";
-import { TeacherCreatePageMandatoryInformationVideoThumbnail } from "@/app/_features/teacher/teacher-create-page/TeacherCreatePageMandatoryInformationVideoThumbnail";
 import { SubmitButton } from "@/app/_components/SubmitButton";
+import Image from "next/image";
+import { createSupabaseBrowserClient } from "@/app/_utils/supabase/createSupabaseBrowserClient";
+import { Image as ImageIcon } from "@mui/icons-material";
 
-type TeacherCreatePageMandatoryInformationFormProps = {
+type TeacherCreatePageMandatoryFormProps = {
   teacher: TeacherType | null;
 };
 
-export function TeacherCreatePageMandatoryInformationForm({
+export function TeacherCreatePageMandatoryForm({
   teacher,
-}: TeacherCreatePageMandatoryInformationFormProps) {
+}: TeacherCreatePageMandatoryFormProps) {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
@@ -40,8 +42,8 @@ export function TeacherCreatePageMandatoryInformationForm({
         leftChildren={
           <TextField
             className="w-full"
-            helperText="For example: John Doe"
-            label="Your name"
+            helperText="Zum Beispiel: John Doe"
+            label="Dein Name"
             required
             name="name"
             defaultValue={teacher?.name}
@@ -49,7 +51,7 @@ export function TeacherCreatePageMandatoryInformationForm({
         }
         rightChildren={
           <Alert className="w-full" severity="info" variant="outlined">
-            Your name should be between 3 and 32 characters long
+            Dein Name sollte zwischen 3 und 32 Zeichen lang sein.
           </Alert>
         }
       />
@@ -57,8 +59,8 @@ export function TeacherCreatePageMandatoryInformationForm({
         leftChildren={
           <TextField
             className="w-full"
-            helperText="For example: 45 €"
-            label="Your price per hour"
+            helperText="Zum Beispiel: 45 €"
+            label="Dein Preis pro Stunde"
             required
             slotProps={{
               input: {
@@ -72,10 +74,11 @@ export function TeacherCreatePageMandatoryInformationForm({
         }
         rightChildren={
           <Alert className="w-full" severity="info" variant="outlined">
-            By entering a price per hour students can better compare you to
-            other teachers. Even if you dont offer 60min lessons, try to
-            calculate what the price of a 60min lesson would be. You can add
-            more prices and lesson durations in the About section.
+            Durch die Angabe eines Preises pro Stunde können Schüler dich besser
+            mit anderen Lehrern vergleichen. Auch wenn du keine 60-minütigen
+            Lektionen anbietest, versuche den Preis für eine 60-minütige Lektion
+            zu berechnen. Du kannst weitere Preise und Kursdauern im Abschnitt
+            „Über dich“ hinzufügen.
           </Alert>
         }
       />
@@ -90,8 +93,8 @@ export function TeacherCreatePageMandatoryInformationForm({
 
               <div className="ml-[14px]">
                 <FormHelperText>
-                  Optimal aspect ratio 16:9, 1280x720px or bigger, jpg, jpeg or
-                  png, max 500kB.
+                  Optimales Seitenverhältnis 16:9, 1280x720px oder größer, jpg,
+                  jpeg oder png, max. 500kB.
                 </FormHelperText>
               </div>
             </div>
@@ -103,7 +106,7 @@ export function TeacherCreatePageMandatoryInformationForm({
                   inputRef.current.click();
                 }}
               >
-                Select Image*
+                Bild auswählen*
                 <input
                   className="hidden"
                   type="file"
@@ -121,9 +124,9 @@ export function TeacherCreatePageMandatoryInformationForm({
         }
         rightChildren={
           <Alert className="w-full" severity="info" variant="outlined">
-            Students feel much more comfortable contacting teachers with an
-            image. Try uploading an image that shows you in or at a pool. Show
-            your face and smile.
+            Schüler fühlen sich wohler, wenn sie Lehrer mit einem Bild
+            kontaktieren. Versuche ein Bild hochzuladen, das dich in oder an
+            einem Pool zeigt. Zeige dein Gesicht und lächle.
           </Alert>
         }
       />
@@ -131,8 +134,8 @@ export function TeacherCreatePageMandatoryInformationForm({
         leftChildren={
           <TextField
             className="w-full"
-            helperText="For example: john.doe@gmail.com"
-            label="Enter your email"
+            helperText="Zum Beispiel: john.doe@gmail.com"
+            label="Deine E-Mail-Adresse"
             required
             type="email"
             name="email"
@@ -141,8 +144,8 @@ export function TeacherCreatePageMandatoryInformationForm({
         }
         rightChildren={
           <Alert className="w-full" severity="info" variant="outlined">
-            Students need at least one way to contact you. Thats why email is
-            mandatory.
+            Schüler benötigen mindestens eine Kontaktmöglichkeit. Daher ist die
+            Angabe einer E-Mail-Adresse verpflichtend.
           </Alert>
         }
       />
@@ -152,9 +155,65 @@ export function TeacherCreatePageMandatoryInformationForm({
           startIcon={<Save />}
           variant="contained"
         >
-          Save
+          Speichern
         </SubmitButton>
       </div>
     </form>
+  );
+}
+
+type TeacherCreatePageMandatoryInformationVideoThumbnailProps = {
+  selectedFile: File | null;
+  videoThumbnailPath?: string | null;
+};
+
+function TeacherCreatePageMandatoryInformationVideoThumbnail({
+  selectedFile,
+  videoThumbnailPath,
+}: TeacherCreatePageMandatoryInformationVideoThumbnailProps) {
+  function Container(children: ReactNode) {
+    return (
+      <div className="w-full aspect-video rounded-3xl border border-gray-200 flex items-center justify-center relative overflow-hidden">
+        {children}
+      </div>
+    );
+  }
+
+  if (selectedFile) {
+    return Container(
+      <Image
+        alt="image of teacher"
+        src={URL.createObjectURL(selectedFile)}
+        fill
+        style={{
+          objectFit: "cover",
+        }}
+      />
+    );
+  }
+
+  if (videoThumbnailPath) {
+    const {
+      data: { publicUrl },
+    } = createSupabaseBrowserClient()
+      .storage.from("teacher")
+      .getPublicUrl(videoThumbnailPath);
+    return Container(
+      <Image
+        alt="image of teacher"
+        src={publicUrl}
+        fill
+        style={{
+          objectFit: "cover",
+        }}
+      />
+    );
+  }
+
+  return Container(
+    <ImageIcon
+      style={{ width: "56px", height: "56px" }}
+      className="text-gray-200 text-4xl"
+    />
   );
 }
