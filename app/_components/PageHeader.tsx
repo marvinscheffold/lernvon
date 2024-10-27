@@ -80,7 +80,7 @@ export function PageHeader() {
       </svg>
       <div className="flex gap-4 items-center">
         <Link href={TEACHER_CREATE_ROUTE} className="hidden sm:block">
-          <Button variant="outlined">Become a teacher</Button>
+          <Button variant="outlined">Schwimmlehrer werden</Button>
         </Link>
         <AuthUserAvatar />
       </div>

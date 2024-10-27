@@ -6,15 +6,7 @@ export default function Loading() {
     <Section>
       <Skeleton style={{ fontSize: "24px", maxWidth: "340px" }} />
       <SectionRow
-        leftChildren={<Skeleton variant="rounded" height={56} />}
-        rightChildren={<Skeleton variant="rounded" height={56} />}
-      />
-      <SectionRow
-        leftChildren={<Skeleton variant="rounded" height={56} />}
-        rightChildren={<Skeleton variant="rounded" height={56} />}
-      />
-      <SectionRow
-        leftChildren={<Skeleton variant="rounded" height={56} />}
+        leftChildren={<Skeleton variant="rounded" height={128} />}
         rightChildren={<Skeleton variant="rounded" height={56} />}
       />
     </Section>

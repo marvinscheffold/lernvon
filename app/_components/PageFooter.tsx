@@ -18,18 +18,18 @@ export function PageFooter() {
 export function PageFooterContent() {
   return (
     <div className="flex flex-wrap gap-6">
-      <Typography variant="subtitle1">© Swimly 2024</Typography>
+      <Typography variant="subtitle1">© LernVon 2024</Typography>
       <Link href={"/imprint"}>
-        <Typography variant="subtitle1">Imprint</Typography>
+        <Typography variant="subtitle1">Impressum</Typography>
       </Link>
       <Link href={"/privacy"}>
-        <Typography variant="subtitle1">Privacy policy</Typography>
+        <Typography variant="subtitle1">Privatsspäre</Typography>
       </Link>
       <Link href={"/send"}>
-        <Typography variant="subtitle1">Send feedback</Typography>
+        <Typography variant="subtitle1">Feedback senden</Typography>
       </Link>
       <Link href={TEACHER_CREATE_ROUTE}>
-        <Typography variant="subtitle1">Become a teacher</Typography>
+        <Typography variant="subtitle1">Schwimmlehrer werden</Typography>
       </Link>
     </div>
   );

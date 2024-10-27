@@ -58,7 +58,7 @@ export function PoolSearchInputAndSelectDropdown({
         aria-controls={isDropdownOpen ? "basic-menu" : undefined}
         aria-haspopup="true"
         aria-expanded={isDropdownOpen ? "true" : undefined}
-        label="Name oder Adresse von Schwimmbad eingeben"
+        label="Name oder Adresse eines Schwimmbads eingeben"
       />
       <Popper
         open={isDropdownOpen}

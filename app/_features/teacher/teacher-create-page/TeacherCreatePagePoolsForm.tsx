@@ -9,6 +9,7 @@ import {
   List,
   ListItem,
   ListItemText,
+  Typography,
 } from "@mui/material";
 import { PoolType } from "@/app/_utils/types/pool";
 import { FormEvent, useState } from "react";
@@ -47,32 +48,39 @@ export function TeacherCreatePagePoolsForm({
       <SectionRow
         leftChildren={
           <div className="flex flex-col gap-6">
-            <List>
-              {pools.map((pool) => (
-                <ListItem
-                  key={pool.id}
-                  disableGutters
-                  divider
-                  secondaryAction={
-                    <IconButton
-                      aria-label="löschen"
-                      onClick={() => {
-                        setPools((pools) =>
-                          pools.filter((p) => p.id !== pool.id)
-                        );
-                      }}
-                    >
-                      <Delete />
-                    </IconButton>
-                  }
-                >
-                  <ListItemText
-                    primary={pool.name}
-                    secondary={`${pool.street} ${pool.streetNumber}, ${pool.zip} ${pool.city}`}
-                  />
-                </ListItem>
-              ))}
-            </List>
+            {pools.length > 0 ? (
+              <List>
+                {pools.map((pool) => (
+                  <ListItem
+                    key={pool.id}
+                    disableGutters
+                    divider
+                    secondaryAction={
+                      <IconButton
+                        aria-label="löschen"
+                        onClick={() => {
+                          setPools((pools) =>
+                            pools.filter((p) => p.id !== pool.id)
+                          );
+                        }}
+                      >
+                        <Delete />
+                      </IconButton>
+                    }
+                  >
+                    <ListItemText
+                      primary={pool.name}
+                      secondary={`${pool.street} ${pool.streetNumber}, ${pool.zip} ${pool.city}`}
+                    />
+                  </ListItem>
+                ))}
+              </List>
+            ) : (
+              <Typography variant="body1">
+                Du hast noch keine Schwimmbäder hinzugefügt
+              </Typography>
+            )}
+
             <div className="flex flex-col">
               <PoolSearchInputAndSelectDropdown
                 disabledOptionValues={pools.map((p) => p.id)}
