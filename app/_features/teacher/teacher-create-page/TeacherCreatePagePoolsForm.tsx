@@ -10,11 +10,13 @@ import {
   ListItem,
   ListItemText,
 } from "@mui/material";
-import { teacherUpsertAction } from "@/app/_features/teacher/actions/teacherUpsertAction";
-import { SubmitButton } from "@/app/_components/SubmitButton";
 import { PoolType } from "@/app/_utils/types/pool";
-import { useState } from "react";
-import { PoolSelectAutocompleteMultiple } from "@/app/_features/pool/PoolSelectAutocomplete";
+import { FormEvent, useState } from "react";
+import { PoolSearchInputAndSelectDropdown } from "@/app/_features/pool/PoolSearchInputAndSelectDropdown";
+import { teacherCreateOrDeleteTeacherPoolsAction } from "@/app/_features/teacher/actions/teacherCreateOrDeleteTeacherPoolsAction";
+import { useMutation } from "@tanstack/react-query";
+import { createServerActionThatThrowsClientError } from "@/app/_utils/createServerActionThatThrowsClientError";
+import { LoadingButton } from "@mui/lab";
 
 type TeacherCreatePagePoolsFormProps = {
   pools: PoolType[];
@@ -24,14 +26,24 @@ export function TeacherCreatePagePoolsForm({
   pools: poolsProps,
 }: TeacherCreatePagePoolsFormProps) {
   const [pools, setPools] = useState(poolsProps);
+  const mutation = useMutation({
+    mutationFn: createServerActionThatThrowsClientError(
+      teacherCreateOrDeleteTeacherPoolsAction
+    ),
+  });
 
-  async function handleSubmit(formData: FormData) {
-    const response = await teacherUpsertAction(formData);
-    console.log(response);
+  async function handleSubmit(event: FormEvent) {
+    event.preventDefault();
+    mutation.mutate(
+      {
+        poolIds: pools.map((p) => p.id),
+      },
+      {}
+    );
   }
 
   return (
-    <form action={handleSubmit} className="flex flex-col gap-8">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-8">
       <SectionRow
         leftChildren={
           <div className="flex flex-col gap-6">
@@ -62,10 +74,9 @@ export function TeacherCreatePagePoolsForm({
               ))}
             </List>
             <div className="flex flex-col">
-              <PoolSelectAutocompleteMultiple
-                value={null}
+              <PoolSearchInputAndSelectDropdown
                 disabledOptionValues={pools.map((p) => p.id)}
-                onChangeWithFullType={(pool) => {
+                onSelect={(pool) => {
                   if (!pool) return;
                   setPools((pools) => [...pools, pool]);
                 }}
@@ -81,21 +92,22 @@ export function TeacherCreatePagePoolsForm({
         }
         rightChildren={
           <Alert className="w-full" severity="info" variant="outlined">
-            Indem du die Schwimmbäder hinzufügst, in denen du unterrichtest,
-            erhältst du passendere Nachrichten von Schülern, da sie bereits
-            wissen, dass du in ihrer Nähe Unterricht gibst.
+            Wenn du die Schwimmbäder hinzufügst, in denen du unterrichtest,
+            erhältst du passendere Nachrichten von Schülern.
           </Alert>
         }
       />
 
       <div>
-        <SubmitButton
+        <LoadingButton
           loadingPosition="start"
           startIcon={<Save />}
           variant="contained"
+          type="submit"
+          loading={mutation.isPending}
         >
           Speichern
-        </SubmitButton>
+        </LoadingButton>
       </div>
     </form>
   );
