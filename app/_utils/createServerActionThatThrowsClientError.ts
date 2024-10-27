@@ -1,7 +1,9 @@
+import { ServerActionResponseType } from "@/app/_utils/types/serverActionResponse";
+
 export function createServerActionThatThrowsClientError(
-  serverAction: (arg: any) => Promise<any>
-): (arg: any) => Promise<any> {
-  return async function (params: any) {
+  serverAction: (arg: unknown) => Promise<ServerActionResponseType>
+): (arg: unknown) => Promise<ServerActionResponseType> {
+  return async function (params: unknown) {
     const response = await serverAction(params);
     if (response.code >= 400 && response.code <= 500) {
       throw response;

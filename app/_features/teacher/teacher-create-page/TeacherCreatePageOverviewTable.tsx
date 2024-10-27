@@ -1,13 +1,7 @@
 import { getDateAsDDMMYYYYHHMMSS } from "@/app/_utils/getDateAsDDMMYYYYHHMMSS";
 import { TeacherType } from "@/app/_utils/types/teacher";
+import { CheckCircle, Warning } from "@mui/icons-material";
 import {
-  Check,
-  CheckCircle,
-  CheckOutlined,
-  Warning,
-} from "@mui/icons-material";
-import {
-  Chip,
   List,
   ListItem,
   ListItemText,

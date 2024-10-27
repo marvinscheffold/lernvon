@@ -1,5 +1,4 @@
 import { Section } from "@/app/_components/Section";
-import { TeacherCreatePageContactForm } from "@/app/_features/teacher/teacher-create-page/TeacherCreatePageContactForm";
 import { TeacherCreatePagePoolsForm } from "@/app/_features/teacher/teacher-create-page/TeacherCreatePagePoolsForm";
 import { httpResponseStatusCode } from "@/app/_utils/httpResponseStatusCode";
 import { createSupabaseServerClient } from "@/app/_utils/supabase/createSupabaseServerClient";
