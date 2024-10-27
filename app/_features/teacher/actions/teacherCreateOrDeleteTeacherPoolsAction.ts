@@ -5,6 +5,13 @@ import { createSupabaseServiceRoleClient } from "@/app/_utils/supabase/createSup
 import { httpResponseStatusCode } from "@/app/_utils/httpResponseStatusCode";
 import { revalidatePath } from "next/cache";
 import { PoolType } from "@/app/_utils/types/pool";
+import { ServerActionResponseType } from "@/app/_utils/types/serverActionResponse";
+
+const errorSchema = z.object({
+  message: z.string(),
+  code: z.number(),
+  key: z.string(),
+});
 
 const payloadSchema = z.object({
   poolIds: z.number().array(),
@@ -12,7 +19,7 @@ const payloadSchema = z.object({
 
 export async function teacherCreateOrDeleteTeacherPoolsAction(payload: {
   poolIds: PoolType["id"][];
-}) {
+}): Promise<ServerActionResponseType> {
   try {
     const supabaseServiceRole = createSupabaseServiceRoleClient();
 
@@ -95,7 +102,10 @@ export async function teacherCreateOrDeleteTeacherPoolsAction(payload: {
     revalidatePath("/");
     return httpResponseStatusCode.Ok;
   } catch (error) {
-    console.log(error);
-    return error;
+    if (typeof error === "object" && error !== null) {
+      const { data: errorVerified } = errorSchema.safeParse(error);
+      if (errorVerified) return errorVerified;
+    }
+    return httpResponseStatusCode.InternalServerError;
   }
 }
