@@ -40,7 +40,7 @@ export async function teacherCreateOrDeleteTeacherPoolsAction(payload: {
 
     const { data: teacher } = await createSupabaseServiceRoleClient()
       .from("teacher")
-      .select("id, pool(*)")
+      .select("id, pools:pool(*)")
       .eq("userId", user.id)
       .single();
 
@@ -51,13 +51,13 @@ export async function teacherCreateOrDeleteTeacherPoolsAction(payload: {
       };
     }
 
-    const poolIdsToRemove = teacher.pool
+    const poolIdsToRemove = teacher.pools
       .filter(
         (pool) => !payloadVerified.poolIds.some((poolId) => poolId === pool.id)
       )
       .map((pool) => pool.id);
     const poolIdsToAdd = payloadVerified.poolIds.filter(
-      (poolId) => !teacher.pool.some((pool) => pool.id === poolId)
+      (poolId) => !teacher.pools.some((pool) => pool.id === poolId)
     );
 
     if (poolIdsToRemove.length > 0) {

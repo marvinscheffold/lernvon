@@ -19,9 +19,6 @@
     "@supabase/supabase-js": "^2.44.0",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tanstack/react-query": "^5.59.16",
-    "@typescript-eslint/eslint-plugin": "^8.11.0",
-    "@typescript-eslint/parser": "^8.11.0",
-    "eslint-plugin-react-hooks": "^5.0.0",
     "next": "^14.2.15",
     "react": "^18",
     "react-dom": "^18",
@@ -37,6 +34,9 @@
     "eslint-config-next": "14.2.4",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5",
+    "@typescript-eslint/eslint-plugin": "^8.11.0",
+    "@typescript-eslint/parser": "^8.11.0",
+    "eslint-plugin-react-hooks": "^5.0.0"
   }
 }

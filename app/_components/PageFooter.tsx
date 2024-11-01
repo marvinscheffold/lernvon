@@ -18,12 +18,12 @@ export function PageFooter() {
 export function PageFooterContent() {
   return (
     <div className="flex flex-wrap gap-6">
-      <Typography variant="subtitle1">© LernVon 2024</Typography>
+      <Typography variant="subtitle1">© lernvon 2024</Typography>
       <Link href={"/imprint"}>
         <Typography variant="subtitle1">Impressum</Typography>
       </Link>
       <Link href={"/privacy"}>
-        <Typography variant="subtitle1">Privatsspäre</Typography>
+        <Typography variant="subtitle1">Datenschutz</Typography>
       </Link>
       <Link href={"/send"}>
         <Typography variant="subtitle1">Feedback senden</Typography>

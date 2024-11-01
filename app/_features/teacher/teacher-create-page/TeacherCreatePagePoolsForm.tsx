@@ -100,8 +100,8 @@ export function TeacherCreatePagePoolsForm({
         }
         rightChildren={
           <Alert className="w-full" severity="info" variant="outlined">
-            Wenn du die Schwimmbäder hinzufügst, in denen du unterrichtest,
-            erhältst du passendere Nachrichten von Schülern.
+            Wenn du Schwimmbäder hinzufügst, in denen du unterrichtest, erhältst
+            du passende Nachrichten von Schülern.
           </Alert>
         }
       />

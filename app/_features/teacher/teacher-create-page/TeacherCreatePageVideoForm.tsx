@@ -30,7 +30,7 @@ export function TeacherCreatePageVideoForm({
         leftChildren={
           <div className="flex flex-col gap-4">
             <div className="flex flex-col">
-              <YoutubeVideo yotubeVideoUrl={youtubeVideoUrl} />
+              <YoutubeVideo youtubeVideoUrl={youtubeVideoUrl} />
               <div className="ml-[14px]">
                 <FormHelperText>
                   Dieses Video wird angezeigt, wenn Nutzer auf dein Bild

@@ -10,6 +10,7 @@ import {
   Paper,
   Popper,
   TextField,
+  TextFieldProps,
 } from "@mui/material";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo, useRef, useState } from "react";
@@ -17,11 +18,13 @@ import { useMemo, useRef, useState } from "react";
 type PoolSearchInputAndSelectDropdownProps = {
   onSelect: (pool: PoolType) => void;
   disabledOptionValues: PoolType["id"][];
+  variant?: TextFieldProps["variant"];
 };
 
 export function PoolSearchInputAndSelectDropdown({
   onSelect,
   disabledOptionValues,
+  variant = "outlined",
 }: PoolSearchInputAndSelectDropdownProps) {
   const textFieldRef = useRef(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -50,7 +53,7 @@ export function PoolSearchInputAndSelectDropdown({
       <TextField
         ref={textFieldRef}
         disabled={isLoading}
-        variant="outlined"
+        variant={variant}
         value={searchValue}
         onChange={(event) => setSearchValue(event.target.value)}
         onFocus={() => setIsDropdownOpen(true)}
@@ -58,7 +61,7 @@ export function PoolSearchInputAndSelectDropdown({
         aria-controls={isDropdownOpen ? "basic-menu" : undefined}
         aria-haspopup="true"
         aria-expanded={isDropdownOpen ? "true" : undefined}
-        label="Name oder Adresse eines Schwimmbads eingeben"
+        label="Nach Schwimmbad suchen"
       />
       <Popper
         open={isDropdownOpen}

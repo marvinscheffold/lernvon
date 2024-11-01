@@ -6,7 +6,7 @@ export default function PageLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <PageHeader />
-      {children}
+      <main>{children}</main>
       <PageFooter />
     </>
   );
