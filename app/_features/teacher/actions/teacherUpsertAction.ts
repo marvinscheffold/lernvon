@@ -1,7 +1,7 @@
 "use server";
 import { z } from "zod";
 import { createSupabaseServerClient } from "@/app/_utils/supabase/createSupabaseServerClient";
-import { createSupabaseServiceRoleClient } from "@/app/_utils/supabase/createSupabaseServiceRoleClient";
+import { createSupabaseAdminClient } from "@/app/_utils/supabase/createSupabaseAdminClient";
 import { httpResponseStatusCode } from "@/app/_utils/httpResponseStatusCode";
 import { revalidatePath } from "next/cache";
 import { v4 as uuidv4 } from "uuid";
@@ -74,7 +74,7 @@ const payloadSchema = z.object({
 
 export async function teacherUpsertAction(payload: FormData) {
   try {
-    const supabaseServiceRole = createSupabaseServiceRoleClient();
+    const supabaseServiceRole = createSupabaseAdminClient();
     const supabase = createSupabaseServerClient();
 
     const {
@@ -164,7 +164,7 @@ async function uploadVideoThumbnailFile({
   videoThumbnailFile: File;
 }): Promise<string> {
   const folderName = "video-thumbnail";
-  const supabaseServiceRole = createSupabaseServiceRoleClient();
+  const supabaseServiceRole = createSupabaseAdminClient();
 
   const { data: list } = await supabaseServiceRole.storage
     .from("teacher")

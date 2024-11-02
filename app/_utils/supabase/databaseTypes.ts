@@ -70,7 +70,7 @@ export type Database = {
           createdAt: string;
           email: string | null;
           id: number;
-          isVisible: boolean | null;
+          isVisible: boolean;
           name: string | null;
           phoneNumber: string | null;
           pricePerHour: number | null;
@@ -86,7 +86,7 @@ export type Database = {
           createdAt?: string;
           email?: string | null;
           id?: number;
-          isVisible?: boolean | null;
+          isVisible?: boolean;
           name?: string | null;
           phoneNumber?: string | null;
           pricePerHour?: number | null;
@@ -102,7 +102,7 @@ export type Database = {
           createdAt?: string;
           email?: string | null;
           id?: number;
-          isVisible?: boolean | null;
+          isVisible?: boolean;
           name?: string | null;
           phoneNumber?: string | null;
           pricePerHour?: number | null;

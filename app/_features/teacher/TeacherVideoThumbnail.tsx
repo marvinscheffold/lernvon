@@ -53,9 +53,9 @@ export function TeacherVideoThumbnail({
           className="absolute z-10 inset w-full h-full flex items-center justify-center cursor-pointer"
           onClick={() => setIsVideoVisible(true)}
         >
-          <div className="w-20 h-20 rounded-full bg-blue-500/20 flex items-center justify-center">
+          <div className="w-16 h-16 rounded-full bg-[#464e56]/75 flex items-center justify-center">
             <PlayArrow
-              className="text-blue-500 animate-pulse"
+              className="text-white"
               style={{ width: 40, height: 40 }}
             />
           </div>

@@ -1,6 +1,6 @@
 "use server";
 import { createSupabaseServerClient } from "@/app/_utils/supabase/createSupabaseServerClient";
-import { createSupabaseServiceRoleClient } from "@/app/_utils/supabase/createSupabaseServiceRoleClient";
+import { createSupabaseAdminClient } from "@/app/_utils/supabase/createSupabaseAdminClient";
 import { httpResponseStatusCode } from "@/app/_utils/httpResponseStatusCode";
 import { revalidatePath } from "next/cache";
 
@@ -12,7 +12,7 @@ export async function teacherDeleteAction() {
     } = await createSupabaseServerClient().auth.getUser();
     if (!user || userError) throw httpResponseStatusCode.Unauthorized;
 
-    const deleteRequest = await createSupabaseServiceRoleClient()
+    const deleteRequest = await createSupabaseAdminClient()
       .from("teacher")
       .delete()
       .eq("userId", user.id);

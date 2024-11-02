@@ -1,7 +1,7 @@
 "use server";
 import { z } from "zod";
 import { createSupabaseServerClient } from "@/app/_utils/supabase/createSupabaseServerClient";
-import { createSupabaseServiceRoleClient } from "@/app/_utils/supabase/createSupabaseServiceRoleClient";
+import { createSupabaseAdminClient } from "@/app/_utils/supabase/createSupabaseAdminClient";
 import { httpResponseStatusCode } from "@/app/_utils/httpResponseStatusCode";
 import { revalidatePath } from "next/cache";
 import { getObjectFromFormData } from "@/app/_utils/getObjectFromFormData";
@@ -17,7 +17,7 @@ const payloadSchema = z.object({
 
 export async function teacherUpdateVisibilityAction(payload: FormData) {
   try {
-    const supabaseServiceRole = createSupabaseServiceRoleClient();
+    const supabaseServiceRole = createSupabaseAdminClient();
 
     const {
       data: { user },

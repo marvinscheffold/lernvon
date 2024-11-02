@@ -1,7 +1,7 @@
 "use server";
 import { z } from "zod";
 import { createSupabaseServerClient } from "@/app/_utils/supabase/createSupabaseServerClient";
-import { createSupabaseServiceRoleClient } from "@/app/_utils/supabase/createSupabaseServiceRoleClient";
+import { createSupabaseAdminClient } from "@/app/_utils/supabase/createSupabaseAdminClient";
 import { httpResponseStatusCode } from "@/app/_utils/httpResponseStatusCode";
 import { revalidatePath } from "next/cache";
 import { PoolType } from "@/app/_utils/types/pool";
@@ -21,7 +21,7 @@ export async function teacherCreateOrDeleteTeacherPoolsAction(payload: {
   poolIds: PoolType["id"][];
 }): Promise<ServerActionResponseType> {
   try {
-    const supabaseServiceRole = createSupabaseServiceRoleClient();
+    const supabaseServiceRole = createSupabaseAdminClient();
 
     const {
       data: { user },
@@ -38,7 +38,7 @@ export async function teacherCreateOrDeleteTeacherPoolsAction(payload: {
         message: payloadError.errors[0].message,
       };
 
-    const { data: teacher } = await createSupabaseServiceRoleClient()
+    const { data: teacher } = await createSupabaseAdminClient()
       .from("teacher")
       .select("id, pools:pool(*)")
       .eq("userId", user.id)

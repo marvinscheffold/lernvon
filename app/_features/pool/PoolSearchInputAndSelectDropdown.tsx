@@ -12,7 +12,7 @@ import {
   TextField,
   TextFieldProps,
 } from "@mui/material";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useMemo, useRef, useState } from "react";
 
 type PoolSearchInputAndSelectDropdownProps = {
@@ -26,6 +26,7 @@ export function PoolSearchInputAndSelectDropdown({
   disabledOptionValues,
   variant = "outlined",
 }: PoolSearchInputAndSelectDropdownProps) {
+  const queryClient = useQueryClient();
   const textFieldRef = useRef(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [searchValue, setSearchValue] = useState("");
@@ -86,6 +87,10 @@ export function PoolSearchInputAndSelectDropdown({
                   <MenuItem
                     key={pool.id}
                     onClick={() => {
+                      queryClient.setQueryData(
+                        poolQueries.detail(pool.id).queryKey,
+                        pool
+                      );
                       onSelect(pool);
                       setSearchValue("");
                       handleClose();

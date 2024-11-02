@@ -51,11 +51,15 @@ export function TeacherResultPagePreviewItem({
           <TeacherResultPagePreviewItemAbout about={about} />
           <div className="flex gap-2 flex-col md:flex-row">
             <Link href={TEACHER_ROUTE(id)} className="flex-grow md:flex-grow-0">
-              <Button className="w-full" variant="outlined">
+              <Button className="w-full" variant="outlined" color="secondary">
                 Mehr anzeigen
               </Button>
             </Link>
-            <Button className="flex-grow md:flex-grow-0" variant="contained">
+            <Button
+              className="flex-grow md:flex-grow-0"
+              variant="contained"
+              color="secondary"
+            >
               Nachricht senden
             </Button>
           </div>

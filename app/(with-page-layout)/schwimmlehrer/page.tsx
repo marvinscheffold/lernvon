@@ -2,66 +2,71 @@ import { Container } from "@/app/_components/Container";
 import { TeacherResultPageFilters } from "@/app/_features/teacher/teacher-result-page/TeacherResultPageFilters";
 import { TeacherResultPagePreviewItem } from "@/app/_features/teacher/teacher-result-page/TeacherResultPagePreviewItem";
 import { TEACHERS_ROUTE } from "@/app/_utils/constants/routes";
-import { createSupabaseServiceRoleClient } from "@/app/_utils/supabase/createSupabaseServiceRoleClient";
+import { createSupabaseAdminClient } from "@/app/_utils/supabase/createSupabaseAdminClient";
 import { Button, Typography } from "@mui/material";
 import Link from "next/link";
 import { z } from "zod";
 
-const searchParamsSchema = z.object({
-  min_price: z.coerce
-    .number({ invalid_type_error: "min_price must be a number" })
-    .min(0, "min_price must be positive")
-    .optional(),
-  max_price: z.coerce
-    .number({ invalid_type_error: "max_price must be a number" })
-    .min(0, "max_price must be positive")
-    .optional(),
-  pools: z.coerce
-    .number({ invalid_type_error: "pools must be a number or number array" })
-    .min(0)
-    .or(
-      z.array(
-        z
-          .number({
-            invalid_type_error: "pools must be a number or number array",
-          })
-          .min(0)
-      )
-    )
-    .optional(),
-});
+export const MAX_MAX_PRICE = 120;
+export const searchParamMinPriceSchema = z.coerce
+  .number({ invalid_type_error: "min_price must be a number" })
+  .min(0, "min_price must be positive")
+  .optional();
+export const searchParamMaxPriceSchema = z.coerce
+  .number({ invalid_type_error: "max_price must be a number" })
+  .min(1, "max_price must be positive")
+  .max(MAX_MAX_PRICE, "max_price must be smaller than 120")
+  .optional();
+export const searchParamPoolIdsSchema = z
+  .string()
+  .min(0)
+  .refine((value) => {
+    const pool_ids = value.split(",");
+    return !pool_ids.some((poolId) => isNaN(parseInt(poolId)));
+  })
+  .transform((value) => value.split(",").map((n) => parseInt(n)))
+  .optional();
 
 export default async function Page({
   searchParams,
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const { data: searchParamsVerified } = searchParamsSchema.safeParse(
-    await searchParams
+  const searchParamsAwaited = await searchParams;
+
+  const { data: poolIdsVerified } = searchParamPoolIdsSchema.safeParse(
+    searchParamsAwaited.pool_ids
   );
 
-  let query = createSupabaseServiceRoleClient()
-    .from("teacher")
-    .select("*, pools:pool!inner(*)")
-    .eq("isVisible", true);
-
-  if (searchParamsVerified) {
-    if (searchParamsVerified.min_price) {
-      query = query.gt("pricePerHour", searchParamsVerified.min_price);
-    }
-    if (searchParamsVerified.max_price) {
-      query = query.lt("pricePerHour", searchParamsVerified.max_price);
-    }
-    if (searchParamsVerified.pools) {
-      query = query.in(
-        "pools.id",
-        Array.isArray(searchParamsVerified.pools)
-          ? searchParamsVerified.pools
-          : [searchParamsVerified.pools]
-      );
-    }
+  let query;
+  if (poolIdsVerified) {
+    console.log("1");
+    query = createSupabaseAdminClient()
+      .from("teacher")
+      .select(`*, pools:pool!inner(*)`)
+      .in("pools.id", poolIdsVerified);
+  } else {
+    console.log("2");
+    query = createSupabaseAdminClient()
+      .from("teacher")
+      .select(`*, pools:pool(*)`);
   }
 
+  const { data: minPriceVerified } = searchParamMinPriceSchema.safeParse(
+    searchParamsAwaited.min_price
+  );
+  if (minPriceVerified) {
+    query = query.gt("pricePerHour", minPriceVerified);
+  }
+
+  const { data: maxPriceVerified } = searchParamMaxPriceSchema.safeParse(
+    searchParamsAwaited.max_price
+  );
+  if (maxPriceVerified && maxPriceVerified < 120) {
+    query = query.lt("pricePerHour", maxPriceVerified);
+  }
+
+  query = query.eq("isVisible", true);
   const { data: teachers } = await query;
 
   return (
@@ -90,16 +95,18 @@ export default async function Page({
               ))}
             </ul>
           ) : (
-            <div className="flex-grow h-80 p-6 flex justify-center items-center flex-col gap-1">
-              <Typography variant="h6">Keine Schwimmlehrer gefunden</Typography>
+            <div className="flex-grow h-80 p-6 flex justify-center items-center flex-col">
+              <Typography className="!mb-2 !font-normal" variant="h6">
+                Keine Schwimmlehrer gefunden
+              </Typography>
               <Typography
-                className="text-center"
+                className="!mb-4 text-center"
                 variant="body2"
                 color="textSecondary"
               >
                 Mit den aktuellen Filtern konnten wir keine Lehrer finden.
               </Typography>
-              <Link href={TEACHERS_ROUTE} className="mt-3">
+              <Link href={TEACHERS_ROUTE}>
                 <Button variant="contained">Filter zurücksetzen</Button>
               </Link>
             </div>

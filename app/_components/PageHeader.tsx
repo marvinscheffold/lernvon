@@ -17,7 +17,7 @@ export function PageHeader() {
       </Link>
       <div className="flex gap-4 items-center">
         <Link href={TEACHER_CREATE_ROUTE} className="hidden sm:block">
-          <Button variant="outlined">Schwimmlehrer werden</Button>
+          <Button variant="text">Schwimmlehrer werden</Button>
         </Link>
         <AuthUserAvatar />
       </div>

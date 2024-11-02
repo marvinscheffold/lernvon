@@ -27,6 +27,7 @@ export function TeacherToggleVisibilityButton({
     >
       <SubmitButton
         variant={"outlined"}
+        color="secondary"
         startIcon={teacher.isVisible ? <VisibilityOff /> : <Visibility />}
         disabled={
           teacher.name === null ||

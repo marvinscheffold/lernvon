@@ -1,3 +1,3 @@
-import { Database } from "@/app/_utils/supabase/databaseTypes";
+import { Tables } from "@/app/_utils/supabase/databaseTypes";
 
-export type PoolType = Database["public"]["Tables"]["pool"]["Row"];
+export type PoolType = Tables<"pool">;

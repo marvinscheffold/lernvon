@@ -8,7 +8,7 @@ import {
 } from "@/app/_utils/constants/routes";
 import { httpResponseStatusCode } from "@/app/_utils/httpResponseStatusCode";
 import { createSupabaseServerClient } from "@/app/_utils/supabase/createSupabaseServerClient";
-import { createSupabaseServiceRoleClient } from "@/app/_utils/supabase/createSupabaseServiceRoleClient";
+import { createSupabaseAdminClient } from "@/app/_utils/supabase/createSupabaseAdminClient";
 import { Add, OpenInNew } from "@mui/icons-material";
 import { Alert, AlertTitle, Button, Typography } from "@mui/material";
 import Link from "next/link";
@@ -21,7 +21,7 @@ export default async function Page() {
 
   if (!user || userError) throw httpResponseStatusCode.Unauthorized;
 
-  const { data: teacher } = await createSupabaseServiceRoleClient()
+  const { data: teacher } = await createSupabaseAdminClient()
     .from("teacher")
     .select()
     .eq("userId", user.id)
@@ -46,10 +46,9 @@ export default async function Page() {
     <Section>
       <Typography variant="h5">Übersicht</Typography>
       {!teacher.isVisible && (
-        <Alert severity="warning" variant="outlined">
+        <Alert severity="warning">
           <AlertTitle>Dein Profil ist unsichtbar</AlertTitle>
-          Das bedeutet, dass niemand dein Profil finden oder dich kontaktieren
-          kann.
+          Niemand kann dein Profil über die Suche finden.
           {teacher.name === null ||
           teacher.email === null ||
           teacher.videoThumbnailPath === null ||
@@ -74,8 +73,13 @@ export default async function Page() {
       <TeacherCreatePageOverviewTable teacher={teacher} />
       <div className="flex flex-col md:flex-row gap-4">
         <Link href={TEACHER_ROUTE(teacher.id)} target="_blank">
-          <Button variant="outlined" startIcon={<OpenInNew />}>
-            Live-Vorschau öffnen
+          <Button
+            startIcon={<OpenInNew />}
+            color="secondary"
+            variant="contained"
+            disabled={!teacher.isVisible}
+          >
+            Schüler Ansicht öffnen
           </Button>
         </Link>
         <TeacherToggleVisibilityButton teacher={teacher} />
