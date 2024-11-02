@@ -1,3 +1,4 @@
+import { ClientPagination } from "@/app/_components/ClientPagination";
 import { Container } from "@/app/_components/Container";
 import { TeacherResultPageFilters } from "@/app/_features/teacher/teacher-result-page/TeacherResultPageFilters";
 import { TeacherResultPagePreviewItem } from "@/app/_features/teacher/teacher-result-page/TeacherResultPagePreviewItem";
@@ -7,6 +8,7 @@ import { Button, Typography } from "@mui/material";
 import Link from "next/link";
 import { z } from "zod";
 
+const PAGE_SIZE = 1;
 export const MAX_MAX_PRICE = 120;
 export const searchParamMinPriceSchema = z.coerce
   .number({ invalid_type_error: "min_price must be a number" })
@@ -26,6 +28,12 @@ export const searchParamPoolIdsSchema = z
   })
   .transform((value) => value.split(",").map((n) => parseInt(n)))
   .optional();
+export const searchParamPageSchema = z.coerce
+  .number({
+    invalid_type_error: "page must be a number",
+  })
+  .min(1)
+  .optional();
 
 export default async function Page({
   searchParams,
@@ -40,16 +48,14 @@ export default async function Page({
 
   let query;
   if (poolIdsVerified) {
-    console.log("1");
     query = createSupabaseAdminClient()
       .from("teacher")
-      .select(`*, pools:pool!inner(*)`)
+      .select(`*, pools:pool!inner(*)`, { count: "exact" })
       .in("pools.id", poolIdsVerified);
   } else {
-    console.log("2");
     query = createSupabaseAdminClient()
       .from("teacher")
-      .select(`*, pools:pool(*)`);
+      .select(`*, pools:pool(*)`, { count: "exact" });
   }
 
   const { data: minPriceVerified } = searchParamMinPriceSchema.safeParse(
@@ -66,8 +72,15 @@ export default async function Page({
     query = query.lt("pricePerHour", maxPriceVerified);
   }
 
-  query = query.eq("isVisible", true);
-  const { data: teachers } = await query;
+  query = query.eq("isVisible", true).order("id", { ascending: false });
+
+  const { data: pageVerified } = searchParamPageSchema.safeParse(
+    searchParamsAwaited.page
+  );
+  const page = pageVerified ?? 1;
+  query = query.range((page - 1) * PAGE_SIZE, page * PAGE_SIZE - 1);
+
+  const { data: teachers, count } = await query;
 
   return (
     <>
@@ -83,17 +96,25 @@ export default async function Page({
           <div className="flex-shrink-0 relative md:sticky z-20 self-start h-auto top-0 bg-white w-full md:w-72 border-b border-gray-200 md:border-none py-6 px-6 md:px-0">
             <TeacherResultPageFilters />
           </div>
-          {teachers && teachers.length > 0 ? (
-            <ul className="flex-grow">
-              {teachers?.map((teacher) => (
-                <li
-                  key={teacher.id}
-                  className="py-6 px-6 md:px-0 border-b border-gray-200"
-                >
-                  <TeacherResultPagePreviewItem {...teacher} />
-                </li>
-              ))}
-            </ul>
+          {teachers && teachers.length > 0 && count ? (
+            <div className="flex-grow">
+              <ul>
+                {teachers?.map((teacher) => (
+                  <li
+                    key={teacher.id}
+                    className="py-6 px-6 md:px-0 border-b border-gray-200"
+                  >
+                    <TeacherResultPagePreviewItem {...teacher} />
+                  </li>
+                ))}
+              </ul>
+              <div className="flex justify-center p-6">
+                <ClientPagination
+                  count={count / PAGE_SIZE}
+                  page={pageVerified || 1}
+                />
+              </div>
+            </div>
           ) : (
             <div className="flex-grow h-80 p-6 flex justify-center items-center flex-col">
               <Typography className="!mb-2 !font-normal" variant="h6">

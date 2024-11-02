@@ -67,7 +67,6 @@ export function TeacherResultPageFilters() {
               setMaxPrice(value[1]);
             }}
             onChangeCommitted={(_event, value) => {
-              console.log(value);
               if (!Array.isArray(value)) return;
               router.push(
                 TEACHERS_ROUTE +
@@ -75,6 +74,7 @@ export function TeacherResultPageFilters() {
                   createSearchParamsString([
                     { name: "min_price", value: value[0] },
                     { name: "max_price", value: value[1] },
+                    { name: "page", value: "" },
                   ])
               );
             }}
@@ -105,6 +105,7 @@ export function TeacherResultPageFilters() {
                         "?" +
                         createSearchParamsString([
                           { name: "pool_ids", value: newPoolIds.join(",") },
+                          { name: "page", value: "" },
                         ])
                     );
 
@@ -124,6 +125,7 @@ export function TeacherResultPageFilters() {
                     "?" +
                     createSearchParamsString([
                       { name: "pool_ids", value: newPoolIds.join(",") },
+                      { name: "page", value: "" },
                     ])
                 );
 
