@@ -8,7 +8,7 @@ import { Button, Typography } from "@mui/material";
 import Link from "next/link";
 import { z } from "zod";
 
-const PAGE_SIZE = 1;
+const PAGE_SIZE = 15;
 export const MAX_MAX_PRICE = 120;
 export const searchParamMinPriceSchema = z.coerce
   .number({ invalid_type_error: "min_price must be a number" })
@@ -41,7 +41,6 @@ export default async function Page({
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   const searchParamsAwaited = await searchParams;
-
   const { data: poolIdsVerified } = searchParamPoolIdsSchema.safeParse(
     searchParamsAwaited.pool_ids
   );

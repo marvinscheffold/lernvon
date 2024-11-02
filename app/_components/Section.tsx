@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 export function Section({ children }: { children: ReactNode }) {
-  return <section className="py-14 flex flex-col gap-8">{children}</section>;
+  return <section className="py-14 flex flex-col gap-6">{children}</section>;
 }
 
 export function SectionRow({

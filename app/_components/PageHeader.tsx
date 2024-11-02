@@ -11,13 +11,15 @@ export function PageHeader() {
     <header className="h-14 p-6 flex items-center justify-between border-b border-gray-200">
       <Link href={HOME_ROUTE}>
         <div className="flex gap-2 items-center">
-          <Typography variant="h4">🏊</Typography>
+          <Typography variant="h4">🏊‍♂️</Typography>
           <Typography variant="h6">lernvon</Typography>
         </div>
       </Link>
       <div className="flex gap-4 items-center">
         <Link href={TEACHER_CREATE_ROUTE} className="hidden sm:block">
-          <Button variant="text">Schwimmlehrer werden</Button>
+          <Button variant="outlined" color="secondary">
+            Schwimmlehrer werden
+          </Button>
         </Link>
         <AuthUserAvatar />
       </div>

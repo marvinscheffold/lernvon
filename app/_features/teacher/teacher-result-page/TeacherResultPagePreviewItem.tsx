@@ -35,30 +35,32 @@ export function TeacherResultPagePreviewItem({
               </Typography>
             </div>
           </div>
-          <div className="flex gap-2 flex-wrap">
-            {pools.slice(0, 3).map((pool) => (
-              <Chip
-                key={pool.id}
-                variant="outlined"
-                size="small"
-                label={pool.name}
+          {pools.length > 0 && (
+            <div className="flex gap-2 flex-wrap">
+              {pools.slice(0, 3).map((pool) => (
+                <Chip
+                  key={pool.id}
+                  variant="outlined"
+                  size="small"
+                  label={pool.name}
+                />
+              ))}
+              <TeacherResultPagePreviewItemPoolsAddon
+                numberOfPools={pools.length}
               />
-            ))}
-            <TeacherResultPagePreviewItemPoolsAddon
-              numberOfPools={pools.length}
-            />
-          </div>
+            </div>
+          )}
           <TeacherResultPagePreviewItemAbout about={about} />
           <div className="flex gap-2 flex-col md:flex-row">
             <Link href={TEACHER_ROUTE(id)} className="flex-grow md:flex-grow-0">
               <Button className="w-full" variant="outlined" color="secondary">
-                Mehr anzeigen
+                Profil öffnen
               </Button>
             </Link>
             <Button
               className="flex-grow md:flex-grow-0"
               variant="contained"
-              color="secondary"
+              color="primary"
             >
               Nachricht senden
             </Button>
