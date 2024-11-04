@@ -5,9 +5,9 @@ import Link from "next/link";
 
 export function PageFooter() {
   return (
-    <footer className="border-t border-gray-200">
+    <footer className="py-16 border-t border-gray-200">
       <Container>
-        <div className="h-32 flex items-center">
+        <div className="flex items-center">
           <PageFooterContent />
         </div>
       </Container>
