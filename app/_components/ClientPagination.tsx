@@ -2,7 +2,6 @@
 
 import { Pagination } from "@mui/material";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import path from "path";
 import { useCallback } from "react";
 
 type ClientPaginationProps = {

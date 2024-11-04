@@ -94,6 +94,7 @@ export function TeacherResultPageFilters() {
             )}
             {poolIds.map((poolId) => (
               <PoolChip
+                key={poolId}
                 poolId={poolId}
                 variant="outlined"
                 onDelete={() => {
