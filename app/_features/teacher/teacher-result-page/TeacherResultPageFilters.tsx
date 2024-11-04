@@ -1,13 +1,13 @@
 "use client";
 
+import { PoolChip } from "@/app/_features/pool/PoolChip";
+import { PoolSearchInputAndSelectDropdown } from "@/app/_features/pool/PoolSearchInputAndSelectDropdown";
 import {
   MAX_MAX_PRICE,
   searchParamMaxPriceSchema,
   searchParamMinPriceSchema,
   searchParamPoolIdsSchema,
-} from "@/app/(with-page-layout)/schwimmlehrer/page";
-import { PoolChip } from "@/app/_features/pool/PoolChip";
-import { PoolSearchInputAndSelectDropdown } from "@/app/_features/pool/PoolSearchInputAndSelectDropdown";
+} from "@/app/_features/teacher/teacher-result-page/teacherResultPageUtils";
 import { TEACHERS_ROUTE } from "@/app/_utils/constants/routes";
 import { useStateEffect } from "@/app/_utils/hooks/useStateEffect";
 import { Chip, Slider, Typography } from "@mui/material";
