@@ -31,7 +31,7 @@ export async function teacherUpdateVisibilityAction(payload: FormData) {
     if (payloadError) {
       throw {
         ...httpResponseStatusCode.BadRequest,
-        message: payloadError.errors[0].message,
+        message: payloadError.flatten().fieldErrors,
       };
     }
 

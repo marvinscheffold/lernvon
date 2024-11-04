@@ -6,6 +6,8 @@ import { Alert, TextField } from "@mui/material";
 import { teacherUpsertAction } from "@/app/_features/teacher/actions/teacherUpsertAction";
 import { TeacherType } from "@/app/_utils/types/teacher";
 import { SubmitButton } from "@/app/_components/SubmitButton";
+import { useMutation } from "@tanstack/react-query";
+import { ServerActionResponseAlert } from "@/app/_components/ServerActionResponseAlert";
 
 type TeacherCreatePageAboutFormProps = {
   teacher: TeacherType | null;
@@ -14,13 +16,13 @@ type TeacherCreatePageAboutFormProps = {
 export function TeacherCreatePageAboutForm({
   teacher,
 }: TeacherCreatePageAboutFormProps) {
-  async function handleSubmit(formData: FormData) {
-    const response = await teacherUpsertAction(formData);
-    console.log(response);
-  }
+  const mutation = useMutation({ mutationFn: teacherUpsertAction });
 
   return (
-    <form action={handleSubmit} className="flex flex-col gap-8">
+    <form
+      action={(formData) => mutation.mutate(formData)}
+      className="flex flex-col gap-8"
+    >
       <SectionRow
         leftChildren={
           <TextField
@@ -51,6 +53,7 @@ export function TeacherCreatePageAboutForm({
           Speichern
         </SubmitButton>
       </div>
+      <ServerActionResponseAlert serverActionResponse={mutation.data} />
     </form>
   );
 }

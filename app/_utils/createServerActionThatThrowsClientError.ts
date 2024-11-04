@@ -1,4 +1,4 @@
-import { ServerActionResponseType } from "@/app/_utils/types/serverActionResponse";
+import { ServerActionResponseType } from "@/app/_utils/serverActionResponseSchema";
 
 export function createServerActionThatThrowsClientError(
   // eslint-disable-next-line

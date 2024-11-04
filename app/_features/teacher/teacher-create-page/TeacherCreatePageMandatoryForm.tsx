@@ -16,6 +16,8 @@ import { SubmitButton } from "@/app/_components/SubmitButton";
 import Image from "next/image";
 import { createSupabaseBrowserClient } from "@/app/_utils/supabase/createSupabaseBrowserClient";
 import { Image as ImageIcon } from "@mui/icons-material";
+import { useMutation } from "@tanstack/react-query";
+import { ServerActionResponseAlert } from "@/app/_components/ServerActionResponseAlert";
 
 type TeacherCreatePageMandatoryFormProps = {
   teacher: TeacherType | null;
@@ -24,6 +26,7 @@ type TeacherCreatePageMandatoryFormProps = {
 export function TeacherCreatePageMandatoryForm({
   teacher,
 }: TeacherCreatePageMandatoryFormProps) {
+  const mutation = useMutation({ mutationFn: handleSubmit });
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
@@ -32,12 +35,14 @@ export function TeacherCreatePageMandatoryForm({
       formData.delete("videoThumbnailFile");
     }
 
-    const response = await teacherUpsertAction(formData);
-    console.log(response);
+    return await teacherUpsertAction(formData);
   }
 
   return (
-    <form action={handleSubmit} className="flex flex-col gap-8">
+    <form
+      action={(formData) => mutation.mutate(formData)}
+      className="flex flex-col gap-8"
+    >
       <SectionRow
         leftChildren={
           <TextField
@@ -158,6 +163,7 @@ export function TeacherCreatePageMandatoryForm({
           Speichern
         </SubmitButton>
       </div>
+      <ServerActionResponseAlert serverActionResponse={mutation.data} />
     </form>
   );
 }
@@ -173,7 +179,7 @@ function TeacherCreatePageMandatoryInformationVideoThumbnail({
 }: TeacherCreatePageMandatoryInformationVideoThumbnailProps) {
   function Container(children: ReactNode) {
     return (
-      <div className="w-full aspect-video rounded-3xl border border-gray-200 flex items-center justify-center relative overflow-hidden">
+      <div className="w-full aspect-video rounded-xl sm:rounded-2xl border border-gray-200 flex items-center justify-center relative overflow-hidden">
         {children}
       </div>
     );

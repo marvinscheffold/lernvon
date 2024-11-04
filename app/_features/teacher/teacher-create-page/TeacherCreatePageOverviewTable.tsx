@@ -29,12 +29,12 @@ export function TeacherCreatePageOverviewTable({
               secondary={
                 teacher.isVisible ? (
                   <span>
-                    Dein Profil ist sichtbar{" "}
                     <CheckCircle
-                      className="mb-1"
+                      className="mb-1 mr-1"
                       fontSize="small"
                       color="success"
                     />
+                    Dein Profil ist sichtbar
                   </span>
                 ) : (
                   <span>
@@ -70,21 +70,21 @@ export function TeacherCreatePageOverviewTable({
               <TableCell>
                 {teacher.isVisible ? (
                   <span>
-                    Dein Profil ist sichtbar{" "}
                     <CheckCircle
-                      className="mb-1"
+                      className="mb-1 mr-1"
                       fontSize="small"
                       color="success"
                     />
+                    Dein Profil ist sichtbar
                   </span>
                 ) : (
                   <span>
-                    Dein Profil ist unsichtbar{" "}
                     <Warning
-                      className="mb-1"
+                      className="mb-1 mr-1"
                       fontSize="small"
                       color="warning"
                     />
+                    Dein Profil ist unsichtbar
                   </span>
                 )}
               </TableCell>

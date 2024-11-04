@@ -81,7 +81,7 @@ export default async function Page({
                 {teachers?.map((teacher) => (
                   <li
                     key={teacher.id}
-                    className="py-6 px-6 md:px-0 border-b border-gray-200"
+                    className="py-6 px-6 md:px-0 border-b border-gray-200 last:border-0"
                   >
                     <TeacherResultPagePreviewItem {...teacher} />
                   </li>

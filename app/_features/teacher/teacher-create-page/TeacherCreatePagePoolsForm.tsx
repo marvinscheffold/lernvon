@@ -16,8 +16,8 @@ import { FormEvent, useState } from "react";
 import { PoolSearchInputAndSelectDropdown } from "@/app/_features/pool/PoolSearchInputAndSelectDropdown";
 import { teacherCreateOrDeleteTeacherPoolsAction } from "@/app/_features/teacher/actions/teacherCreateOrDeleteTeacherPoolsAction";
 import { useMutation } from "@tanstack/react-query";
-import { createServerActionThatThrowsClientError } from "@/app/_utils/createServerActionThatThrowsClientError";
 import { LoadingButton } from "@mui/lab";
+import { ServerActionResponseAlert } from "@/app/_components/ServerActionResponseAlert";
 
 type TeacherCreatePagePoolsFormProps = {
   pools: PoolType[];
@@ -28,9 +28,7 @@ export function TeacherCreatePagePoolsForm({
 }: TeacherCreatePagePoolsFormProps) {
   const [pools, setPools] = useState(poolsProps);
   const mutation = useMutation({
-    mutationFn: createServerActionThatThrowsClientError(
-      teacherCreateOrDeleteTeacherPoolsAction
-    ),
+    mutationFn: teacherCreateOrDeleteTeacherPoolsAction,
   });
 
   async function handleSubmit(event: FormEvent) {
@@ -117,6 +115,8 @@ export function TeacherCreatePagePoolsForm({
           Speichern
         </LoadingButton>
       </div>
+
+      <ServerActionResponseAlert serverActionResponse={mutation.data} />
     </form>
   );
 }

@@ -8,6 +8,8 @@ import { TeacherType } from "@/app/_utils/types/teacher";
 import { SubmitButton } from "@/app/_components/SubmitButton";
 import { useState } from "react";
 import { YoutubeVideo } from "@/app/_components/YoutubeVideo";
+import { useMutation } from "@tanstack/react-query";
+import { ServerActionResponseAlert } from "@/app/_components/ServerActionResponseAlert";
 
 type TeacherCreatePageVideoFormProps = {
   teacher: TeacherType | null;
@@ -16,16 +18,17 @@ type TeacherCreatePageVideoFormProps = {
 export function TeacherCreatePageVideoForm({
   teacher,
 }: TeacherCreatePageVideoFormProps) {
+  const mutation = useMutation({ mutationFn: teacherUpsertAction });
+
   const [youtubeVideoUrl, setYoutubeVideoUrl] = useState(
     teacher?.youtubeVideoUrl || null
   );
-  async function handleSubmit(formData: FormData) {
-    const response = await teacherUpsertAction(formData);
-    console.log(response);
-  }
 
   return (
-    <form action={handleSubmit} className="flex flex-col gap-8">
+    <form
+      action={(formData) => mutation.mutate(formData)}
+      className="flex flex-col gap-8"
+    >
       <SectionRow
         leftChildren={
           <div className="flex flex-col gap-4">
@@ -70,6 +73,7 @@ export function TeacherCreatePageVideoForm({
           Speichern
         </SubmitButton>
       </div>
+      <ServerActionResponseAlert serverActionResponse={mutation.data} />
     </form>
   );
 }

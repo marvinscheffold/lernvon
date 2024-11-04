@@ -5,13 +5,10 @@ import { createSupabaseAdminClient } from "@/app/_utils/supabase/createSupabaseA
 import { httpResponseStatusCode } from "@/app/_utils/httpResponseStatusCode";
 import { revalidatePath } from "next/cache";
 import { PoolType } from "@/app/_utils/types/pool";
-import { ServerActionResponseType } from "@/app/_utils/types/serverActionResponse";
-
-const errorSchema = z.object({
-  message: z.string(),
-  code: z.number(),
-  key: z.string(),
-});
+import {
+  serverActionResponseSchema,
+  ServerActionResponseType,
+} from "@/app/_utils/serverActionResponseSchema";
 
 const payloadSchema = z.object({
   poolIds: z.number().array(),
@@ -35,7 +32,7 @@ export async function teacherCreateOrDeleteTeacherPoolsAction(payload: {
     if (payloadError)
       throw {
         ...httpResponseStatusCode.BadRequest,
-        message: payloadError.errors[0].message,
+        message: payloadError.flatten().fieldErrors,
       };
 
     const { data: teacher } = await createSupabaseAdminClient()
@@ -103,7 +100,8 @@ export async function teacherCreateOrDeleteTeacherPoolsAction(payload: {
     return httpResponseStatusCode.Ok;
   } catch (error) {
     if (typeof error === "object" && error !== null) {
-      const { data: errorVerified } = errorSchema.safeParse(error);
+      const { data: errorVerified } =
+        serverActionResponseSchema.safeParse(error);
       if (errorVerified) return errorVerified;
     }
     return httpResponseStatusCode.InternalServerError;

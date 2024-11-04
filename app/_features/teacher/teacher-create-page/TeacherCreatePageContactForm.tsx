@@ -6,6 +6,8 @@ import { Alert, TextField } from "@mui/material";
 import { teacherUpsertAction } from "@/app/_features/teacher/actions/teacherUpsertAction";
 import { TeacherType } from "@/app/_utils/types/teacher";
 import { SubmitButton } from "@/app/_components/SubmitButton";
+import { ServerActionResponseAlert } from "@/app/_components/ServerActionResponseAlert";
+import { useMutation } from "@tanstack/react-query";
 
 type TeacherCreatePageContactFormProps = {
   teacher: TeacherType | null;
@@ -14,6 +16,7 @@ type TeacherCreatePageContactFormProps = {
 export function TeacherCreatePageContactForm({
   teacher,
 }: TeacherCreatePageContactFormProps) {
+  const mutation = useMutation({ mutationFn: handleSubmit });
   async function handleSubmit(formData: FormData) {
     if ((formData.get("whatsappPhoneNumber") as string).length === 0) {
       formData.delete("whatsappPhoneNumber");
@@ -24,27 +27,28 @@ export function TeacherCreatePageContactForm({
     if ((formData.get("telegramUsername") as string).length === 0) {
       formData.delete("telegramUsername");
     }
-    const response = await teacherUpsertAction(formData);
-    console.log(response);
+    return await teacherUpsertAction(formData);
   }
 
   return (
-    <form action={handleSubmit} className="flex flex-col gap-8">
+    <form
+      action={(formData) => mutation.mutate(formData)}
+      className="flex flex-col gap-8"
+    >
       <SectionRow
         leftChildren={
           <TextField
             className="w-full"
-            helperText="Zum Beispiel: 004915255551111"
+            helperText="Zum Beispiel: +4915255551111"
             label="Deine Telefonnummer"
             name="phoneNumber"
-            type="number"
             defaultValue={teacher?.phoneNumber}
           />
         }
         rightChildren={
           <Alert className="w-full" severity="info" variant="outlined">
-            Deine Nummer sollte mit der Landesvorwahl beginnen. Zum Beispiel
-            0049 für Deutschland.
+            Deine Nummer muss mit der Landesvorwahl beginnen. Zum Beispiel +49
+            für Deutschland.
           </Alert>
         }
       />
@@ -52,17 +56,16 @@ export function TeacherCreatePageContactForm({
         leftChildren={
           <TextField
             className="w-full"
-            helperText="Zum Beispiel: 004915255551111"
+            helperText="Zum Beispiel: +4915255551111"
             label="Deine WhatsApp-Telefonnummer"
-            type="number"
             name="whatsappPhoneNumber"
             defaultValue={teacher?.whatsappPhoneNumber}
           />
         }
         rightChildren={
           <Alert className="w-full" severity="info" variant="outlined">
-            Deine Nummer sollte mit der Landesvorwahl beginnen. Zum Beispiel
-            0049 für Deutschland.
+            Deine Nummer muss mit der Landesvorwahl beginnen. Zum Beispiel +49
+            für Deutschland.
           </Alert>
         }
       />
@@ -93,6 +96,8 @@ export function TeacherCreatePageContactForm({
           Speichern
         </SubmitButton>
       </div>
+
+      <ServerActionResponseAlert serverActionResponse={mutation.data} />
     </form>
   );
 }

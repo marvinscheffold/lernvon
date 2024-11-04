@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export function PageHeader() {
   return (
-    <header className="h-14 p-6 flex items-center justify-between border-b border-gray-200">
+    <header className="h-14 p-6 pr-5 flex items-center justify-between border-b border-gray-200">
       <Link href={HOME_ROUTE}>
         <div className="flex gap-2 items-center">
           <Typography variant="h4">🏊‍♂️</Typography>

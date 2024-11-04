@@ -7,6 +7,10 @@ import { revalidatePath } from "next/cache";
 import { v4 as uuidv4 } from "uuid";
 import { TeacherType } from "@/app/_utils/types/teacher";
 import { getObjectFromFormData } from "@/app/_utils/getObjectFromFormData";
+import {
+  serverActionResponseSchema,
+  ServerActionResponseType,
+} from "@/app/_utils/serverActionResponseSchema";
 
 const MAX_FILE_SIZE = 500000;
 const ACCEPTED_IMAGE_TYPES = [
@@ -51,16 +55,16 @@ const payloadSchema = z.object({
   phoneNumber: z
     .string()
     .refine(
-      (s) => /^\d+$/.test(s),
-      "phoneNumber number can only contain numbers without spaces"
+      (s) => /^\+\d+$/.test(s),
+      "phoneNumber muss mit + anfangen, darf nur aus zahlen bestehen und darf keine leerzeichen enthalten"
     )
     .nullable()
     .optional(),
   whatsappPhoneNumber: z
     .string()
     .refine(
-      (s) => /^\d+$/.test(s),
-      "whatsappPhoneNumber number can only contain numbers without spaces"
+      (s) => /^\+\d+$/.test(s),
+      "whatsappPhoneNumber muss mit + anfangen, darf nur aus zahlen bestehen und darf keine leerzeichen enthalten"
     )
     .nullable()
     .optional(),
@@ -72,7 +76,9 @@ const payloadSchema = z.object({
     .optional(),
 });
 
-export async function teacherUpsertAction(payload: FormData) {
+export async function teacherUpsertAction(
+  payload: FormData
+): Promise<ServerActionResponseType> {
   try {
     const supabaseServiceRole = createSupabaseAdminClient();
     const supabase = createSupabaseServerClient();
@@ -81,16 +87,19 @@ export async function teacherUpsertAction(payload: FormData) {
       data: { user },
       error: userError,
     } = await supabase.auth.getUser();
-    if (!user || userError) throw httpResponseStatusCode.Unauthorized;
+    if (!user || userError) {
+      throw httpResponseStatusCode.Unauthorized;
+    }
 
     const { data: payloadVerified, error: payloadError } =
       payloadSchema.safeParse(getObjectFromFormData(payload));
 
-    if (payloadError)
+    if (payloadError) {
       throw {
         ...httpResponseStatusCode.BadRequest,
-        message: payloadError.errors[0].message,
+        message: payloadError.flatten().fieldErrors,
       };
+    }
 
     let teacher = null;
     const readRequest = await supabaseServiceRole
@@ -110,11 +119,12 @@ export async function teacherUpsertAction(payload: FormData) {
         .select()
         .single();
 
-      if (insertRequest.error || !insertRequest.data)
+      if (insertRequest.error || !insertRequest.data) {
         throw {
           ...httpResponseStatusCode.InternalServerError,
           message: insertRequest.error.message,
         };
+      }
 
       teacher = insertRequest.data;
     }
@@ -152,7 +162,12 @@ export async function teacherUpsertAction(payload: FormData) {
     return httpResponseStatusCode.Ok;
   } catch (error) {
     console.log(error);
-    return error;
+    if (typeof error === "object" && error !== null) {
+      const { data: errorVerified } =
+        serverActionResponseSchema.safeParse(error);
+      if (errorVerified) return errorVerified;
+    }
+    return httpResponseStatusCode.InternalServerError;
   }
 }
 
