@@ -1,8 +1,22 @@
-import { TEACHER_CREATE_ROUTE } from "@/app/_utils/constants/routes";
+import {
+  TEACHER_CREATE_ABOUT_ROUTE,
+  TEACHER_CREATE_CONTACT_ROUTE,
+  TEACHER_CREATE_MANDATORY_INFORMATION_ROUTE,
+  TEACHER_CREATE_POOLS_ROUTE,
+  TEACHER_CREATE_ROUTE,
+  TEACHER_CREATE_VIDEO_ROUTE,
+} from "@/app/_utils/constants/routes";
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
-const protectedRoutes = [TEACHER_CREATE_ROUTE];
+const protectedRoutes = [
+  TEACHER_CREATE_ROUTE,
+  TEACHER_CREATE_ABOUT_ROUTE,
+  TEACHER_CREATE_CONTACT_ROUTE,
+  TEACHER_CREATE_MANDATORY_INFORMATION_ROUTE,
+  TEACHER_CREATE_POOLS_ROUTE,
+  TEACHER_CREATE_VIDEO_ROUTE,
+];
 
 export async function middleware(request: NextRequest) {
   let response = NextResponse.next({

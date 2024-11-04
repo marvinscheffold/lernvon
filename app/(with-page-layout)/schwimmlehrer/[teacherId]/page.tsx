@@ -1,16 +1,12 @@
 import { Container } from "@/app/_components/Container";
+import { Result } from "@/app/_components/Result";
 import { Section } from "@/app/_components/Section";
+import { TeacherContactButton } from "@/app/_features/teacher/TeacherContactButton";
 import { TeacherVideoThumbnail } from "@/app/_features/teacher/TeacherVideoThumbnail";
-import { httpResponseStatusCode } from "@/app/_utils/httpResponseStatusCode";
+import { TEACHERS_ROUTE } from "@/app/_utils/constants/routes";
 import { createSupabaseAdminClient } from "@/app/_utils/supabase/createSupabaseAdminClient";
 import { TeacherType } from "@/app/_utils/types/teacher";
-import {
-  Button,
-  List,
-  ListItem,
-  ListItemText,
-  Typography,
-} from "@mui/material";
+import { List, ListItem, ListItemText, Typography } from "@mui/material";
 
 export default async function Page({
   params,
@@ -23,7 +19,18 @@ export default async function Page({
     .eq("id", (await params).teacherId)
     .single();
 
-  if (!teacher) throw httpResponseStatusCode.NotFound;
+  if (!teacher)
+    return (
+      <Result
+        tagline="404 - Seite nicht gefunden"
+        title="Lehrer nicht gefunden"
+        subTitle="Um deine Schwimmreise fortzuführen kannst du nach anderen Lehrern suchen."
+        linkButton={{
+          text: "Andere Lehrer suchen",
+          href: TEACHERS_ROUTE,
+        }}
+      />
+    );
 
   return (
     <Container>
@@ -88,9 +95,12 @@ function CtaCardContent({ teacher }: { teacher: TeacherType }) {
           pro Stunde
         </Typography>
       </div>
-      <Button variant="contained" size="large">
+      <TeacherContactButton
+        teacher={teacher}
+        buttonProps={{ variant: "contained", size: "large" }}
+      >
         Nachricht senden
-      </Button>
+      </TeacherContactButton>
     </div>
   );
 }

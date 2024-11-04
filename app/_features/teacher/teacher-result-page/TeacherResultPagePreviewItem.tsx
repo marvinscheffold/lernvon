@@ -1,18 +1,20 @@
+import { TeacherContactButton } from "@/app/_features/teacher/TeacherContactButton";
 import { TeacherVideoThumbnail } from "@/app/_features/teacher/TeacherVideoThumbnail";
 import { TEACHER_ROUTE } from "@/app/_utils/constants/routes";
 import { TeacherType, TeacherWithPoolsType } from "@/app/_utils/types/teacher";
 import { Button, Chip, Typography } from "@mui/material";
 import Link from "next/link";
 
-export function TeacherResultPagePreviewItem({
-  id,
-  name,
-  pricePerHour,
-  about,
-  videoThumbnailPath,
-  youtubeVideoUrl,
-  pools,
-}: TeacherWithPoolsType) {
+export function TeacherResultPagePreviewItem(teacher: TeacherWithPoolsType) {
+  const {
+    id,
+    name,
+    pricePerHour,
+    about,
+    videoThumbnailPath,
+    youtubeVideoUrl,
+    pools,
+  } = teacher;
   return (
     <div className="@container w-full">
       <div className="flex flex-col @3xl:flex-row gap-6">
@@ -57,13 +59,16 @@ export function TeacherResultPagePreviewItem({
                 Profil öffnen
               </Button>
             </Link>
-            <Button
-              className="flex-grow md:flex-grow-0"
-              variant="contained"
-              color="primary"
+            <TeacherContactButton
+              teacher={teacher}
+              buttonProps={{
+                className: "flex-grow md:flex-grow-0",
+                variant: "contained",
+                color: "primary",
+              }}
             >
               Nachricht senden
-            </Button>
+            </TeacherContactButton>
           </div>
         </div>
       </div>

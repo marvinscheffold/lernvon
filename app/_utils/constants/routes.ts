@@ -11,3 +11,4 @@ export const TEACHER_CREATE_POOLS_ROUTE = "/dein-lehrerprofil/schwimmbaeder";
 export const TEACHERS_ROUTE = "/schwimmlehrer";
 export const TEACHER_ROUTE = (teacherId: TeacherType["id"]) =>
   `/schwimmlehrer/${teacherId}`;
+export const AUTH_ROUTE = "/auth";
