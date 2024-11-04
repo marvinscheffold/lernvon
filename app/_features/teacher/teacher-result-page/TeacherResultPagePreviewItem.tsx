@@ -2,7 +2,7 @@ import { TeacherContactButton } from "@/app/_features/teacher/TeacherContactButt
 import { TeacherVideoThumbnail } from "@/app/_features/teacher/TeacherVideoThumbnail";
 import { TEACHER_ROUTE } from "@/app/_utils/constants/routes";
 import { TeacherType, TeacherWithPoolsType } from "@/app/_utils/types/teacher";
-import { Button, Chip, Typography, Link as MuiLink } from "@mui/material";
+import { Button, Chip, Typography } from "@mui/material";
 import Link from "next/link";
 
 export function TeacherResultPagePreviewItem(teacher: TeacherWithPoolsType) {
