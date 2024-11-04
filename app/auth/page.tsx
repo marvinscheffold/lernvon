@@ -10,7 +10,7 @@ export default function Page({
   return (
     <div className="h-full flex items-center justify-center">
       <div className="flex flex-col gap-8 w-full max-w-md p-6">
-        <Typography variant="h4">Login or signup</Typography>
+        <Typography variant="h4">Anmelden oder Registrieren</Typography>
         <div className="flex flex-col gap-4">
           <AuthenticateWithGoogleButton
             redirectTo={
