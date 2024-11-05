@@ -12,7 +12,14 @@ export function AuthenticateWithGoogleButton({
   redirectTo,
 }: AuthenticateWithGoogleButtonProps) {
   return (
-    <form action={() => authenticateWithGoogleAction(redirectTo)}>
+    <form
+      action={() =>
+        authenticateWithGoogleAction({
+          redirectTo: redirectTo,
+          origin: window.location.origin,
+        })
+      }
+    >
       <SubmitButton
         className="w-full"
         startIcon={<Google />}

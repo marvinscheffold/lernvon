@@ -6,8 +6,6 @@ export async function GET(request: Request) {
   const code = searchParams.get("code");
   const redirectTo = searchParams.get("redirect-to") ?? "/";
 
-  console.log({ code, searchParams, origin });
-
   if (code) {
     const supabase = createSupabaseServerClient();
     const { error } = await supabase.auth.exchangeCodeForSession(code);

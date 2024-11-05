@@ -51,7 +51,6 @@ export async function middleware(request: NextRequest) {
   const { error } = await supabase.auth.getUser();
 
   if (protectedRoutes.includes(request.nextUrl.pathname) && error) {
-    console.log("in if");
     return NextResponse.redirect(
       new URL(
         encodeURI(`/auth?redirect-to=${request.nextUrl.pathname}`),
