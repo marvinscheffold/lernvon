@@ -1,3 +1,8 @@
 export default function Page() {
-  return <div>start</div>;
+  const isDevelop = process.env.NODE_ENV! === "development";
+  return (
+    <div>
+      is develop {isDevelop} NODE_ENV: {process.env.NODE_ENV!}
+    </div>
+  );
 }
