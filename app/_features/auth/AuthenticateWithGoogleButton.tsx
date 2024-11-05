@@ -1,7 +1,7 @@
 "use client";
 
 import { SubmitButton } from "@/app/_components/SubmitButton";
-import { authenticateWithGoogleAction } from "@/app/_features/auth/actions";
+import { authenticateWithGoogleAction } from "@/app/_features/auth/actions/authenticateWithGoogleAction";
 import { Google } from "@mui/icons-material";
 
 type AuthenticateWithGoogleButtonProps = {

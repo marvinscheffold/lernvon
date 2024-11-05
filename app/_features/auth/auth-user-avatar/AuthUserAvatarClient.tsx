@@ -1,6 +1,6 @@
 "use client";
 
-import { signOutAction } from "@/app/_features/auth/actions";
+import { signOutAction } from "@/app/_features/auth/actions/signOutAction";
 import { TEACHER_CREATE_ROUTE } from "@/app/_utils/constants/routes";
 import {
   AccountCircleOutlined,
