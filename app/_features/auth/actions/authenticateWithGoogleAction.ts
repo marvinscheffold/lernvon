@@ -10,7 +10,7 @@ export async function authenticateWithGoogleAction(redirectTo?: string) {
     options: {
       redirectTo: encodeURI(
         `${
-          process.env.NODE_ENV! === "development"
+          process.env.NODE_ENV === "development"
             ? "http://localhost:3000"
             : "https://www.lernvon.de"
         }/auth/callback?redirect-to=${redirectTo || "/"}`
