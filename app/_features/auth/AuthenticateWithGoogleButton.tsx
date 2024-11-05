@@ -30,7 +30,7 @@ function SubmitButton() {
       loading={pending}
       type="submit"
     >
-      Mit Google fortfahre n
+      Mit Google fortfahren
     </LoadingButton>
   );
 }
