@@ -16,13 +16,13 @@ export default function Page() {
     <>
       <section className="bg-neutral-50">
         <Container hasPadding={false}>
-          <div className="flex flex-col md:flex-row px-0 md:px-12 gap-0 md:gap-12">
+          <div className="flex flex-col md:flex-row px-0 md:px-6 gap-0 md:gap-12">
             <div className="md:flex-grow basis-0 flex flex-col gap-8 px-6 md:px-0 pt-8 pb-12 py-0 md:py-16">
               <Typography
                 component="h1"
                 sx={{ typography: { xs: "h3", md: "h2" } }}
               >
-                Finde die besten Schwimmlehrer in ganz Berlin
+                Finde die besten Schwimmlehrer in Berlin
               </Typography>
               <Typography variant="h5">
                 Kostenlos und ohne Anmeldung.
@@ -59,40 +59,6 @@ export default function Page() {
       <section>
         <Container>
           <div className="py-2 lg:py-16">
-            {/* <div className="hidden lg:flex justify-evenly mb-16">
-              <div className="flex flex-col gap-2 items-center">
-                <Typography variant="h4" component={"p"}>
-                  90+
-                </Typography>
-                <Typography variant="h6" component={"p"} color="textSecondary">
-                  erfahrene Schwimmlehrer
-                </Typography>
-              </div>
-              <div className="flex flex-col gap-2 items-center">
-                <Typography variant="h4" component={"p"}>
-                  36+
-                </Typography>
-                <Typography variant="h6" component={"p"} color="textSecondary">
-                  Schwimmbäder in Berlin
-                </Typography>
-              </div>
-              <div className="flex flex-col gap-2 items-center">
-                <Typography variant="h4" component={"p"}>
-                  12+
-                </Typography>
-                <Typography variant="h6" component={"p"} color="textSecondary">
-                  Berliner Bezirker
-                </Typography>
-              </div>
-              <div className="flex flex-col gap-2 items-center">
-                <Typography variant="h4" component={"p"}>
-                  1000+
-                </Typography>
-                <Typography variant="h6" component={"p"} color="textSecondary">
-                  vermittelte Anfragen
-                </Typography>
-              </div>
-            </div> */}
             <LandingBerlinDistrictsCards />
           </div>
         </Container>
@@ -106,7 +72,7 @@ export default function Page() {
                 component={"h2"}
                 className="break-words"
               >
-                Lerne effektiv mit privatem Schwimmunterricht
+                Lerne schneller mit privatem Schwimmunterricht
               </Typography>
               <Typography
                 sx={{ typography: { xs: "h6", md: "h5" } }}
@@ -132,50 +98,54 @@ export default function Page() {
         </div>
       </section>
       <section>
-        <Container>
-          <div className="flex flex-col md:flex-row m-0 md:my-16 border border-transparent md:border-black">
-            <div className="basis-0 flex-grow relative w-full h-[524px] md:h-[800px]">
-              <Image
-                alt="Bild eines Schwimmlehrers im Wasser"
-                src={teacherInWaterImage}
-                fill
-                style={{
-                  objectFit: "cover",
-                  objectPosition: "top",
-                }}
-              />
-            </div>
-            <div className="basis-0 flex-grow bg-neutral-50 flex flex-col gap-8 px-6 pt-8 pb-12 md:p-16">
-              <Typography
-                component={"h2"}
-                sx={{ typography: { xs: "h3", md: "h2" } }}
-              >
-                Schwimmlehrer werden
-              </Typography>
-              <Typography variant="body1">
-                Verdiene Geld, indem du dein Fachwissen mit Lernenden teilst.
-                Melde dich kosenlos an und finde neue Schüler auf lernvon.
-              </Typography>
-              <ul>
-                <Typography variant="h5" component={"li"}>
-                  - Finde neue Schülerinnen und Schüler
-                </Typography>
-                <Typography variant="h5" component={"li"}>
-                  - Erhalte bessere Nachrichten
-                </Typography>
-                <Typography variant="h5" component={"li"}>
-                  - Gib langfristig Unterricht
-                </Typography>
-              </ul>
-              <Link href={TEACHER_CREATE_ROUTE}>
-                <Button
-                  variant="contained"
-                  endIcon={<ArrowForward />}
-                  sx={{ fontSize: "20px", fontWeight: "400" }}
+        <Container hasPadding={false}>
+          <div className="px-0 md:px-6 py-0 md:py-16">
+            <div className="flex flex-col md:flex-row  border border-transparent md:border-black rounded-none md:rounded-lg overflow-hidden">
+              <div className="basis-0 flex-grow">
+                <div className="relative w-full h-[524px] md:h-[800px]">
+                  <Image
+                    alt="Bild eines Schwimmlehrers im Wasser"
+                    src={teacherInWaterImage}
+                    fill
+                    style={{
+                      objectFit: "cover",
+                      objectPosition: "top",
+                    }}
+                  />
+                </div>
+              </div>
+              <div className="basis-0 flex-grow bg-neutral-50 flex flex-col gap-8 px-6 pt-8 pb-12 md:p-16">
+                <Typography
+                  component={"h2"}
+                  sx={{ typography: { xs: "h3", md: "h2" } }}
                 >
                   Schwimmlehrer werden
-                </Button>
-              </Link>
+                </Typography>
+                <Typography variant="body1">
+                  Verdiene Geld, indem du dein Fachwissen mit Lernenden teilst.
+                  Melde dich kostenlos an und finde neue Schüler auf lernvon.
+                </Typography>
+                <ul>
+                  <Typography variant="h5" component={"li"}>
+                    - Finde neue Schülerinnen & Schüler
+                  </Typography>
+                  <Typography variant="h5" component={"li"}>
+                    - Erhalte passende Nachrichten
+                  </Typography>
+                  <Typography variant="h5" component={"li"}>
+                    - Gib langfristig Unterricht
+                  </Typography>
+                </ul>
+                <Link href={TEACHER_CREATE_ROUTE}>
+                  <Button
+                    variant="contained"
+                    endIcon={<ArrowForward />}
+                    sx={{ fontSize: "20px", fontWeight: "400" }}
+                  >
+                    Schwimmlehrer werden
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </Container>
