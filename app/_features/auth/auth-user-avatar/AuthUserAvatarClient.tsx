@@ -2,14 +2,7 @@
 
 import { signOutAction } from "@/app/_features/auth/actions/signOutAction";
 import { TEACHER_CREATE_ROUTE } from "@/app/_utils/constants/routes";
-import {
-  AccountCircle,
-  AccountCircleOutlined,
-  Logout,
-  LogoutOutlined,
-  Person,
-  Person2,
-} from "@mui/icons-material";
+import { Logout, Person, Person2 } from "@mui/icons-material";
 import { Avatar, ListItemIcon, Menu, MenuItem } from "@mui/material";
 import { User } from "@supabase/supabase-js";
 import Link from "next/link";
