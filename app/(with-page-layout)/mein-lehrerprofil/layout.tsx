@@ -7,7 +7,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <Container>
       <div className="py-12">
-        <Typography variant="h4">Dein Lehrerprofil</Typography>
+        <Typography variant="h4">Mein Lehrerprofil</Typography>
       </div>
       <TeacherCreatePageNavTabs />
       {children}

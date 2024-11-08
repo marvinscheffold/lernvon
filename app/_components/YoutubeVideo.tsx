@@ -7,10 +7,10 @@ type YoutubeVideoProps = {
 export function YoutubeVideo({ youtubeVideoUrl }: YoutubeVideoProps) {
   if (!youtubeVideoUrl)
     return (
-      <div className="w-full aspect-video rounded-xl sm:rounded-2xl border border-gray-200 flex items-center justify-center relative overflow-hidden">
+      <div className="w-full aspect-video rounded-xl sm:rounded-2xl border border-neutral-100 flex items-center justify-center relative overflow-hidden">
         <PlayArrow
           style={{ width: "56px", height: "56px" }}
-          className="text-gray-200 text-4xl"
+          className="text-neutral-100 text-4xl"
         />
       </div>
     );

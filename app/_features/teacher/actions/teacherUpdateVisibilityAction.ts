@@ -52,7 +52,8 @@ export async function teacherUpdateVisibilityAction(payload: FormData) {
       teacher.name === null ||
       teacher.email === null ||
       teacher.pricePerHour === null ||
-      teacher.videoThumbnailPath === null
+      teacher.videoThumbnailPath === null ||
+      teacher.about === null
     ) {
       throw {
         ...httpResponseStatusCode.BadRequest,

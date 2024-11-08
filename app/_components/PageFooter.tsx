@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export function PageFooter() {
   return (
-    <footer className="py-16 border-t border-gray-200">
+    <footer className="py-16 border-t border-neutral-100">
       <Container>
         <div className="flex items-center">
           <PageFooterContent />
@@ -18,7 +18,9 @@ export function PageFooter() {
 export function PageFooterContent() {
   return (
     <div className="flex flex-wrap gap-6">
-      <Typography variant="subtitle1">© lernvon 2024</Typography>
+      <Typography variant="subtitle1">
+        © lernvon {new Date().getFullYear()}
+      </Typography>
       <Link href={"/imprint"}>
         <Typography variant="subtitle1">Impressum</Typography>
       </Link>

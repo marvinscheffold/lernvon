@@ -3,9 +3,12 @@
 import { signOutAction } from "@/app/_features/auth/actions/signOutAction";
 import { TEACHER_CREATE_ROUTE } from "@/app/_utils/constants/routes";
 import {
+  AccountCircle,
   AccountCircleOutlined,
+  Logout,
   LogoutOutlined,
   Person,
+  Person2,
 } from "@mui/icons-material";
 import { Avatar, ListItemIcon, Menu, MenuItem } from "@mui/material";
 import { User } from "@supabase/supabase-js";
@@ -29,12 +32,10 @@ export function AuthUserAvatarClient({ user }: AuthUserAvatarClientProps) {
 
   if (!user) return null;
 
-  const fullName = user.user_metadata?.full_name;
-
   return (
     <>
-      <Avatar onClick={handleClick}>
-        {fullName ? fullName[0] : <Person />}
+      <Avatar onClick={handleClick} className="!bg-neutral-100">
+        <Person className="!text-neutral-500 !text-3xl" />
       </Avatar>
       <Menu
         id="authUserMenu"
@@ -49,9 +50,9 @@ export function AuthUserAvatarClient({ user }: AuthUserAvatarClientProps) {
         <Link href={TEACHER_CREATE_ROUTE}>
           <MenuItem onClick={handleClose}>
             <ListItemIcon>
-              <AccountCircleOutlined fontSize="small" />
+              <Person2 fontSize="small" />
             </ListItemIcon>
-            Teacher profile
+            Mein Lehrerprofil
           </MenuItem>
         </Link>
         <MenuItem
@@ -61,9 +62,9 @@ export function AuthUserAvatarClient({ user }: AuthUserAvatarClientProps) {
           }}
         >
           <ListItemIcon>
-            <LogoutOutlined fontSize="small" />
+            <Logout fontSize="small" />
           </ListItemIcon>
-          Logout
+          Abmelden
         </MenuItem>
       </Menu>
     </>

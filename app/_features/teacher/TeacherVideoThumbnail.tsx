@@ -29,7 +29,7 @@ export function TeacherVideoThumbnail({
 
   function Container(children: ReactNode) {
     return (
-      <div className="w-full aspect-video rounded-xl sm:rounded-2xl relative overflow-hidden border-gray-200">
+      <div className="w-full aspect-video rounded-xl sm:rounded-2xl relative overflow-hidden border-neutral-100">
         {children}
       </div>
     );

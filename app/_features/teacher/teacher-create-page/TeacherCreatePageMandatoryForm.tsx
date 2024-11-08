@@ -99,7 +99,7 @@ export function TeacherCreatePageMandatoryForm({
               <div className="ml-[14px]">
                 <FormHelperText>
                   Optimales Seitenverhältnis 16:9, 1280x720px oder größer, jpg,
-                  jpeg oder png, max. 500kB.
+                  jpeg oder png, max. 1MB.
                 </FormHelperText>
               </div>
             </div>
@@ -154,6 +154,27 @@ export function TeacherCreatePageMandatoryForm({
           </Alert>
         }
       />
+      <SectionRow
+        leftChildren={
+          <TextField
+            className="w-full"
+            helperText="Zum Beispiel: Hey! Ich bin John und unterrichte gerne Schwimmen."
+            label="Schreibe etwas über dich"
+            name="about"
+            defaultValue={teacher?.about}
+            multiline
+            rows={14}
+          />
+        }
+        rightChildren={
+          <Alert className="w-full" severity="info" variant="outlined">
+            Hier kannst du darüber schreiben, wie dein Unterricht strukturiert
+            ist, warum du Schwimmen unterrichtest, wann du verfügbar bist oder
+            was dir sonst in den Sinn kommt. Dein Text muss zwischen 32 und 1000
+            Zeichen lang sein.
+          </Alert>
+        }
+      />
       <div>
         <SubmitButton
           loadingPosition="start"
@@ -179,7 +200,7 @@ function TeacherCreatePageMandatoryInformationVideoThumbnail({
 }: TeacherCreatePageMandatoryInformationVideoThumbnailProps) {
   function Container(children: ReactNode) {
     return (
-      <div className="w-full aspect-video rounded-xl sm:rounded-2xl border border-gray-200 flex items-center justify-center relative overflow-hidden">
+      <div className="w-full aspect-video rounded-xl sm:rounded-2xl border border-neutral-100 flex items-center justify-center relative overflow-hidden">
         {children}
       </div>
     );
@@ -219,7 +240,7 @@ function TeacherCreatePageMandatoryInformationVideoThumbnail({
   return Container(
     <ImageIcon
       style={{ width: "56px", height: "56px" }}
-      className="text-gray-200 text-4xl"
+      className="text-neutral-100 text-4xl"
     />
   );
 }

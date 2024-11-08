@@ -72,7 +72,7 @@ export default async function Page({
       </Container>
       <Container hasPadding={false}>
         <div className="flex-col md:flex-row flex gap-0 md:gap-10 p-0 md:px-6">
-          <div className="flex-shrink-0 relative md:sticky z-20 self-start h-auto top-0 bg-white w-full md:w-72 border-b border-gray-200 md:border-none py-6 px-6 md:px-0">
+          <div className="flex-shrink-0 relative md:sticky z-20 self-start h-auto top-0 bg-white w-full md:w-72 border-b border-neutral-100 md:border-none py-6 px-6 md:px-0">
             <TeacherResultPageFilters />
           </div>
           {teachers && teachers.length > 0 && count ? (
@@ -81,7 +81,7 @@ export default async function Page({
                 {teachers?.map((teacher) => (
                   <li
                     key={teacher.id}
-                    className="py-6 px-6 md:px-0 border-b border-gray-200 last:border-0"
+                    className="py-6 px-6 md:px-0 border-b border-neutral-100 last:border-0"
                   >
                     <TeacherResultPagePreviewItem {...teacher} />
                   </li>

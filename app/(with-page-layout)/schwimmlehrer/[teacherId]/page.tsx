@@ -17,6 +17,7 @@ export default async function Page({
     .from("teacher")
     .select("*, pools:pool(*)")
     .eq("id", (await params).teacherId)
+    .eq("isVisible", true)
     .single();
 
   if (!teacher)
@@ -44,19 +45,14 @@ export default async function Page({
           <div className="block lg:hidden">
             <CtaCardContent teacher={teacher} />
           </div>
-          {teacher.about && (
-            <Section>
-              <Typography variant="h5">Über mich</Typography>
-              <Typography variant="body1">{teacher.about}</Typography>
-            </Section>
-          )}
+          <Section>
+            <Typography variant="h5">Beschreibung</Typography>
+            <Typography variant="body1">{teacher.about}</Typography>
+          </Section>
           {teacher.pools.length > 0 && (
             <Section>
               <div className="flex flex-col gap-2">
                 <Typography variant="h5">Schwimmbäder</Typography>
-                <Typography variant="body2" color="textSecondary">
-                  In diesen Schwimmbädern unterrichte ich
-                </Typography>
               </div>
               <List>
                 {teacher.pools.map((pool) => (
@@ -72,7 +68,7 @@ export default async function Page({
           )}
         </div>
         <div className="hidden lg:block w-[480px] flex-shrink-0 py-8">
-          <div className="p-6 rounded-3xl border border-gray-200 sticky top-8 h-auto">
+          <div className="p-6 rounded-3xl border border-neutral-100 sticky top-8 h-auto">
             <CtaCardContent teacher={teacher} />
           </div>
         </div>

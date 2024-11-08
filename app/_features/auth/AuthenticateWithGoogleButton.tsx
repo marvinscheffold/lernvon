@@ -25,6 +25,7 @@ export function AuthenticateWithGoogleButton({
         startIcon={<Google />}
         loadingPosition="end"
         variant="outlined"
+        size="large"
       >
         Mit Google fortfahren
       </SubmitButton>

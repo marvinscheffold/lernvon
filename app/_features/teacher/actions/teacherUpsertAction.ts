@@ -12,7 +12,7 @@ import {
   ServerActionResponseType,
 } from "@/app/_utils/serverActionResponseSchema";
 
-const MAX_FILE_SIZE = 500000;
+const MAX_FILE_SIZE = 1000000;
 const ACCEPTED_IMAGE_TYPES = [
   "image/jpeg",
   "image/jpg",
@@ -45,7 +45,10 @@ const payloadSchema = z.object({
     .optional(),
   videoThumbnailFile: z
     .any()
-    .refine((file) => file?.size <= MAX_FILE_SIZE, `max image size is 500kB`)
+    .refine(
+      (file) => file?.size <= MAX_FILE_SIZE,
+      `Die maximale Dateigröße ist 1MB`
+    )
     .refine(
       (file) => ACCEPTED_IMAGE_TYPES.includes(file?.type),
       "only .jpg, .jpeg, .png and .webp formats are supported"
