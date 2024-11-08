@@ -14,91 +14,91 @@ export function PageFooter() {
               <ul className="flex flex-col gap-2">
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmlehrer in Berlin
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmlehrer in Berlin Lichtenberg
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmlehrer in Berlin Friedrichshain-Kreuzberg
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmlehrer in Berlin Charlottenburg-Wilmersdorf
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmlehrer in Berlin-Marzahn-Hellersdorf
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmlehrer in Berlin Mitte
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmlehrer in Berlin Neukölln
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmlehrer in Berlin Pankow
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmlehrer in Berlin Reinickendorf
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmlehrer in Berlin Spandau
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmlehrer in Berlin Steglitz-Zehlendorf
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmlehrer in Berlin Tempelhof-Schöneberg
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmlehrer in Berlin Treptow-Köpenick
                     </Typography>
                   </Link>
@@ -110,91 +110,91 @@ export function PageFooter() {
               <ul className="flex flex-col gap-2">
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmunterricht Stadtbad Neukölln
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmunterricht Stadtbad Mitte „James Simon“
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmunterricht Stadtbad Tiergarten
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmunterricht SSE
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmunterricht Stadtbad Charlottenburg
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmunterricht Kombibad Seestraße Halle
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmunterricht Schwimmhalle Anton-Saefkow-Platz
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmunterricht Stadtbad Spandau Nord
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmunterricht Schwimmhalle Fischerinsel
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmunterricht Schwimmhalle Helmut Behrendt
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmunterricht Sport- und Lehrschwimmhalle Schöneberg
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmunterricht Stadtbad Märkisches Viertel
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link href={""}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                       Schwimmunterricht Schwimmhalle im FEZ
                     </Typography>
                   </Link>
@@ -203,20 +203,20 @@ export function PageFooter() {
             </section>
           </div>
           <div className="flex flex-wrap gap-6">
-            <Typography variant="subtitle1">
+            <Typography variant="body2">
               © lernvon {new Date().getFullYear()}
             </Typography>
             <Link href={"/imprint"}>
-              <Typography variant="subtitle1">Impressum</Typography>
+              <Typography variant="body2">Impressum</Typography>
             </Link>
             <Link href={"/privacy"}>
-              <Typography variant="subtitle1">Datenschutz</Typography>
+              <Typography variant="body2">Datenschutz</Typography>
             </Link>
             <Link href={"/send"}>
-              <Typography variant="subtitle1">Feedback senden</Typography>
+              <Typography variant="body2">Feedback senden</Typography>
             </Link>
             <Link href={TEACHER_CREATE_ROUTE}>
-              <Typography variant="subtitle1">Schwimmlehrer werden</Typography>
+              <Typography variant="body2">Schwimmlehrer werden</Typography>
             </Link>
           </div>
         </div>
