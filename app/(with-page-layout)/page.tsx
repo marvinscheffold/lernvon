@@ -17,14 +17,17 @@ export default function Page() {
       <section className="bg-neutral-50">
         <Container hasPadding={false}>
           <div className="flex flex-col md:flex-row px-0 md:px-6 gap-0 md:gap-12">
-            <div className="md:flex-grow basis-0 flex flex-col gap-8 px-6 md:px-0 pt-8 pb-12 py-0 md:py-16">
+            <div className="md:flex-grow basis-0 flex flex-col gap-6 px-6 md:px-0 pt-8 pb-12 py-0 md:py-16">
               <Typography
                 component="h1"
-                sx={{ typography: { xs: "h3", md: "h2" } }}
+                sx={{ typography: { xs: "h4", md: "h2" } }}
               >
                 Finde die besten Schwimmlehrer in Berlin
               </Typography>
-              <Typography variant="h5">
+              <Typography
+                component={"p"}
+                sx={{ typography: { xs: "h6", md: "h5" } }}
+              >
                 Kostenlos und ohne Anmeldung.
               </Typography>
               <div>
@@ -68,14 +71,14 @@ export default function Page() {
           <Container>
             <div className="flex flex-col gap-4 py-12 md:py-24">
               <Typography
-                sx={{ typography: { xs: "h3", md: "h2" } }}
+                sx={{ typography: { xs: "h4", md: "h2" } }}
                 component={"h2"}
                 className="break-words"
               >
                 Lerne schneller mit privatem Schwimmunterricht
               </Typography>
               <Typography
-                sx={{ typography: { xs: "h6", md: "h5" } }}
+                sx={{ typography: { xs: "body1", md: "h5" } }}
                 component={"p"}
               >
                 Über 120 Schwimmlehrer in 12 Berzirken - Bei lernvon findest du
@@ -114,10 +117,10 @@ export default function Page() {
                   />
                 </div>
               </div>
-              <div className="basis-0 flex-grow bg-neutral-50 flex flex-col gap-8 px-6 pt-8 pb-12 md:p-16">
+              <div className="basis-0 flex-grow bg-neutral-50 flex flex-col gap-6 md:gap-8 px-6 pt-8 pb-12 md:p-16">
                 <Typography
                   component={"h2"}
-                  sx={{ typography: { xs: "h3", md: "h2" } }}
+                  sx={{ typography: { xs: "h4", md: "h2" } }}
                 >
                   Schwimmlehrer werden
                 </Typography>
@@ -126,14 +129,23 @@ export default function Page() {
                   Melde dich kostenlos an und finde neue Schüler auf lernvon.
                 </Typography>
                 <ul>
-                  <Typography variant="h5" component={"li"}>
-                    - Finde neue Schülerinnen & Schüler
+                  <Typography
+                    sx={{ typography: { xs: "h6", md: "h5" } }}
+                    component={"li"}
+                  >
+                    - Finde neue Schüler
                   </Typography>
-                  <Typography variant="h5" component={"li"}>
+                  <Typography
+                    sx={{ typography: { xs: "h6", md: "h5" } }}
+                    component={"li"}
+                  >
                     - Erhalte passende Nachrichten
                   </Typography>
-                  <Typography variant="h5" component={"li"}>
-                    - Gib langfristig Unterricht
+                  <Typography
+                    sx={{ typography: { xs: "h6", md: "h5" } }}
+                    component={"li"}
+                  >
+                    - Verdiene mehr Geld
                   </Typography>
                 </ul>
                 <Link href={TEACHER_CREATE_ROUTE}>

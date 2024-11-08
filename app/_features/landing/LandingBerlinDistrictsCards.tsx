@@ -106,19 +106,21 @@ export function LandingBerlinDistrictsCards() {
           {isExpanded ? "Bezirke ausblenden" : "Alle Bezirke anzeigen"}
         </Button>
       </div>
-      {isExpanded && (
-        <ul className="grid gap-0 lg:gap-4 grid-cols-1 lg:grid-cols-3">
-          {districts.slice(0, 6).map((d) => (
-            <Card
-              key={d.linkHref}
-              linkHref={d.linkHref}
-              linkTitle={d.linkTitle}
-              title={d.title}
-              subTitle={d.subTitle}
-            />
-          ))}
-        </ul>
-      )}
+      <ul
+        className={`grid gap-0 lg:gap-4 grid-cols-1 lg:grid-cols-3 ${
+          isExpanded ? "" : "hidden"
+        }`}
+      >
+        {districts.slice(0, 6).map((d) => (
+          <Card
+            key={d.linkHref}
+            linkHref={d.linkHref}
+            linkTitle={d.linkTitle}
+            title={d.title}
+            subTitle={d.subTitle}
+          />
+        ))}
+      </ul>
     </>
   );
 }
@@ -135,19 +137,29 @@ function Card({
   subTitle: string;
 }) {
   return (
-    <Link
-      href={linkHref}
-      title={linkTitle}
-      className="border-b lg:border rounded-none lg:rounded-l"
-    >
-      <li className="lg:h-full border-neutral-100 flex items-center gap-6 p-6">
+    <li>
+      <Link
+        href={linkHref}
+        title={linkTitle}
+        className="border-b lg:border rounded-none lg:rounded-lg border-neutral-100 lg:h-full flex items-center gap-4 md:gap-6 p-6"
+      >
         <div className="flex flex-col flex-grow">
-          <Typography variant="h4">{title}</Typography>
-          <Typography variant="body1">{subTitle}</Typography>
+          <Typography
+            sx={{ typography: { xs: "h5", md: "h4" } }}
+            component={"p"}
+          >
+            {title}
+          </Typography>
+          <Typography
+            sx={{ typography: { xs: "body2", md: "body1" } }}
+            component={"p"}
+            color="textSecondary"
+          >
+            {subTitle}
+          </Typography>
         </div>
-
         <ChevronRight className="!text-4xl" />
-      </li>
-    </Link>
+      </Link>
+    </li>
   );
 }
