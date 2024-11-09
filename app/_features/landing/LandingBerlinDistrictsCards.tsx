@@ -93,7 +93,6 @@ export function LandingBerlinDistrictsCards() {
             linkHref={d.linkHref}
             linkTitle={d.linkTitle}
             title={d.title}
-            subTitle={d.subTitle}
           />
         ))}
       </ul>
@@ -118,7 +117,6 @@ export function LandingBerlinDistrictsCards() {
             linkHref={d.linkHref}
             linkTitle={d.linkTitle}
             title={d.title}
-            subTitle={d.subTitle}
           />
         ))}
       </ul>
@@ -130,12 +128,10 @@ function Card({
   linkHref,
   linkTitle,
   title,
-  subTitle,
 }: {
   linkHref: string;
   linkTitle: string;
   title: string;
-  subTitle: string;
 }) {
   return (
     <li>
@@ -151,13 +147,6 @@ function Card({
           >
             {title}
           </Typography>
-          {/* <Typography
-            sx={{ typography: { xs: "body2", md: "body1" } }}
-            component={"p"}
-            color="textSecondary"
-          >
-            {subTitle}
-          </Typography> */}
         </div>
         <ChevronRight className="!text-4xl" />
       </Link>
