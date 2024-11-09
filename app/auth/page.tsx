@@ -1,5 +1,9 @@
 import { AuthenticateWithGoogleButton } from "@/app/_features/auth/AuthenticateWithGoogleButton";
-import { TEACHER_CREATE_ROUTE } from "@/app/_utils/constants/routes";
+import {
+  IMPRINT_ROUTE,
+  PRIVACY_ROUTE,
+  TEACHER_CREATE_ROUTE,
+} from "@/app/_utils/constants/routes";
 import { Typography } from "@mui/material";
 import Link from "next/link";
 
@@ -25,13 +29,13 @@ export default function Page({
           <Typography variant="subtitle1">
             © lernvon {new Date().getFullYear()}
           </Typography>
-          <Link href={"/impressum"}>
+          <Link href={IMPRINT_ROUTE}>
             <Typography variant="subtitle1">Impressum</Typography>
           </Link>
-          <Link href={"/datenschutz"}>
+          <Link href={PRIVACY_ROUTE}>
             <Typography variant="subtitle1">Datenschutz</Typography>
           </Link>
-          <Link href={"/send"}>
+          <Link href={"mailto:info@lernvon.de"}>
             <Typography variant="subtitle1">Feedback senden</Typography>
           </Link>
           <Link href={TEACHER_CREATE_ROUTE}>

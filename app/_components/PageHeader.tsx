@@ -17,7 +17,7 @@ export function PageHeader() {
             <Typography variant="h6">lernvon</Typography>
           </div>
         </Link>
-        <Link href={TEACHERS_ROUTE}>
+        <Link href={TEACHERS_ROUTE} className="hidden sm:block">
           <Typography variant="subtitle1">Schwimmlehrer finden</Typography>
         </Link>
       </div>

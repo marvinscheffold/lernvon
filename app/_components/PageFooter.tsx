@@ -1,5 +1,9 @@
 import { Container } from "@/app/_components/Container";
-import { TEACHER_CREATE_ROUTE } from "@/app/_utils/constants/routes";
+import {
+  IMPRINT_ROUTE,
+  PRIVACY_ROUTE,
+  TEACHER_CREATE_ROUTE,
+} from "@/app/_utils/constants/routes";
 import { Typography } from "@mui/material";
 import Link from "next/link";
 
@@ -206,13 +210,13 @@ export function PageFooter() {
             <Typography variant="body2">
               © lernvon {new Date().getFullYear()}
             </Typography>
-            <Link href={"/imprint"}>
+            <Link href={IMPRINT_ROUTE}>
               <Typography variant="body2">Impressum</Typography>
             </Link>
-            <Link href={"/privacy"}>
+            <Link href={PRIVACY_ROUTE}>
               <Typography variant="body2">Datenschutz</Typography>
             </Link>
-            <Link href={"/send"}>
+            <Link href={"mailto:info@lernvon.de"}>
               <Typography variant="body2">Feedback senden</Typography>
             </Link>
             <Link href={TEACHER_CREATE_ROUTE}>

@@ -25,10 +25,12 @@ export function AuthUserAvatarClient({ user }: AuthUserAvatarClientProps) {
 
   if (!user) return null;
 
+  const fullName = user.user_metadata?.full_name;
+
   return (
     <>
-      <Avatar onClick={handleClick} className="!bg-neutral-100">
-        <Person className="!text-neutral-500 !text-3xl" />
+      <Avatar onClick={handleClick} className="!bg-neutral-300">
+        {fullName ? fullName[0] : <Person />}
       </Avatar>
       <Menu
         id="authUserMenu"

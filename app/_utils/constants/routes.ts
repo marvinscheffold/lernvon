@@ -11,3 +11,5 @@ export const TEACHERS_ROUTE = "/schwimmlehrer";
 export const TEACHER_ROUTE = (teacherId: TeacherType["id"]) =>
   `/schwimmlehrer/${teacherId}`;
 export const AUTH_ROUTE = "/auth";
+export const IMPRINT_ROUTE = "/impressum";
+export const PRIVACY_ROUTE = "/datenschutz";
