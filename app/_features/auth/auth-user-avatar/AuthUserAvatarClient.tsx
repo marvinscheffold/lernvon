@@ -3,7 +3,7 @@
 import { signOutAction } from "@/app/_features/auth/actions/signOutAction";
 import { TEACHER_CREATE_ROUTE } from "@/app/_utils/constants/routes";
 import { Logout, Person, Person2 } from "@mui/icons-material";
-import { Avatar, ListItemIcon, Menu, MenuItem } from "@mui/material";
+import { Avatar, Button, ListItemIcon, Menu, MenuItem } from "@mui/material";
 import { User } from "@supabase/supabase-js";
 import Link from "next/link";
 import { MouseEvent, useState } from "react";
@@ -23,7 +23,14 @@ export function AuthUserAvatarClient({ user }: AuthUserAvatarClientProps) {
     setAnchorEl(null);
   };
 
-  if (!user) return null;
+  if (!user)
+    return (
+      <Link href={TEACHER_CREATE_ROUTE}>
+        <Button variant="outlined" color="secondary">
+          Schwimmlehrer werden
+        </Button>
+      </Link>
+    );
 
   const fullName = user.user_metadata?.full_name;
 

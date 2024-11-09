@@ -38,6 +38,7 @@ export function TeacherCreatePageContactForm({
       <SectionRow
         leftChildren={
           <TextField
+            autoComplete="off"
             className="w-full"
             helperText="Zum Beispiel: +4915255551111"
             label="Deine Telefonnummer"
@@ -55,6 +56,7 @@ export function TeacherCreatePageContactForm({
       <SectionRow
         leftChildren={
           <TextField
+            autoComplete="off"
             className="w-full"
             helperText="Zum Beispiel: +4915255551111"
             label="Deine WhatsApp-Telefonnummer"
@@ -72,6 +74,7 @@ export function TeacherCreatePageContactForm({
       <SectionRow
         leftChildren={
           <TextField
+            autoComplete="off"
             className="w-full"
             helperText="Zum Beispiel: banana123"
             label="Dein Telegram-Benutzername"

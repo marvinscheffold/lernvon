@@ -1,10 +1,9 @@
 import { AuthUserAvatar } from "@/app/_features/auth/auth-user-avatar/AuthUserAvatar";
 import {
   LANDING_PAGE_HOME_ROUTE,
-  TEACHER_CREATE_ROUTE,
   TEACHERS_ROUTE,
 } from "@/app/_utils/constants/routes";
-import { Button, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import Link from "next/link";
 
 export function PageHeader() {
@@ -18,15 +17,10 @@ export function PageHeader() {
           </div>
         </Link>
         <Link href={TEACHERS_ROUTE} className="hidden sm:block">
-          <Typography variant="subtitle1">Schwimmlehrer finden</Typography>
+          <Typography variant="subtitle1">Schwimmlehrer in Berlin</Typography>
         </Link>
       </div>
       <div className="flex gap-4 items-center">
-        <Link href={TEACHER_CREATE_ROUTE} className="hidden sm:block">
-          <Button variant="outlined" color="secondary">
-            Schwimmlehrer werden
-          </Button>
-        </Link>
         <AuthUserAvatar />
       </div>
     </header>

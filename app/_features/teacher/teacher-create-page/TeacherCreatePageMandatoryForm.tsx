@@ -46,6 +46,7 @@ export function TeacherCreatePageMandatoryForm({
       <SectionRow
         leftChildren={
           <TextField
+            autoComplete="off"
             className="w-full"
             helperText="Zum Beispiel: John Doe"
             label="Dein Name"
@@ -63,6 +64,7 @@ export function TeacherCreatePageMandatoryForm({
       <SectionRow
         leftChildren={
           <TextField
+            autoComplete="off"
             className="w-full"
             helperText="Zum Beispiel: 45 €"
             label="Dein Preis pro Stunde"
@@ -138,6 +140,7 @@ export function TeacherCreatePageMandatoryForm({
       <SectionRow
         leftChildren={
           <TextField
+            autoComplete="off"
             className="w-full"
             helperText="Zum Beispiel: john.doe@gmail.com"
             label="Deine E-Mail-Adresse"
@@ -157,6 +160,7 @@ export function TeacherCreatePageMandatoryForm({
       <SectionRow
         leftChildren={
           <TextField
+            autoComplete="off"
             className="w-full"
             helperText="Zum Beispiel: Hey! Ich bin John und unterrichte gerne Schwimmen."
             label="Schreibe etwas über dich"

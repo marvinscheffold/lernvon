@@ -52,6 +52,7 @@ export function PoolSearchInputAndSelectDropdown({
   return (
     <>
       <TextField
+        autoComplete="off"
         ref={textFieldRef}
         disabled={isLoading}
         variant={variant}

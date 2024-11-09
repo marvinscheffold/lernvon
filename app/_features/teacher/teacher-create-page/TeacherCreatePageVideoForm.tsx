@@ -43,6 +43,7 @@ export function TeacherCreatePageVideoForm({
             </div>
             <div>
               <TextField
+                autoComplete="off"
                 className="w-full"
                 helperText="Zum Beispiel: https://www.youtube.com/embed/dQw4w9WgXcQ"
                 label="Füge eine YouTube-Embed-URL ein"
