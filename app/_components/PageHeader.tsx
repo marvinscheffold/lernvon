@@ -2,7 +2,6 @@ import { AuthUserAvatar } from "@/app/_features/auth/auth-user-avatar/AuthUserAv
 import {
   LANDING_PAGE_HOME_ROUTE,
   SWIMMING_TEACHERS_CITY_BERLIN_ROUTE,
-  SWIMMING_TEACHERS_ROUTE,
 } from "@/app/_utils/constants/routes";
 import { Typography } from "@mui/material";
 import Link from "next/link";
