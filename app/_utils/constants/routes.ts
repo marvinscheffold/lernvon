@@ -9,9 +9,9 @@ export const TEACHER_CREATE_POOLS_ROUTE = `${TEACHER_CREATE_ROUTE}/schwimmbäder
 export const SWIMMING_TEACHERS_ROUTE = "/schwimmlehrer";
 export const SWIMMING_TEACHER_ROUTE = (teacherId: TeacherType["id"]) =>
   `/schwimmlehrer/${teacherId}`;
-export const SWIMMING_TEACHERS_BERLIN_ROUTE = `${SWIMMING_TEACHERS_ROUTE}/stadt/berlin`;
-export const SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE = `${SWIMMING_TEACHERS_BERLIN_ROUTE}/bezirk`;
-export const SWIMMING_TEACHERS_BERLIN_POOLS_ROUTE = `${SWIMMING_TEACHERS_BERLIN_ROUTE}/schwimmbad`;
+export const SWIMMING_TEACHERS_CITY_BERLIN_ROUTE = `${SWIMMING_TEACHERS_ROUTE}/stadt/berlin`;
+export const SWIMMING_TEACHERS_CITY_BERLIN_DISTRICTS_ROUTE = `${SWIMMING_TEACHERS_CITY_BERLIN_ROUTE}/bezirk`;
+export const SWIMMING_TEACHERS_CITY_BERLIN_POOLS_ROUTE = `${SWIMMING_TEACHERS_CITY_BERLIN_ROUTE}/schwimmbad`;
 export const AUTH_ROUTE = "/auth";
 export const IMPRINT_ROUTE = "/impressum";
 export const PRIVACY_ROUTE = "/datenschutz";

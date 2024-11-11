@@ -58,7 +58,7 @@ export function PageFooter() {
                     href={`${SWIMMING_TEACHERS_CITY_BERLIN_DISTRICTS_ROUTE}/marzahn-hellersdorf?pool_ids=12,24`}
                   >
                     <Typography variant="body2">
-                      Schwimmlehrer in Berlin-Marzahn-Hellersdorf
+                      Schwimmlehrer in Berlin Marzahn-Hellersdorf
                     </Typography>
                   </Link>
                 </li>
@@ -141,7 +141,7 @@ export function PageFooter() {
               <ul className="flex flex-col gap-2">
                 <li>
                   <Link
-                    href={`${SWIMMING_TEACHERS_CITY_BERLIN_POOLS_ROUTE}/stadtbad-neukölln?pool_ids=1`}
+                    href={`${SWIMMING_TEACHERS_CITY_BERLIN_POOLS_ROUTE}/stadtbad-neukölln`}
                   >
                     <Typography variant="body2">
                       Schwimmunterricht Stadtbad Neukölln
@@ -150,70 +150,16 @@ export function PageFooter() {
                 </li>
                 <li>
                   <Link
-                    href={`${SWIMMING_TEACHERS_CITY_BERLIN_POOLS_ROUTE}/stadtbad-mitte?pool_ids=5`}
+                    href={`${SWIMMING_TEACHERS_CITY_BERLIN_POOLS_ROUTE}/schwimmhalle-sewanstraße`}
                   >
                     <Typography variant="body2">
-                      Schwimmunterricht Stadtbad Mitte „James Simon“
+                      Schwimmunterricht Schwimmhalle Sewanstraße
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href={`${SWIMMING_TEACHERS_CITY_BERLIN_POOLS_ROUTE}/stadtbad-tiergarten?pool_ids=6`}
-                  >
-                    <Typography variant="body2">
-                      Schwimmunterricht Stadtbad Tiergarten
-                    </Typography>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={`${SWIMMING_TEACHERS_CITY_BERLIN_POOLS_ROUTE}/sse?pool_ids=7`}
-                  >
-                    <Typography variant="body2">
-                      Schwimmunterricht SSE
-                    </Typography>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={`${SWIMMING_TEACHERS_CITY_BERLIN_POOLS_ROUTE}?pool_ids=8`}
-                  >
-                    <Typography variant="body2">
-                      Schwimmunterricht Stadtbad Charlottenburg
-                    </Typography>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={`${SWIMMING_TEACHERS_CITY_BERLIN_POOLS_ROUTE}/kombibad-seestraße-halle?pool_ids=9`}
-                  >
-                    <Typography variant="body2">
-                      Schwimmunterricht Kombibad Seestraße Halle
-                    </Typography>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={`${SWIMMING_TEACHERS_CITY_BERLIN_POOLS_ROUTE}/schwimmhalle-anton-saefkow-platz?pool_ids=10`}
-                  >
-                    <Typography variant="body2">
-                      Schwimmunterricht Schwimmhalle Anton-Saefkow-Platz
-                    </Typography>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={`${SWIMMING_TEACHERS_CITY_BERLIN_POOLS_ROUTE}/stadtbad-spandau-nord?pool_ids=11`}
-                  >
-                    <Typography variant="body2">
-                      Schwimmunterricht Stadtbad Spandau Nord
-                    </Typography>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={`${SWIMMING_TEACHERS_CITY_BERLIN_POOLS_ROUTE}/schwimmhalle-fischerinsel?pool_ids=3`}
+                    href={`${SWIMMING_TEACHERS_CITY_BERLIN_POOLS_ROUTE}/schwimmhalle-fischerinsel`}
                   >
                     <Typography variant="body2">
                       Schwimmunterricht Schwimmhalle Fischerinsel
@@ -222,37 +168,28 @@ export function PageFooter() {
                 </li>
                 <li>
                   <Link
-                    href={`${SWIMMING_TEACHERS_CITY_BERLIN_POOLS_ROUTE}/schwimmhalle-helene-weigelt-platz?pool_ids=12`}
+                    href={`${SWIMMING_TEACHERS_CITY_BERLIN_POOLS_ROUTE}/stadtbad-mitte`}
                   >
                     <Typography variant="body2">
-                      Schwimmunterricht Schwimmhalle Helene Weigelt Platz
+                      Schwimmunterricht Stadtbad Mitte "James Simon"
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href={`${SWIMMING_TEACHERS_CITY_BERLIN_POOLS_ROUTE}/sport-und-lehrschwimmhalle-schöeneberg?pool_ids=13`}
+                    href={`${SWIMMING_TEACHERS_CITY_BERLIN_POOLS_ROUTE}/stadtbad-tiergarten`}
                   >
                     <Typography variant="body2">
-                      Schwimmunterricht Sport- und Lehrschwimmhalle Schöneberg
+                      Schwimmunterricht Stadtbad Tiergarten
                     </Typography>
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href={`${SWIMMING_TEACHERS_CITY_BERLIN_POOLS_ROUTE}/stadtbad-märkisches-viertel?pool_ids=14`}
+                    href={`${SWIMMING_TEACHERS_CITY_BERLIN_POOLS_ROUTE}/stadtbad-charlottenburg-alte-halle`}
                   >
                     <Typography variant="body2">
-                      Schwimmunterricht Stadtbad Märkisches Viertel
-                    </Typography>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={`${SWIMMING_TEACHERS_CITY_BERLIN_POOLS_ROUTE}/schwimmhalle-im-fez?pool_ids=15`}
-                  >
-                    <Typography variant="body2">
-                      Schwimmunterricht Schwimmhalle im FEZ
+                      Schwimmunterricht Stadtbad Charlottenburg - Alte Halle
                     </Typography>
                   </Link>
                 </li>
