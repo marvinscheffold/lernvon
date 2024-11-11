@@ -1,7 +1,8 @@
 import { AuthUserAvatar } from "@/app/_features/auth/auth-user-avatar/AuthUserAvatar";
 import {
   LANDING_PAGE_HOME_ROUTE,
-  TEACHERS_ROUTE,
+  SWIMMING_TEACHERS_BERLIN_ROUTE,
+  SWIMMING_TEACHERS_ROUTE,
 } from "@/app/_utils/constants/routes";
 import { Typography } from "@mui/material";
 import Link from "next/link";
@@ -16,7 +17,7 @@ export function PageHeader() {
             <Typography variant="h6">lernvon</Typography>
           </div>
         </Link>
-        <Link href={TEACHERS_ROUTE} className="hidden sm:block">
+        <Link href={SWIMMING_TEACHERS_BERLIN_ROUTE} className="hidden sm:block">
           <Typography variant="subtitle1">Schwimmlehrer in Berlin</Typography>
         </Link>
       </div>

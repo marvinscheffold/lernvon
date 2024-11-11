@@ -3,7 +3,8 @@ import {
   IMPRINT_ROUTE,
   PRIVACY_ROUTE,
   TEACHER_CREATE_ROUTE,
-  TEACHERS_ROUTE,
+  SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE,
+  SWIMMING_TEACHERS_BERLIN_ROUTE,
 } from "@/app/_utils/constants/routes";
 import { Typography } from "@mui/material";
 import Link from "next/link";
@@ -18,91 +19,115 @@ export function PageFooter() {
               <Typography variant="h6">Schwimmlehrer in deiner Nähe</Typography>
               <ul className="flex flex-col gap-2">
                 <li>
-                  <Link href={TEACHERS_ROUTE}>
+                  <Link href={SWIMMING_TEACHERS_BERLIN_ROUTE}>
                     <Typography variant="body2">
                       Schwimmlehrer in Berlin
                     </Typography>
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${TEACHERS_ROUTE}?pool_ids=10,2,27`}>
+                  <Link
+                    href={`${SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE}/lichtenberg?pool_ids=10,2,27`}
+                  >
                     <Typography variant="body2">
                       Schwimmlehrer in Berlin Lichtenberg
                     </Typography>
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${TEACHERS_ROUTE}?pool_ids=25,33`}>
+                  <Link
+                    href={`${SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE}/friedrichshain-kreuzberg?pool_ids=25,33`}
+                  >
                     <Typography variant="body2">
                       Schwimmlehrer in Berlin Friedrichshain-Kreuzberg
                     </Typography>
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${TEACHERS_ROUTE}?pool_ids=22,8,31,32,41,44`}>
+                  <Link
+                    href={`${SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE}/charlottenburg-wilmersdorf?pool_ids=22,8,31,32,41,44`}
+                  >
                     <Typography variant="body2">
                       Schwimmlehrer in Berlin Charlottenburg-Wilmersdorf
                     </Typography>
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${TEACHERS_ROUTE}?pool_ids=12,24`}>
+                  <Link
+                    href={`${SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE}/marzahn-hellersdorf?pool_ids=12,24`}
+                  >
                     <Typography variant="body2">
                       Schwimmlehrer in Berlin-Marzahn-Hellersdorf
                     </Typography>
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${TEACHERS_ROUTE}?pool_ids=9,36,3,5,6,34,37`}>
+                  <Link
+                    href={`${SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE}/mitte?pool_ids=9,36,3,5,6,34,37`}
+                  >
                     <Typography variant="body2">
                       Schwimmlehrer in Berlin Mitte
                     </Typography>
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${TEACHERS_ROUTE}?pool_ids=16,35,40,1,46`}>
+                  <Link
+                    href={`${SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE}/neukölln?pool_ids=16,35,40,1,46`}
+                  >
                     <Typography variant="body2">
                       Schwimmlehrer in Berlin Neukölln
                     </Typography>
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${TEACHERS_ROUTE}?pool_ids=7,19,20,26,42`}>
+                  <Link
+                    href={`${SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE}/pankow?pool_ids=7,19,20,26,42`}
+                  >
                     <Typography variant="body2">
                       Schwimmlehrer in Berlin Pankow
                     </Typography>
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${TEACHERS_ROUTE}?pool_ids=14`}>
+                  <Link
+                    href={`${SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE}/reinickendorf?pool_ids=14`}
+                  >
                     <Typography variant="body2">
                       Schwimmlehrer in Berlin Reinickendorf
                     </Typography>
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${TEACHERS_ROUTE}?pool_ids=11,30,43`}>
+                  <Link
+                    href={`${SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE}/spandau?pool_ids=11,30,43`}
+                  >
                     <Typography variant="body2">
                       Schwimmlehrer in Berlin Spandau
                     </Typography>
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${TEACHERS_ROUTE}?pool_ids=21,23,28,38`}>
+                  <Link
+                    href={`${SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE}/steglitz-zehlendorf?pool_ids=21,23,28,38`}
+                  >
                     <Typography variant="body2">
                       Schwimmlehrer in Berlin Steglitz-Zehlendorf
                     </Typography>
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${TEACHERS_ROUTE}?pool_ids=13,29,39`}>
+                  <Link
+                    href={`${SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE}/tempelhof-schöneberg?pool_ids=13,29,39`}
+                  >
                     <Typography variant="body2">
                       Schwimmlehrer in Berlin Tempelhof-Schöneberg
                     </Typography>
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${TEACHERS_ROUTE}?pool_ids=45,17,18`}>
+                  <Link
+                    href={`${SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE}/treptow-köpenick?pool_ids=45,17,18`}
+                  >
                     <Typography variant="body2">
                       Schwimmlehrer in Berlin Treptow-Köpenick
                     </Typography>
@@ -114,91 +139,117 @@ export function PageFooter() {
               <Typography variant="h6">Hallenbäder in Berlin</Typography>
               <ul className="flex flex-col gap-2">
                 <li>
-                  <Link href={`${TEACHERS_ROUTE}?pool_ids=1`}>
+                  <Link
+                    href={`${SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE}?pool_ids=1`}
+                  >
                     <Typography variant="body2">
                       Schwimmunterricht Stadtbad Neukölln
                     </Typography>
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${TEACHERS_ROUTE}?pool_ids=5`}>
+                  <Link
+                    href={`${SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE}?pool_ids=5`}
+                  >
                     <Typography variant="body2">
                       Schwimmunterricht Stadtbad Mitte „James Simon“
                     </Typography>
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${TEACHERS_ROUTE}?pool_ids=6`}>
+                  <Link
+                    href={`${SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE}?pool_ids=6`}
+                  >
                     <Typography variant="body2">
                       Schwimmunterricht Stadtbad Tiergarten
                     </Typography>
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${TEACHERS_ROUTE}?pool_ids=7`}>
+                  <Link
+                    href={`${SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE}?pool_ids=7`}
+                  >
                     <Typography variant="body2">
                       Schwimmunterricht SSE
                     </Typography>
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${TEACHERS_ROUTE}?pool_ids=8`}>
+                  <Link
+                    href={`${SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE}?pool_ids=8`}
+                  >
                     <Typography variant="body2">
                       Schwimmunterricht Stadtbad Charlottenburg
                     </Typography>
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${TEACHERS_ROUTE}?pool_ids=9`}>
+                  <Link
+                    href={`${SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE}?pool_ids=9`}
+                  >
                     <Typography variant="body2">
                       Schwimmunterricht Kombibad Seestraße Halle
                     </Typography>
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${TEACHERS_ROUTE}?pool_ids=10`}>
+                  <Link
+                    href={`${SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE}?pool_ids=10`}
+                  >
                     <Typography variant="body2">
                       Schwimmunterricht Schwimmhalle Anton-Saefkow-Platz
                     </Typography>
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${TEACHERS_ROUTE}?pool_ids=11`}>
+                  <Link
+                    href={`${SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE}?pool_ids=11`}
+                  >
                     <Typography variant="body2">
                       Schwimmunterricht Stadtbad Spandau Nord
                     </Typography>
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${TEACHERS_ROUTE}?pool_ids=3`}>
+                  <Link
+                    href={`${SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE}?pool_ids=3`}
+                  >
                     <Typography variant="body2">
                       Schwimmunterricht Schwimmhalle Fischerinsel
                     </Typography>
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${TEACHERS_ROUTE}?pool_ids=12`}>
+                  <Link
+                    href={`${SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE}?pool_ids=12`}
+                  >
                     <Typography variant="body2">
                       Schwimmunterricht Schwimmhalle Helene Weigelt Platz
                     </Typography>
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${TEACHERS_ROUTE}?pool_ids=13`}>
+                  <Link
+                    href={`${SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE}?pool_ids=13`}
+                  >
                     <Typography variant="body2">
                       Schwimmunterricht Sport- und Lehrschwimmhalle Schöneberg
                     </Typography>
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${TEACHERS_ROUTE}?pool_ids=14`}>
+                  <Link
+                    href={`${SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE}?pool_ids=14`}
+                  >
                     <Typography variant="body2">
                       Schwimmunterricht Stadtbad Märkisches Viertel
                     </Typography>
                   </Link>
                 </li>
                 <li>
-                  <Link href={`${TEACHERS_ROUTE}?pool_ids=15`}>
+                  <Link
+                    href={`${SWIMMING_TEACHERS_BERLIN_DISTRICTS_ROUTE}?pool_ids=15`}
+                  >
                     <Typography variant="body2">
                       Schwimmunterricht Schwimmhalle im FEZ
                     </Typography>

@@ -9,7 +9,7 @@ export default async function Page({
     <TeacherResultPage
       searchParams={searchParams}
       headline={{
-        template: "x Schwimmlehrer gefunden",
+        template: "x Schwimmlehrer in Berlin gefunden",
         replaceWithNumberOfResults: "x",
       }}
     />

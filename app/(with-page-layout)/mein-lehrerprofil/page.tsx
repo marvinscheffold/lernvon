@@ -4,7 +4,7 @@ import { TeacherCreatePageOverviewTable } from "@/app/_features/teacher/teacher-
 import { TeacherToggleVisibilityButton } from "@/app/_features/teacher/TeacherToggleVisibilityButton";
 import {
   TEACHER_CREATE_MANDATORY_INFORMATION_ROUTE,
-  TEACHER_ROUTE,
+  SWIMMING_TEACHER_ROUTE,
 } from "@/app/_utils/constants/routes";
 import { httpResponseStatusCode } from "@/app/_utils/httpResponseStatusCode";
 import { createSupabaseServerClient } from "@/app/_utils/supabase/createSupabaseServerClient";
@@ -72,7 +72,7 @@ export default async function Page() {
       )}
       <TeacherCreatePageOverviewTable teacher={teacher} />
       <div className="flex flex-col md:flex-row gap-4">
-        <Link href={TEACHER_ROUTE(teacher.id)} target="_blank">
+        <Link href={SWIMMING_TEACHER_ROUTE(teacher.id)} target="_blank">
           <Button
             startIcon={<OpenInNew />}
             color="secondary"

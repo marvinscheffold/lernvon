@@ -1,6 +1,6 @@
 import { TeacherContactButton } from "@/app/_features/teacher/TeacherContactButton";
 import { TeacherVideoThumbnail } from "@/app/_features/teacher/TeacherVideoThumbnail";
-import { TEACHER_ROUTE } from "@/app/_utils/constants/routes";
+import { SWIMMING_TEACHER_ROUTE } from "@/app/_utils/constants/routes";
 import { TeacherType, TeacherWithPoolsType } from "@/app/_utils/types/teacher";
 import { Button, Chip, Typography } from "@mui/material";
 import Link from "next/link";
@@ -28,7 +28,7 @@ export function TeacherResultPagePreviewItem(teacher: TeacherWithPoolsType) {
         <div className="flex-grow flex flex-col gap-4">
           <div className="flex w-full">
             <div className="flex-grow">
-              <Link href={TEACHER_ROUTE(id)}>
+              <Link href={SWIMMING_TEACHER_ROUTE(id)}>
                 <Typography variant="h5">{name}</Typography>
               </Link>
             </div>
@@ -56,7 +56,10 @@ export function TeacherResultPagePreviewItem(teacher: TeacherWithPoolsType) {
           )}
           <TeacherResultPagePreviewItemAbout about={about} />
           <div className="flex gap-2 flex-col md:flex-row">
-            <Link href={TEACHER_ROUTE(id)} className="flex-grow md:flex-grow-0">
+            <Link
+              href={SWIMMING_TEACHER_ROUTE(id)}
+              className="flex-grow md:flex-grow-0"
+            >
               <Button
                 className="w-full"
                 variant="outlined"

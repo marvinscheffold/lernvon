@@ -1,7 +1,7 @@
 import { Container } from "@/app/_components/Container";
 import {
   TEACHER_CREATE_ROUTE,
-  TEACHERS_ROUTE,
+  SWIMMING_TEACHERS_ROUTE,
 } from "@/app/_utils/constants/routes";
 import { ArrowForward } from "@mui/icons-material";
 import { Button, Typography } from "@mui/material";
@@ -31,7 +31,7 @@ export default function Page() {
                 Kostenlos und ohne Anmeldung.
               </Typography>
               <div>
-                <Link href={TEACHERS_ROUTE}>
+                <Link href={SWIMMING_TEACHERS_ROUTE}>
                   <Button
                     variant="contained"
                     endIcon={<ArrowForward />}
@@ -85,7 +85,7 @@ export default function Page() {
                 kostenlos qualifizierte Schwimm-Coaches in Berlin.
               </Typography>
               <div className="pt-8">
-                <Link href={TEACHERS_ROUTE}>
+                <Link href={SWIMMING_TEACHERS_ROUTE}>
                   <Button
                     variant="contained"
                     endIcon={<ArrowForward />}

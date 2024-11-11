@@ -3,7 +3,7 @@ import { Result } from "@/app/_components/Result";
 import { Section } from "@/app/_components/Section";
 import { TeacherContactButton } from "@/app/_features/teacher/TeacherContactButton";
 import { TeacherVideoThumbnail } from "@/app/_features/teacher/TeacherVideoThumbnail";
-import { TEACHERS_ROUTE } from "@/app/_utils/constants/routes";
+import { SWIMMING_TEACHERS_ROUTE } from "@/app/_utils/constants/routes";
 import { createSupabaseAdminClient } from "@/app/_utils/supabase/createSupabaseAdminClient";
 import { TeacherType } from "@/app/_utils/types/teacher";
 import { List, ListItem, ListItemText, Typography } from "@mui/material";
@@ -28,7 +28,7 @@ export default async function Page({
         subTitle="Um deine Schwimmreise fortzuführen kannst du nach anderen Lehrern suchen."
         linkButton={{
           text: "Andere Lehrer suchen",
-          href: TEACHERS_ROUTE,
+          href: SWIMMING_TEACHERS_ROUTE,
         }}
       />
     );

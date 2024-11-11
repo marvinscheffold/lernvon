@@ -8,7 +8,7 @@ import {
   searchParamMinPriceSchema,
   searchParamPoolIdsSchema,
 } from "@/app/_features/teacher/teacher-result-page/teacherResultPageUtils";
-import { TEACHERS_ROUTE } from "@/app/_utils/constants/routes";
+import { SWIMMING_TEACHERS_ROUTE } from "@/app/_utils/constants/routes";
 import { useStateEffect } from "@/app/_utils/hooks/useStateEffect";
 import { Chip, Slider, Typography } from "@mui/material";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -73,7 +73,7 @@ export function TeacherResultPageFilters() {
             onChangeCommitted={(_event, value) => {
               if (!Array.isArray(value)) return;
               router.push(
-                TEACHERS_ROUTE +
+                SWIMMING_TEACHERS_ROUTE +
                   "?" +
                   createSearchParamsString([
                     { name: "min_price", value: value[0] },
@@ -106,7 +106,7 @@ export function TeacherResultPageFilters() {
                     const newPoolIds = poolIds.filter((p) => p !== poolId);
 
                     router.push(
-                      TEACHERS_ROUTE +
+                      SWIMMING_TEACHERS_ROUTE +
                         "?" +
                         createSearchParamsString([
                           { name: "pool_ids", value: newPoolIds.join(",") },
@@ -126,7 +126,7 @@ export function TeacherResultPageFilters() {
                 const newPoolIds = [...poolIds, pool.id];
 
                 router.push(
-                  TEACHERS_ROUTE +
+                  SWIMMING_TEACHERS_ROUTE +
                     "?" +
                     createSearchParamsString([
                       { name: "pool_ids", value: newPoolIds.join(",") },
