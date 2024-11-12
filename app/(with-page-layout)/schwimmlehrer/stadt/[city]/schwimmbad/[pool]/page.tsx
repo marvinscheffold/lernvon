@@ -195,7 +195,11 @@ export default async function Page({
   if (params.pool.indexOf(encodeURIComponent("sommerbad-britz")) >= 0) {
     template = "x Schwimmlehrer im Sommerbad Britz gefunden";
   }
-  if (params.pool.indexOf("stadtbad-charlottenburg-alte-halle") >= 0) {
+  if (
+    params.pool.indexOf(
+      encodeURIComponent("stadtbad-charlottenburg-alte-halle")
+    ) >= 0
+  ) {
     template =
       "x Schwimmlehrer im Stadtbad Charlottenburg - Alte Halle gefunden";
   }
