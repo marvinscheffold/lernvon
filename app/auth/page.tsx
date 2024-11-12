@@ -5,7 +5,15 @@ import {
   TEACHER_CREATE_ROUTE,
 } from "@/app/_utils/constants/routes";
 import { Typography } from "@mui/material";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Anmelden oder registrieren | lernvon",
+  description:
+    "Melde dich an oder registriere dich, um Schwimmlehrer zu werden.",
+  robots: "noindex, nofollow",
+};
 
 export default function Page({
   searchParams,

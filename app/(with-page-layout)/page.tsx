@@ -2,6 +2,7 @@ import { Container } from "@/app/_components/Container";
 import {
   TEACHER_CREATE_ROUTE,
   SWIMMING_TEACHERS_ROUTE,
+  SWIMMING_TEACHERS_CITY_BERLIN_ROUTE,
 } from "@/app/_utils/constants/routes";
 import { ArrowForward } from "@mui/icons-material";
 import { Button, Typography } from "@mui/material";
@@ -10,6 +11,14 @@ import teacherWithStudentsImage from "@/public/images/teacher-with-students.jpg"
 import teacherInWaterImage from "@/public/images/teacher-in-water.jpg";
 import Image from "next/image";
 import { LandingBerlinDistrictsCards } from "@/app/_features/landing/LandingBerlinDistrictsCards";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title:
+    "Schwimmlehrer & Schwimmtrainer - Finde den perfekten Schwimmlehrer in Berlin | lernvon",
+  description:
+    "Entdecke die besten Schwimmlehrer und Schwimmtrainer in Berlin. Lerne sicher schwimmen oder verbessere deine Technik mit qualifizierten Experten. Finde jetzt den perfekten Schwimmlehrer!",
+};
 
 export default function Page() {
   return (
@@ -31,7 +40,7 @@ export default function Page() {
                 Kostenlos und ohne Anmeldung.
               </Typography>
               <div>
-                <Link href={SWIMMING_TEACHERS_ROUTE}>
+                <Link href={SWIMMING_TEACHERS_CITY_BERLIN_ROUTE}>
                   <Button
                     variant="contained"
                     endIcon={<ArrowForward />}
