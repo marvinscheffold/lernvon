@@ -1,6 +1,6 @@
 "use client";
 
-import { SWIMMING_TEACHERS_ROUTE } from "@/app/_utils/constants/routes";
+import { SWIMMING_TEACHERS_CITY_BERLIN_DISTRICTS_ROUTE } from "@/app/_utils/constants/routes";
 import { Add, ChevronRight, Remove } from "@mui/icons-material";
 import { Button, Typography } from "@mui/material";
 import Link from "next/link";
@@ -11,73 +11,73 @@ export function LandingBerlinDistrictsCards() {
 
   const districts = [
     {
-      linkHref: `${SWIMMING_TEACHERS_ROUTE}?pool_ids=22,8,31,32,41,44`,
+      linkHref: `${SWIMMING_TEACHERS_CITY_BERLIN_DISTRICTS_ROUTE}/charlottenburg-wilmersdorf?pool_ids=22,8,31,32,41,44`,
       linkTitle: "Schwimmlehrer in Berlin Charlottenburg-Wilmersdorf",
       title: "Charlottenburg-Wilmersdorf",
       subTitle: "18 Schwimmlehrer",
     },
     {
-      linkHref: `${SWIMMING_TEACHERS_ROUTE}?pool_ids=25,33`,
+      linkHref: `${SWIMMING_TEACHERS_CITY_BERLIN_DISTRICTS_ROUTE}/friedrichshain-kreuzberg?pool_ids=25,33`,
       linkTitle: "Schwimmlehrer in Berlin Friedrichshain-Kreuzberg",
       title: "Friedrichshain-Kreuzberg",
       subTitle: "18 Schwimmlehrer",
     },
     {
-      linkHref: `${SWIMMING_TEACHERS_ROUTE}?pool_ids=10,2,27`,
+      linkHref: `${SWIMMING_TEACHERS_CITY_BERLIN_DISTRICTS_ROUTE}/lichtenberg?pool_ids=10,2,27`,
       linkTitle: "Schwimmlehrer in Berlin Lichtenberg",
       title: "Lichtenberg",
       subTitle: "18 Schwimmlehrer",
     },
     {
-      linkHref: `${SWIMMING_TEACHERS_ROUTE}?pool_ids=12,24`,
+      linkHref: `${SWIMMING_TEACHERS_CITY_BERLIN_DISTRICTS_ROUTE}/marzahn-hellersdorf?pool_ids=12,24`,
       linkTitle: "Schwimmlehrer in Berlin Marzahn-Hellersdorf",
       title: "Marzahn-Hellersdorf",
       subTitle: "18 Schwimmlehrer",
     },
     {
-      linkHref: `${SWIMMING_TEACHERS_ROUTE}?pool_ids=9,36,3,5,6,34,37`,
+      linkHref: `${SWIMMING_TEACHERS_CITY_BERLIN_DISTRICTS_ROUTE}/mitte?pool_ids=9,36,3,5,6,34,37`,
       linkTitle: "Schwimmlehrer in Berlin Mitte",
       title: "Mitte",
       subTitle: "18 Schwimmlehrer",
     },
     {
-      linkHref: `${SWIMMING_TEACHERS_ROUTE}?pool_ids=16,35,40,1,46`,
+      linkHref: `${SWIMMING_TEACHERS_CITY_BERLIN_DISTRICTS_ROUTE}/neukölln?pool_ids=16,35,40,1,46`,
       linkTitle: "Schwimmlehrer in Berlin Neukölln",
       title: "Neukölln",
       subTitle: "18 Schwimmlehrer",
     },
     {
-      linkHref: `${SWIMMING_TEACHERS_ROUTE}?pool_ids=7,19,20,26,42`,
+      linkHref: `${SWIMMING_TEACHERS_CITY_BERLIN_DISTRICTS_ROUTE}/pankow?pool_ids=7,19,20,26,42`,
       linkTitle: "Schwimmlehrer in Berlin Pankow",
       title: "Pankow",
       subTitle: "18 Schwimmlehrer",
     },
     {
-      linkHref: `${SWIMMING_TEACHERS_ROUTE}?pool_ids=14`,
+      linkHref: `${SWIMMING_TEACHERS_CITY_BERLIN_DISTRICTS_ROUTE}/reinickendorf?pool_ids=14`,
       linkTitle: "Schwimmlehrer in Berlin Reinickendorf",
       title: "Reinickendorf",
       subTitle: "18 Schwimmlehrer",
     },
     {
-      linkHref: `${SWIMMING_TEACHERS_ROUTE}?pool_ids=11,30,43`,
+      linkHref: `${SWIMMING_TEACHERS_CITY_BERLIN_DISTRICTS_ROUTE}/spandau?pool_ids=11,30,43`,
       linkTitle: "Schwimmlehrer in Berlin Spandau",
       title: "Spandau",
       subTitle: "18 Schwimmlehrer",
     },
     {
-      linkHref: `${SWIMMING_TEACHERS_ROUTE}?pool_ids=21,23,28,38`,
+      linkHref: `${SWIMMING_TEACHERS_CITY_BERLIN_DISTRICTS_ROUTE}/steglitz-zehlendorf?pool_ids=21,23,28,38`,
       linkTitle: "Schwimmlehrer in Berlin Steglitz-Zehlendorf",
       title: "Steglitz-Zehlendorf",
       subTitle: "18 Schwimmlehrer",
     },
     {
-      linkHref: `${SWIMMING_TEACHERS_ROUTE}?pool_ids=13,29,39`,
+      linkHref: `${SWIMMING_TEACHERS_CITY_BERLIN_DISTRICTS_ROUTE}/tempelhof-schöneberg?pool_ids=13,29,39`,
       linkTitle: "Schwimmlehrer in Berlin Tempelhof-Schöneberg",
       title: "Tempelhof-Schöneberg",
       subTitle: "18 Schwimmlehrer",
     },
     {
-      linkHref: `${SWIMMING_TEACHERS_ROUTE}?pool_ids=45,17,18`,
+      linkHref: `${SWIMMING_TEACHERS_CITY_BERLIN_DISTRICTS_ROUTE}/treptow-köpenick?pool_ids=45,17,18`,
       linkTitle: "Schwimmlehrer in Berlin Treptow-Köpenick",
       title: "Treptow-Köpenick",
       subTitle: "18 Schwimmlehrer",
