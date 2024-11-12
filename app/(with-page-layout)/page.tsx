@@ -1,7 +1,6 @@
 import { Container } from "@/app/_components/Container";
 import {
   TEACHER_CREATE_ROUTE,
-  SWIMMING_TEACHERS_ROUTE,
   SWIMMING_TEACHERS_CITY_BERLIN_ROUTE,
 } from "@/app/_utils/constants/routes";
 import { ArrowForward } from "@mui/icons-material";
@@ -46,7 +45,7 @@ export default function Page() {
                     endIcon={<ArrowForward />}
                     sx={{ fontSize: "20px", fontWeight: "400" }}
                   >
-                    Schwimmlehrer finden
+                    Schwimmlehrer in Berlin finden
                   </Button>
                 </Link>
               </div>
@@ -94,14 +93,14 @@ export default function Page() {
                 kostenlos qualifizierte Schwimm-Coaches in Berlin.
               </Typography>
               <div className="pt-8">
-                <Link href={SWIMMING_TEACHERS_ROUTE}>
+                <Link href={SWIMMING_TEACHERS_CITY_BERLIN_ROUTE}>
                   <Button
                     variant="contained"
                     endIcon={<ArrowForward />}
                     sx={{ fontSize: "20px", fontWeight: "400" }}
                     color="secondary"
                   >
-                    Schwimmlehrer finden
+                    Schwimmlehrer in Berlin finden
                   </Button>
                 </Link>
               </div>
