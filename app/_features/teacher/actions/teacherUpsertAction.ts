@@ -40,7 +40,7 @@ const payloadSchema = z.object({
   about: z
     .string()
     .min(32, "Beschreibung muss mindestens 32 Zeichen lang sein")
-    .max(1000, "Beschreibung darf maximal 1000 Zeichen lang sein")
+    .max(2000, "Beschreibung darf maximal 2000 Zeichen lang sein")
     .nullable()
     .optional(),
   videoThumbnailFile: z
@@ -100,6 +100,8 @@ export async function teacherUpsertAction(
     if (!user || userError) {
       throw httpResponseStatusCode.Unauthorized;
     }
+
+    console.log({ payload: getObjectFromFormData(payload) });
 
     const { data: payloadVerified, error: payloadError } =
       payloadSchema.safeParse(getObjectFromFormData(payload));

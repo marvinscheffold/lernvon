@@ -16,19 +16,7 @@ type TeacherCreatePageContactFormProps = {
 export function TeacherCreatePageContactForm({
   teacher,
 }: TeacherCreatePageContactFormProps) {
-  const mutation = useMutation({ mutationFn: handleSubmit });
-  async function handleSubmit(formData: FormData) {
-    if ((formData.get("whatsappPhoneNumber") as string).length === 0) {
-      formData.delete("whatsappPhoneNumber");
-    }
-    if ((formData.get("phoneNumber") as string).length === 0) {
-      formData.delete("phoneNumber");
-    }
-    if ((formData.get("telegramUsername") as string).length === 0) {
-      formData.delete("telegramUsername");
-    }
-    return await teacherUpsertAction(formData);
-  }
+  const mutation = useMutation({ mutationFn: teacherUpsertAction });
 
   return (
     <form

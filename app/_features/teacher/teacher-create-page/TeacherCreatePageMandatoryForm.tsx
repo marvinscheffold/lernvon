@@ -174,7 +174,7 @@ export function TeacherCreatePageMandatoryForm({
           <Alert className="w-full" severity="info" variant="outlined">
             Hier kannst du darüber schreiben, wie dein Unterricht strukturiert
             ist, warum du Schwimmen unterrichtest, wann du verfügbar bist oder
-            was dir sonst in den Sinn kommt. Dein Text muss zwischen 32 und 1000
+            was dir sonst in den Sinn kommt. Dein Text muss zwischen 32 und 2000
             Zeichen lang sein.
           </Alert>
         }

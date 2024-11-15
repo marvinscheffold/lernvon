@@ -5,7 +5,7 @@ export const TEACHER_CREATE_ROUTE = "/mein-lehrerprofil";
 export const TEACHER_CREATE_MANDATORY_INFORMATION_ROUTE = `${TEACHER_CREATE_ROUTE}/pflichtangaben`;
 export const TEACHER_CREATE_VIDEO_ROUTE = `${TEACHER_CREATE_ROUTE}/video`;
 export const TEACHER_CREATE_CONTACT_ROUTE = `${TEACHER_CREATE_ROUTE}/kontakt`;
-export const TEACHER_CREATE_POOLS_ROUTE = `${TEACHER_CREATE_ROUTE}/schwimmbäder`;
+export const TEACHER_CREATE_POOLS_ROUTE = `${TEACHER_CREATE_ROUTE}/schwimmbaeder`;
 export const SWIMMING_TEACHERS_ROUTE = "/schwimmlehrer";
 export const SWIMMING_TEACHER_ROUTE = (teacherId: TeacherType["id"]) =>
   `/schwimmlehrer/${teacherId}`;
