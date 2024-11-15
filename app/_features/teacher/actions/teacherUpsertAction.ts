@@ -22,25 +22,25 @@ const ACCEPTED_IMAGE_TYPES = [
 
 const payloadSchema = z.object({
   name: z
-    .string({ invalid_type_error: "name must be a string" })
-    .min(3, "name has to be at least 3 characters long")
-    .max(32, "name can only be 32 characters long")
+    .string({ invalid_type_error: "Name muss Text sein" })
+    .min(3, "Name muss mindestens 3 Zeichen lang sein")
+    .max(32, "Name darf maximal 32 Zeichen lang sein")
     .nullable()
     .optional(),
   pricePerHour: z.coerce
-    .number({ invalid_type_error: "price_per_hour must be a number" })
-    .positive("pricePerHour needs to be positive")
+    .number({ invalid_type_error: "Preis pro Stunde muss eine Zahl sein" })
+    .positive("Preis pro Stunde muss positiv sein")
     .nullable()
     .optional(),
   email: z
-    .string({ invalid_type_error: "email must be a string" })
-    .email("email needs to be valid")
+    .string({ invalid_type_error: "E-Mail muss Text sein" })
+    .email("E-Mail muss gültig sein")
     .nullable()
     .optional(),
   about: z
     .string()
-    .min(32, "about has to be at least 32 characters long")
-    .max(1000, "about can only be 1000 characters long")
+    .min(32, "Beschreibung muss mindestens 32 Zeichen lang sein")
+    .max(1000, "Beschreibung darf maximal 1000 Zeichen lang sein")
     .nullable()
     .optional(),
   videoThumbnailFile: z
@@ -51,15 +51,22 @@ const payloadSchema = z.object({
     )
     .refine(
       (file) => ACCEPTED_IMAGE_TYPES.includes(file?.type),
-      "only .jpg, .jpeg, .png and .webp formats are supported"
+      "Nur .jpg, .jpeg, .png und .webp Formate werden unterstützt"
     )
     .optional(),
-  youtubeVideoUrl: z.string().nullable().optional(),
+  youtubeVideoUrl: z
+    .string()
+    .refine(
+      (s) => /^https:\/\/www\.youtube\.com\/embed\/[a-zA-Z0-9_-]{11}$/.test(s),
+      "YouTube-Video-URL muss eine gültige YouTube-Embed-URL sein"
+    )
+    .nullable()
+    .optional(),
   phoneNumber: z
     .string()
     .refine(
       (s) => /^\+\d+$/.test(s),
-      "phoneNumber muss mit + anfangen, darf nur aus zahlen bestehen und darf keine leerzeichen enthalten"
+      "Telefonnummer muss mit + anfangen, darf nur aus Zahlen bestehen und darf keine Leerzeichen enthalten"
     )
     .nullable()
     .optional(),
@@ -67,14 +74,14 @@ const payloadSchema = z.object({
     .string()
     .refine(
       (s) => /^\+\d+$/.test(s),
-      "whatsappPhoneNumber muss mit + anfangen, darf nur aus zahlen bestehen und darf keine leerzeichen enthalten"
+      "WhatsApp-Nummer muss mit + anfangen, darf nur aus Zahlen bestehen und darf keine Leerzeichen enthalten"
     )
     .nullable()
     .optional(),
   telegramUsername: z
     .string()
-    .min(5, "telegramUsername must contain at least 5 characters")
-    .max(32, "telegramUsername can only be 32 characters long")
+    .min(5, "Telegram-Benutzername muss mindestens 5 Zeichen lang sein")
+    .max(32, "Telegram-Benutzername darf maximal 32 Zeichen lang sein")
     .nullable()
     .optional(),
 });

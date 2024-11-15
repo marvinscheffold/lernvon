@@ -90,6 +90,8 @@ export function TeacherCreatePageContactForm({
         }
       />
 
+      <ServerActionResponseAlert serverActionResponse={mutation.data} />
+
       <div>
         <SubmitButton
           loadingPosition="start"
@@ -99,8 +101,6 @@ export function TeacherCreatePageContactForm({
           Speichern
         </SubmitButton>
       </div>
-
-      <ServerActionResponseAlert serverActionResponse={mutation.data} />
     </form>
   );
 }

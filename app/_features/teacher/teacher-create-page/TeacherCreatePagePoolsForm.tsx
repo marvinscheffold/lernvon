@@ -104,6 +104,8 @@ export function TeacherCreatePagePoolsForm({
         }
       />
 
+      <ServerActionResponseAlert serverActionResponse={mutation.data} />
+
       <div>
         <LoadingButton
           loadingPosition="start"
@@ -115,8 +117,6 @@ export function TeacherCreatePagePoolsForm({
           Speichern
         </LoadingButton>
       </div>
-
-      <ServerActionResponseAlert serverActionResponse={mutation.data} />
     </form>
   );
 }

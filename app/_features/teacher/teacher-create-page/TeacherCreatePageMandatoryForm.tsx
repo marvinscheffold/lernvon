@@ -57,7 +57,7 @@ export function TeacherCreatePageMandatoryForm({
         }
         rightChildren={
           <Alert className="w-full" severity="info" variant="outlined">
-            Dein Name sollte zwischen 3 und 32 Zeichen lang sein.
+            Dein Name muss zwischen 3 und 32 Zeichen lang sein.
           </Alert>
         }
       />
@@ -179,6 +179,7 @@ export function TeacherCreatePageMandatoryForm({
           </Alert>
         }
       />
+      <ServerActionResponseAlert serverActionResponse={mutation.data} />
       <div>
         <SubmitButton
           loadingPosition="start"
@@ -188,7 +189,6 @@ export function TeacherCreatePageMandatoryForm({
           Speichern
         </SubmitButton>
       </div>
-      <ServerActionResponseAlert serverActionResponse={mutation.data} />
     </form>
   );
 }

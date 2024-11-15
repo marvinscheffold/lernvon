@@ -60,11 +60,14 @@ export function TeacherCreatePageVideoForm({
             diese ein besseres Gefühl für dich und deinen Unterrichtsstil
             bekommen. Versuche, ein Video im Schwimmbad hochzuladen, das erzielt
             die besten Ergebnisse. <br></br> <br></br> Um die Embed-URL zu
-            finden, öffne ein Video auf YouTube, klicke auf „Teilen“ und dann
+            finden, öffne dein Video auf YouTube, klicke auf „Teilen“ und dann
             auf „Einbetten“.
           </Alert>
         }
       />
+
+      <ServerActionResponseAlert serverActionResponse={mutation.data} />
+
       <div>
         <SubmitButton
           loadingPosition="start"
@@ -74,7 +77,6 @@ export function TeacherCreatePageVideoForm({
           Speichern
         </SubmitButton>
       </div>
-      <ServerActionResponseAlert serverActionResponse={mutation.data} />
     </form>
   );
 }

@@ -1,5 +1,5 @@
 import { TeacherResultPage } from "@/app/_features/teacher/teacher-result-page/TeacherResultPage";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 
 export async function generateMetadata({
   params,

@@ -8,10 +8,7 @@ import {
   searchParamPageSchema,
   searchParamPoolIdsSchema,
 } from "@/app/_features/teacher/teacher-result-page/teacherResultPageUtils";
-import {
-  SWIMMING_TEACHERS_CITY_BERLIN_ROUTE,
-  SWIMMING_TEACHERS_ROUTE,
-} from "@/app/_utils/constants/routes";
+import { SWIMMING_TEACHERS_CITY_BERLIN_ROUTE } from "@/app/_utils/constants/routes";
 import { createSupabaseAdminClient } from "@/app/_utils/supabase/createSupabaseAdminClient";
 import { Button, Typography } from "@mui/material";
 import Link from "next/link";
