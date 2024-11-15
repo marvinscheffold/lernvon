@@ -101,8 +101,6 @@ export async function teacherUpsertAction(
       throw httpResponseStatusCode.Unauthorized;
     }
 
-    console.log({ payload: getObjectFromFormData(payload) });
-
     const { data: payloadVerified, error: payloadError } =
       payloadSchema.safeParse(getObjectFromFormData(payload));
 

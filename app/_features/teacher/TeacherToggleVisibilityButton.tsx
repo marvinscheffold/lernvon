@@ -22,7 +22,7 @@ export function TeacherToggleVisibilityButton({
         }
 
         const response = await teacherUpdateVisibilityAction(formData);
-        return console.log(response);
+        console.log(response);
       }}
     >
       <SubmitButton
