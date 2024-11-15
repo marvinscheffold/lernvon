@@ -5,6 +5,8 @@ import {
 } from "@/app/_utils/constants/routes";
 import { Typography } from "@mui/material";
 import Link from "next/link";
+import iconImage from "@/public/images/icon.png";
+import Image from "next/image";
 
 export function PageHeader() {
   return (
@@ -12,7 +14,7 @@ export function PageHeader() {
       <div className="flex gap-4 items-center">
         <Link href={LANDING_PAGE_HOME_ROUTE}>
           <div className="flex gap-2 items-center">
-            <Typography variant="h4">🏊‍♂️</Typography>
+            <Image alt="lernvon icon" src={iconImage} width={32} height={32} />
             <Typography variant="h6">lernvon</Typography>
           </div>
         </Link>
