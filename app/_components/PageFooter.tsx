@@ -17,7 +17,9 @@ export function PageFooter() {
         <div className="flex flex-col gap-12">
           <div className="flex flex-wrap gap-12">
             <section className="flex flex-col gap-6">
-              <Typography variant="h6">Schwimmlehrer in deiner Nähe</Typography>
+              <Typography variant="h6" component={"h3"}>
+                Schwimmlehrer in deiner Nähe
+              </Typography>
               <ul className="flex flex-col gap-2">
                 <li>
                   <Link href={SWIMMING_TEACHERS_CITY_BERLIN_ROUTE}>
@@ -137,7 +139,9 @@ export function PageFooter() {
               </ul>
             </section>
             <section className="flex flex-col gap-6">
-              <Typography variant="h6">Hallenbäder in Berlin</Typography>
+              <Typography variant="h6" component={"h3"}>
+                Hallenbäder in Berlin
+              </Typography>
               <ul className="flex flex-col gap-2">
                 <li>
                   <Link
