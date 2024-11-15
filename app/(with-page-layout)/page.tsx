@@ -14,7 +14,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "Schwimmlehrer & Schwimmtrainer - Finde den perfekten Schwimmlehrer in Berlin | lernvon",
+    "Schwimmlehrer & Schwimmtrainer - Finde den perfekten Schwimmcoach in Berlin | lernvon",
   description:
     "Entdecke die besten Schwimmlehrer und Schwimmtrainer in Berlin. Lerne sicher schwimmen oder verbessere deine Technik mit qualifizierten Experten. Finde jetzt den perfekten Schwimmlehrer!",
 };

@@ -8,14 +8,14 @@ import {
   searchParamMinPriceSchema,
   searchParamPoolIdsSchema,
 } from "@/app/_features/teacher/teacher-result-page/teacherResultPageUtils";
-import { SWIMMING_TEACHERS_ROUTE } from "@/app/_utils/constants/routes";
 import { useStateEffect } from "@/app/_utils/hooks/useStateEffect";
 import { Chip, Slider, Typography } from "@mui/material";
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useCallback } from "react";
 
 export function TeacherResultPageFilters() {
   const router = useRouter();
+  const pathname = usePathname();
   const searchParams = useSearchParams();
   const createSearchParamsString = useCallback(
     (
@@ -73,7 +73,7 @@ export function TeacherResultPageFilters() {
             onChangeCommitted={(_event, value) => {
               if (!Array.isArray(value)) return;
               router.push(
-                SWIMMING_TEACHERS_ROUTE +
+                pathname +
                   "?" +
                   createSearchParamsString([
                     { name: "min_price", value: value[0] },
@@ -106,7 +106,7 @@ export function TeacherResultPageFilters() {
                     const newPoolIds = poolIds.filter((p) => p !== poolId);
 
                     router.push(
-                      SWIMMING_TEACHERS_ROUTE +
+                      pathname +
                         "?" +
                         createSearchParamsString([
                           { name: "pool_ids", value: newPoolIds.join(",") },
@@ -126,7 +126,7 @@ export function TeacherResultPageFilters() {
                 const newPoolIds = [...poolIds, pool.id];
 
                 router.push(
-                  SWIMMING_TEACHERS_ROUTE +
+                  pathname +
                     "?" +
                     createSearchParamsString([
                       { name: "pool_ids", value: newPoolIds.join(",") },

@@ -2,10 +2,9 @@ import { TeacherResultPage } from "@/app/_features/teacher/teacher-result-page/T
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title:
-    "Schwimmlehrer & Schwimmtrainer - Finde den perfekten Schwimmlehrer in ganz Deutschland | lernvon",
+  title: "Schwimmlehrer in Deutschland | lernvon",
   description:
-    "Finde professionelle Schwimmlehrer und Schwimmtrainer in ganz Deutschland. Lerne schwimmen oder optimiere deine Technik mit erfahrenen Experten. Entdecke deinen perfekten Schwimmlehrer bei lernvon!",
+    "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in Deutschland. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
 };
 
 export default async function Page({
