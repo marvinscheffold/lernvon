@@ -27,7 +27,7 @@ export function TeacherDeleteButton() {
         Profil löschen
       </Button>
       <Dialog open={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <DialogTitle>Lehrer profil löschen?</DialogTitle>
+        <DialogTitle>Lehrerprofil löschen?</DialogTitle>
         <DialogContent>
           <DialogContentText>
             Möchtest du dein Profil wirklich löschen? Diese Aktion kann nicht
