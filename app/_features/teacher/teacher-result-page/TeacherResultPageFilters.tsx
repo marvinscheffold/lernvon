@@ -45,10 +45,7 @@ export function TeacherResultPageFilters() {
       MAX_MAX_PRICE,
     [searchParams]
   );
-  const xpoolIds = searchParamPoolIdsSchema.safeParse(
-    searchParams.get("pool_ids")
-  ).data;
-  console.log({ xpoolIds });
+
   const [poolIds, setPoolIds] = useStateEffect(
     searchParamPoolIdsSchema.safeParse(searchParams.get("pool_ids")).data ?? [],
     [searchParams]

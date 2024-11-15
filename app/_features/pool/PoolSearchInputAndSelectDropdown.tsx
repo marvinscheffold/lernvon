@@ -34,6 +34,12 @@ export function PoolSearchInputAndSelectDropdown({
 
   const filteredPools = useMemo(() => {
     if (!data) return [];
+
+    if (!searchValue)
+      return data
+        .filter((pool) => !disabledOptionValues.includes(pool.id))
+        .slice(0, 5);
+
     return data
       .filter((pool) => {
         return (
@@ -43,7 +49,7 @@ export function PoolSearchInputAndSelectDropdown({
         );
       })
       .slice(0, 5);
-  }, [data, searchValue]);
+  }, [data, searchValue, disabledOptionValues]);
 
   const handleClose = () => {
     setIsDropdownOpen(false);

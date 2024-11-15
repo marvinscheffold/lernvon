@@ -46,13 +46,19 @@ export default async function Page({
             <CtaCardContent teacher={teacher} />
           </div>
           <Section>
-            <Typography variant="h5">Beschreibung</Typography>
-            <Typography variant="body1">{teacher.about}</Typography>
+            <Typography variant="h5" component={"h2"}>
+              Beschreibung
+            </Typography>
+            <Typography variant="body1" className="whitespace-pre-wrap">
+              {teacher.about}
+            </Typography>
           </Section>
           {teacher.pools.length > 0 && (
             <Section>
               <div className="flex flex-col gap-2">
-                <Typography variant="h5">Schwimmbäder</Typography>
+                <Typography variant="h5" component={"h2"}>
+                  Schwimmbäder
+                </Typography>
               </div>
               <List>
                 {teacher.pools.map((pool) => (

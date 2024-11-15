@@ -2,7 +2,7 @@
 
 import { signOutAction } from "@/app/_features/auth/actions/signOutAction";
 import { TEACHER_CREATE_ROUTE } from "@/app/_utils/constants/routes";
-import { Logout, Person, Person2 } from "@mui/icons-material";
+import { AccountCircleOutlined, Logout, Person } from "@mui/icons-material";
 import { Avatar, Button, ListItemIcon, Menu, MenuItem } from "@mui/material";
 import { User } from "@supabase/supabase-js";
 import Link from "next/link";
@@ -52,7 +52,7 @@ export function AuthUserAvatarClient({ user }: AuthUserAvatarClientProps) {
         <Link href={TEACHER_CREATE_ROUTE}>
           <MenuItem onClick={handleClose}>
             <ListItemIcon>
-              <Person2 fontSize="small" />
+              <AccountCircleOutlined fontSize="small" />
             </ListItemIcon>
             Mein Lehrerprofil
           </MenuItem>
