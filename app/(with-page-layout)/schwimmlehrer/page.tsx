@@ -2,7 +2,8 @@ import { TeacherResultPage } from "@/app/_features/teacher/teacher-result-page/T
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Schwimmlehrer in Deutschland | lernvon",
+  title:
+    "Schwimmlehrer in Deutschland - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
   description:
     "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in Deutschland. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
 };

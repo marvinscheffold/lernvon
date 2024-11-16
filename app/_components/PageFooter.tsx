@@ -181,7 +181,7 @@ export function PageFooter() {
                 </li>
                 <li>
                   <Link
-                    href={`${SWIMMING_TEACHERS_CITY_BERLIN_POOLS_ROUTE}?pool_ids=8`}
+                    href={`${SWIMMING_TEACHERS_CITY_BERLIN_POOLS_ROUTE}/stadtbad-charlottenburg-alte-halle?pool_ids=8`}
                   >
                     <Typography variant="body2">
                       Schwimmunterricht Stadtbad Charlottenburg

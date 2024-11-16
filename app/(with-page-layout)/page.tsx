@@ -89,8 +89,9 @@ export default function Page() {
                 sx={{ typography: { xs: "body1", md: "h5" } }}
                 component={"p"}
               >
-                Über 120 Schwimmlehrer in 12 Berzirken - Bei lernvon findest du
-                kostenlos qualifizierte Schwimm-Coaches in Berlin.
+                Egal ob du Kraulschwimmen, Brustschwimmen oder Rückenschwimmen
+                lernen möchtest. Bei lernvon findest du kostenlos qualifizierte
+                Schwimm-Coaches in Berlin.
               </Typography>
               <div className="pt-8">
                 <Link href={SWIMMING_TEACHERS_CITY_BERLIN_ROUTE}>

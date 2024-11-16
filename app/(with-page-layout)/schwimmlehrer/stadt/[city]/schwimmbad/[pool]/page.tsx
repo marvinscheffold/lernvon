@@ -10,7 +10,8 @@ export async function generateMetadata({
 
   if (paramsUsable.pool.indexOf(encodeURIComponent("stadtbad-neukölln")) >= 0) {
     return {
-      title: "Schwimmlehrer im Stadtbad Neukölln",
+      title:
+        "Schwimmlehrer im Stadtbad Neukölln - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Stadtbad Neukölln. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -20,7 +21,8 @@ export async function generateMetadata({
     0
   ) {
     return {
-      title: "Schwimmlehrer in der Schwimmhalle Sewanstraße",
+      title:
+        "Schwimmlehrer in der Schwimmhalle Sewanstraße - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in der Schwimmhalle Sewanstraße. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -31,14 +33,16 @@ export async function generateMetadata({
     ) >= 0
   ) {
     return {
-      title: "Schwimmlehrer in der Schwimmhalle Fischerinsel",
+      title:
+        "Schwimmlehrer in der Schwimmhalle Fischerinsel - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in der Schwimmhalle Fischerinsel. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
   }
   if (paramsUsable.pool.indexOf(encodeURIComponent("stadtbad-mitte")) >= 0) {
     return {
-      title: 'Schwimmlehrer im Stadtbad Mitte "James Simon"',
+      title:
+        'Schwimmlehrer im Stadtbad Mitte "James Simon" - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon',
       description:
         'Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Stadtbad Mitte "James Simon". Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.',
     };
@@ -47,7 +51,8 @@ export async function generateMetadata({
     paramsUsable.pool.indexOf(encodeURIComponent("stadtbad-tiergarten")) >= 0
   ) {
     return {
-      title: "Schwimmlehrer im Stadtbad Tiergarten",
+      title:
+        "Schwimmlehrer im Stadtbad Tiergarten - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Stadtbad Tiergarten. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -55,7 +60,7 @@ export async function generateMetadata({
   if (paramsUsable.pool.indexOf(encodeURIComponent("sse")) >= 0) {
     return {
       title:
-        "Schwimmlehrer in der Schwimm- und Sprunghalle im Europasportpark (SSE)",
+        "Schwimmlehrer in der Schwimm- und Sprunghalle im Europasportpark (SSE) - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in der Schwimm- und Sprunghalle im Europasportpark (SSE). Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -66,7 +71,8 @@ export async function generateMetadata({
     ) >= 0
   ) {
     return {
-      title: "Schwimmlehrer in der Schwimmhalle Anton-Saefkow-Platz",
+      title:
+        "Schwimmlehrer in der Schwimmhalle Anton-Saefkow-Platz - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in der Schwimmhalle Anton-Saefkow-Platz. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -76,7 +82,8 @@ export async function generateMetadata({
     paramsUsable.pool.indexOf(encodeURIComponent("stadtbad-spandau-nord")) >= 0
   ) {
     return {
-      title: "Schwimmlehrer im Stadtbad Spandau Nord",
+      title:
+        "Schwimmlehrer im Stadtbad Spandau Nord - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Stadtbad Spandau Nord. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -85,7 +92,8 @@ export async function generateMetadata({
     paramsUsable.pool.indexOf(encodeURIComponent("stadtbad-spandau-nord")) >= 0
   ) {
     return {
-      title: "Schwimmlehrer im Stadtbad Spandau Nord",
+      title:
+        "Schwimmlehrer im Stadtbad Spandau Nord - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Stadtbad Spandau Nord. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -97,7 +105,7 @@ export async function generateMetadata({
   ) {
     return {
       title:
-        'Schwimmlehrer in der Schwimmhalle Helene-Weigel-Platz "Helmut Behrendt"',
+        'Schwimmlehrer in der Schwimmhalle Helene-Weigel-Platz "Helmut Behrendt" - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon',
       description:
         'Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in der Schwimmhalle Helene-Weigel-Platz "Helmut Behrendt". Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.',
     };
@@ -109,7 +117,8 @@ export async function generateMetadata({
     ) >= 0
   ) {
     return {
-      title: "Schwimmlehrer in der Sport- und Lehrschwimmhalle Schöneberg",
+      title:
+        "Schwimmlehrer in der Sport- und Lehrschwimmhalle Schöneberg - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in der Sport- und Lehrschwimmhalle Schöneberg. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -121,7 +130,8 @@ export async function generateMetadata({
     ) >= 0
   ) {
     return {
-      title: "Schwimmlehrer im Stadtbad Märkisches Viertel",
+      title:
+        "Schwimmlehrer im Stadtbad Märkisches Viertel - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Stadtbad Märkisches Viertel. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -131,7 +141,8 @@ export async function generateMetadata({
     paramsUsable.pool.indexOf(encodeURIComponent("schwimmhalle-im-fez")) >= 0
   ) {
     return {
-      title: "Schwimmlehrer in der Schwimmhalle im FEZ",
+      title:
+        "Schwimmlehrer in der Schwimmhalle im FEZ - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in der Schwimmhalle im FEZ. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -141,7 +152,8 @@ export async function generateMetadata({
     paramsUsable.pool.indexOf(encodeURIComponent("kombibad-gropiusstadt")) >= 0
   ) {
     return {
-      title: "Schwimmlehrer im Kombibad Gropiusstadt",
+      title:
+        "Schwimmlehrer im Kombibad Gropiusstadt - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Kombibad Gropiusstadt. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -153,7 +165,8 @@ export async function generateMetadata({
     ) >= 0
   ) {
     return {
-      title: "Schwimmlehrer in der Schwimmhalle Allendeviertel",
+      title:
+        "Schwimmlehrer in der Schwimmhalle Allendeviertel - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in der Schwimmhalle Allendeviertel. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -165,7 +178,8 @@ export async function generateMetadata({
     ) >= 0
   ) {
     return {
-      title: "Schwimmlehrer in der Schwimmhalle Baumschulenweg",
+      title:
+        "Schwimmlehrer in der Schwimmhalle Baumschulenweg - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in der Schwimmhalle Baumschulenweg. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -173,7 +187,8 @@ export async function generateMetadata({
 
   if (paramsUsable.pool.indexOf(encodeURIComponent("schwimmhalle-buch")) >= 0) {
     return {
-      title: "Schwimmlehrer in der Schwimmhalle Buch",
+      title:
+        "Schwimmlehrer in der Schwimmhalle Buch - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in der Schwimmhalle Buch. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -185,7 +200,8 @@ export async function generateMetadata({
     ) >= 0
   ) {
     return {
-      title: "Schwimmlehrer in der Schwimmhalle Ernst-Thälmann-Park",
+      title:
+        "Schwimmlehrer in der Schwimmhalle Ernst-Thälmann-Park - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in der Schwimmhalle Ernst-Thälmann-Park. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -197,7 +213,8 @@ export async function generateMetadata({
     ) >= 0
   ) {
     return {
-      title: "Schwimmlehrer in der Schwimmhalle Finckensteinallee",
+      title:
+        "Schwimmlehrer in der Schwimmhalle Finckensteinallee - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in der Schwimmhalle Finckensteinallee. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -208,7 +225,8 @@ export async function generateMetadata({
     0
   ) {
     return {
-      title: "Schwimmlehrer im Forumbad Olympiastadion",
+      title:
+        "Schwimmlehrer im Forumbad Olympiastadion - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Forumbad Olympiastadion. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -218,7 +236,8 @@ export async function generateMetadata({
     paramsUsable.pool.indexOf(encodeURIComponent("schwimmhalle-hüttenweg")) >= 0
   ) {
     return {
-      title: "Schwimmlehrer in der Schwimmhalle Hüttenweg",
+      title:
+        "Schwimmlehrer in der Schwimmhalle Hüttenweg - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in der Schwimmhalle Hüttenweg. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -228,7 +247,8 @@ export async function generateMetadata({
     paramsUsable.pool.indexOf(encodeURIComponent("schwimmhalle-kaulsdorf")) >= 0
   ) {
     return {
-      title: "Schwimmlehrer in der Schwimmhalle Kaulsdorf",
+      title:
+        "Schwimmlehrer in der Schwimmhalle Kaulsdorf - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in der Schwimmhalle Kaulsdorf. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -238,7 +258,8 @@ export async function generateMetadata({
     paramsUsable.pool.indexOf(encodeURIComponent("schwimmhalle-kreuzberg")) >= 0
   ) {
     return {
-      title: "Schwimmlehrer in der Schwimmhalle Kreuzberg",
+      title:
+        "Schwimmlehrer in der Schwimmhalle Kreuzberg - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in der Schwimmhalle Kreuzberg. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -250,7 +271,8 @@ export async function generateMetadata({
     ) >= 0
   ) {
     return {
-      title: "Schwimmlehrer in der Schwimmhalle Thomas-Mann-Straße",
+      title:
+        "Schwimmlehrer in der Schwimmhalle Thomas-Mann-Straße - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in der Schwimmhalle Thomas-Mann-Straße. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -262,7 +284,8 @@ export async function generateMetadata({
     ) >= 0
   ) {
     return {
-      title: "Schwimmlehrer im Sportforum Hohenschönhausen",
+      title:
+        "Schwimmlehrer im Sportforum Hohenschönhausen - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Sportforum Hohenschönhausen. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -270,7 +293,8 @@ export async function generateMetadata({
 
   if (paramsUsable.pool.indexOf(encodeURIComponent("stadtbad-lankwitz")) >= 0) {
     return {
-      title: "Schwimmlehrer im Stadtbad Lankwitz",
+      title:
+        "Schwimmlehrer im Stadtbad Lankwitz - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Stadtbad Lankwitz. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -280,7 +304,8 @@ export async function generateMetadata({
     paramsUsable.pool.indexOf(encodeURIComponent("stadtbad-tempelhof")) >= 0
   ) {
     return {
-      title: "Schwimmlehrer im Stadtbad Tempelhof",
+      title:
+        "Schwimmlehrer im Stadtbad Tempelhof - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Stadtbad Tempelhof. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -292,7 +317,8 @@ export async function generateMetadata({
     ) >= 0
   ) {
     return {
-      title: "Schwimmlehrer im Kombibad Spandau Süd - Hallenbad",
+      title:
+        "Schwimmlehrer im Kombibad Spandau Süd - Hallenbad - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Kombibad Spandau Süd - Hallenbad. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -302,7 +328,8 @@ export async function generateMetadata({
     paramsUsable.pool.indexOf(encodeURIComponent("stadtbad-wilmersdorf-1")) >= 0
   ) {
     return {
-      title: "Schwimmlehrer im Stadtbad Wilmersdorf 1",
+      title:
+        "Schwimmlehrer im Stadtbad Wilmersdorf 1 - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Stadtbad Wilmersdorf 1. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -312,7 +339,8 @@ export async function generateMetadata({
     paramsUsable.pool.indexOf(encodeURIComponent("stadtbad-wilmersdorf-2")) >= 0
   ) {
     return {
-      title: "Schwimmlehrer im Stadtbad Wilmersdorf 2",
+      title:
+        "Schwimmlehrer im Stadtbad Wilmersdorf 2 - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Stadtbad Wilmersdorf 2. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -322,7 +350,8 @@ export async function generateMetadata({
     paramsUsable.pool.indexOf(encodeURIComponent("sommerbad-kreuzberg")) >= 0
   ) {
     return {
-      title: "Schwimmlehrer im Sommerbad Kreuzberg",
+      title:
+        "Schwimmlehrer im Sommerbad Kreuzberg - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Sommerbad Kreuzberg. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -332,7 +361,8 @@ export async function generateMetadata({
     paramsUsable.pool.indexOf(encodeURIComponent("kinderbad-monbijou")) >= 0
   ) {
     return {
-      title: "Schwimmlehrer im Kinderbad Monbijou",
+      title:
+        "Schwimmlehrer im Kinderbad Monbijou - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Kinderbad Monbijou. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -344,7 +374,8 @@ export async function generateMetadata({
     ) >= 0
   ) {
     return {
-      title: "Schwimmlehrer im Kombibad Gropiusstadt - Sommerbad",
+      title:
+        "Schwimmlehrer im Kombibad Gropiusstadt - Sommerbad - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Kombibad Gropiusstadt - Sommerbad. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -356,7 +387,8 @@ export async function generateMetadata({
     ) >= 0
   ) {
     return {
-      title: "Schwimmlehrer im Kombibad Seestraße - Sommerbad",
+      title:
+        "Schwimmlehrer im Kombibad Seestraße - Sommerbad - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Kombibad Seestraße - Sommerbad. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -366,7 +398,8 @@ export async function generateMetadata({
     paramsUsable.pool.indexOf(encodeURIComponent("sommerbad-humboldthain")) >= 0
   ) {
     return {
-      title: "Schwimmlehrer im Sommerbad Humboldthain",
+      title:
+        "Schwimmlehrer im Sommerbad Humboldthain - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Sommerbad Humboldthain. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -376,7 +409,8 @@ export async function generateMetadata({
     paramsUsable.pool.indexOf(encodeURIComponent("sommerbad-am-insulaner")) >= 0
   ) {
     return {
-      title: "Schwimmlehrer im Sommerbad am Insulaner",
+      title:
+        "Schwimmlehrer im Sommerbad am Insulaner - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Sommerbad am Insulaner. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -386,7 +420,8 @@ export async function generateMetadata({
     paramsUsable.pool.indexOf(encodeURIComponent("sommerbad-mariendorf")) >= 0
   ) {
     return {
-      title: "Schwimmlehrer im Sommerbad Mariendorf",
+      title:
+        "Schwimmlehrer im Sommerbad Mariendorf - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Sommerbad Mariendorf. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -396,7 +431,8 @@ export async function generateMetadata({
     paramsUsable.pool.indexOf(encodeURIComponent("sommerbad-neukölln")) >= 0
   ) {
     return {
-      title: "Schwimmlehrer im Sommerbad Neukölln",
+      title:
+        "Schwimmlehrer im Sommerbad Neukölln - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Sommerbad Neukölln. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -407,7 +443,8 @@ export async function generateMetadata({
     0
   ) {
     return {
-      title: "Schwimmlehrer im Sommerbad Olympiastadion",
+      title:
+        "Schwimmlehrer im Sommerbad Olympiastadion - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Sommerbad Olympiastadion. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -415,7 +452,8 @@ export async function generateMetadata({
 
   if (paramsUsable.pool.indexOf(encodeURIComponent("sommerbad-pankow")) >= 0) {
     return {
-      title: "Schwimmlehrer im Sommerbad Pankow",
+      title:
+        "Schwimmlehrer im Sommerbad Pankow - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Sommerbad Pankow. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -425,7 +463,8 @@ export async function generateMetadata({
     paramsUsable.pool.indexOf(encodeURIComponent("sommerbad-staaken-west")) >= 0
   ) {
     return {
-      title: "Schwimmlehrer im Sommerbad Staaken-West",
+      title:
+        "Schwimmlehrer im Sommerbad Staaken-West - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Sommerbad Staaken-West. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -435,7 +474,8 @@ export async function generateMetadata({
     paramsUsable.pool.indexOf(encodeURIComponent("sommerbad-wilmersdorf")) >= 0
   ) {
     return {
-      title: "Schwimmlehrer im Sommerbad Wilmersdorf",
+      title:
+        "Schwimmlehrer im Sommerbad Wilmersdorf - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Sommerbad Wilmersdorf. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -445,7 +485,8 @@ export async function generateMetadata({
     paramsUsable.pool.indexOf(encodeURIComponent("sommerbad-wuhlheide")) >= 0
   ) {
     return {
-      title: "Schwimmlehrer im Sommerbad Wuhlheide",
+      title:
+        "Schwimmlehrer im Sommerbad Wuhlheide - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Sommerbad Wuhlheide. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -453,7 +494,8 @@ export async function generateMetadata({
 
   if (paramsUsable.pool.indexOf(encodeURIComponent("sommerbad-britz")) >= 0) {
     return {
-      title: "Schwimmlehrer im Sommerbad Britz",
+      title:
+        "Schwimmlehrer im Sommerbad Britz - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Sommerbad Britz. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -465,14 +507,16 @@ export async function generateMetadata({
     ) >= 0
   ) {
     return {
-      title: "Schwimmlehrer im Stadtbad Charlottenburg - Alte Halle",
+      title:
+        "Schwimmlehrer im Stadtbad Charlottenburg - Alte Halle - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer im Stadtbad Charlottenburg - Alte Halle. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
   }
 
   return {
-    title: "Schwimmlehrer in Berlin",
+    title:
+      "Schwimmlehrer in Berlin - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
     description:
       "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in Berlin. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
   };

@@ -10,7 +10,8 @@ export async function generateMetadata({
 
   if (paramsUsable.district.indexOf(encodeURIComponent("lichtenberg")) >= 0) {
     return {
-      title: "Schwimmlehrer in Berlin Lichtenberg",
+      title:
+        "Schwimmlehrer in Berlin Lichtenberg - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in Berlin Lichtenberg. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -22,7 +23,8 @@ export async function generateMetadata({
     ) >= 0
   ) {
     return {
-      title: "Schwimmlehrer in Berlin Friedrichshain-Kreuzberg",
+      title:
+        "Schwimmlehrer in Berlin Friedrichshain-Kreuzberg - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in Berlin Friedrichshain-Kreuzberg. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -34,7 +36,8 @@ export async function generateMetadata({
     ) >= 0
   ) {
     return {
-      title: "Schwimmlehrer in Berlin Charlottenburg-Wilmersdorf",
+      title:
+        "Schwimmlehrer in Berlin Charlottenburg-Wilmersdorf - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in Berlin Charlottenburg-Wilmersdorf. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -45,7 +48,8 @@ export async function generateMetadata({
     0
   ) {
     return {
-      title: "Schwimmlehrer in Berlin Marzahn-Hellersdorf",
+      title:
+        "Schwimmlehrer in Berlin Marzahn-Hellersdorf - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in Berlin Marzahn-Hellersdorf. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -53,7 +57,8 @@ export async function generateMetadata({
 
   if (paramsUsable.district.indexOf(encodeURIComponent("mitte")) >= 0) {
     return {
-      title: "Schwimmlehrer in Berlin Mitte",
+      title:
+        "Schwimmlehrer in Berlin Mitte - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in Berlin Mitte. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -61,7 +66,8 @@ export async function generateMetadata({
 
   if (paramsUsable.district.indexOf(encodeURIComponent("neukölln")) >= 0) {
     return {
-      title: "Schwimmlehrer in Berlin Neukölln",
+      title:
+        "Schwimmlehrer in Berlin Neukölln - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in Berlin Neukölln. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -69,7 +75,8 @@ export async function generateMetadata({
 
   if (paramsUsable.district.indexOf(encodeURIComponent("pankow")) >= 0) {
     return {
-      title: "Schwimmlehrer in Berlin Pankow",
+      title:
+        "Schwimmlehrer in Berlin Pankow - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in Berlin Pankow. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -77,7 +84,8 @@ export async function generateMetadata({
 
   if (paramsUsable.district.indexOf(encodeURIComponent("reinickendorf")) >= 0) {
     return {
-      title: "Schwimmlehrer in Berlin Reinickendorf",
+      title:
+        "Schwimmlehrer in Berlin Reinickendorf - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in Berlin Reinickendorf. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -85,7 +93,8 @@ export async function generateMetadata({
 
   if (paramsUsable.district.indexOf(encodeURIComponent("spandau")) >= 0) {
     return {
-      title: "Schwimmlehrer in Berlin Spandau",
+      title:
+        "Schwimmlehrer in Berlin Spandau - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in Berlin Spandau. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -96,7 +105,8 @@ export async function generateMetadata({
     0
   ) {
     return {
-      title: "Schwimmlehrer in Berlin Steglitz-Zehlendorf",
+      title:
+        "Schwimmlehrer in Berlin Steglitz-Zehlendorf - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in Berlin Steglitz-Zehlendorf. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -107,7 +117,8 @@ export async function generateMetadata({
     0
   ) {
     return {
-      title: "Schwimmlehrer in Berlin Tempelhof-Schöneberg",
+      title:
+        "Schwimmlehrer in Berlin Tempelhof-Schöneberg - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in Berlin Tempelhof-Schöneberg. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
@@ -117,14 +128,16 @@ export async function generateMetadata({
     paramsUsable.district.indexOf(encodeURIComponent("treptow-köpenick")) >= 0
   ) {
     return {
-      title: "Schwimmlehrer in Berlin Treptow-Köpenick",
+      title:
+        "Schwimmlehrer in Berlin Treptow-Köpenick - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
       description:
         "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in Berlin Treptow-Köpenick. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
     };
   }
 
   return {
-    title: "Schwimmlehrer in Berlin",
+    title:
+      "Schwimmlehrer in Berlin - Privater Schwimmunterricht ab 15€ pro Stunde | lernvon",
     description:
       "Vergleiche professionelle Schwimmlehrer und Schwimmtrainer in Berlin. Finde den perfekten Schwimmcoach für dich und lerne sicher schwimmen oder verbessere deine Technik.",
   };
