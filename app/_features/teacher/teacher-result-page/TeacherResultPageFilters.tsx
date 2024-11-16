@@ -4,6 +4,7 @@ import { PoolChip } from "@/app/_features/pool/PoolChip";
 import { PoolSearchInputAndSelectDropdown } from "@/app/_features/pool/PoolSearchInputAndSelectDropdown";
 import {
   MAX_MAX_PRICE,
+  MIN_MIN_PRICE,
   searchParamMaxPriceSchema,
   searchParamMinPriceSchema,
   searchParamPoolIdsSchema,
@@ -37,7 +38,7 @@ export function TeacherResultPageFilters() {
 
   const [minPrice, setMinPrice] = useStateEffect(
     searchParamMinPriceSchema.safeParse(searchParams.get("min_price")).data ??
-      0,
+      MIN_MIN_PRICE,
     [searchParams]
   );
   const [maxPrice, setMaxPrice] = useStateEffect(
@@ -80,7 +81,7 @@ export function TeacherResultPageFilters() {
               );
             }}
             disableSwap
-            min={0}
+            min={15}
             max={MAX_MAX_PRICE}
             color="primary"
           />

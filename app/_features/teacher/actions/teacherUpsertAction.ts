@@ -29,7 +29,8 @@ const payloadSchema = z.object({
     .optional(),
   pricePerHour: z.coerce
     .number({ invalid_type_error: "Preis pro Stunde muss eine Zahl sein" })
-    .positive("Preis pro Stunde muss positiv sein")
+    .min(15, "Preis pro Stunde muss größer als 15 sein")
+    .max(200, "Preis pro Stunde muss kleiner als 200 sein")
     .nullable()
     .optional(),
   email: z
