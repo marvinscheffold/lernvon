@@ -6,8 +6,8 @@ import {
 import { ArrowForward } from "@mui/icons-material";
 import { Button, Typography } from "@mui/material";
 import Link from "next/link";
-import teacherWithStudentsImage from "@/public/images/teacher-with-students.jpg";
-import teacherInWaterImage from "@/public/images/teacher-in-water.jpg";
+import teacherAndStudentImage from "@/public/images/teacher-and-student.jpg";
+import teacherOnLadderImage from "@/public/images/teacher-on-ladder.jpg";
 import Image from "next/image";
 import { LandingBerlinDistrictsCards } from "@/app/_features/landing/LandingBerlinDistrictsCards";
 import { Metadata } from "next";
@@ -53,9 +53,8 @@ export default function Page() {
             <div className="md:flex-grow basis-0 h-auto order-first md:order-none">
               <div className="relative w-full h-64 md:h-full">
                 <Image
-                  className="brightness-150"
-                  alt="Bild eines Schwimmlehrers der Unterricht gibt"
-                  src={teacherWithStudentsImage}
+                  alt="Bild eines Schwimmlehrers der einem Schüler etwas zeigt"
+                  src={teacherAndStudentImage}
                   fill
                   style={{
                     objectFit: "cover",
@@ -116,8 +115,8 @@ export default function Page() {
               <div className="basis-0 flex-grow">
                 <div className="relative w-full h-[524px] md:h-[800px]">
                   <Image
-                    alt="Bild eines Schwimmlehrers im Wasser"
-                    src={teacherInWaterImage}
+                    alt="Bild eines Schwimmlehrers und einer Schülerin"
+                    src={teacherOnLadderImage}
                     fill
                     style={{
                       objectFit: "cover",
